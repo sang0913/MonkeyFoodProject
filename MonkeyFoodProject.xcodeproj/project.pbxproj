@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9426B39A261CB64D00BA6A00 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B397261CB64D00BA6A00 /* Theme.swift */; };
+		9426B39B261CB64D00BA6A00 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B398261CB64D00BA6A00 /* Demension.swift */; };
+		9426B39C261CB64D00BA6A00 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B399261CB64D00BA6A00 /* Resource.swift */; };
+		9426B3A1261CB66600BA6A00 /* LauchLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B39F261CB66600BA6A00 /* LauchLoginScreen.swift */; };
+		9426B3A2261CB66600BA6A00 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B3A0261CB66600BA6A00 /* WelcomeScreenViewController.swift */; };
+		9426B3A5261CB6A100BA6A00 /* BaseUIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B3A4261CB6A100BA6A00 /* BaseUIView1.swift */; };
+		9426B3A8261CB6C600BA6A00 /* BaseViewcontroller1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B3A7261CB6C600BA6A00 /* BaseViewcontroller1.swift */; };
+		9426B3C0261D3B6100BA6A00 /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3AE261D3B6100BA6A00 /* Metropolis-Bold.otf */; };
+		9426B3C1261D3B6100BA6A00 /* Metropolis-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3AF261D3B6100BA6A00 /* Metropolis-Thin.otf */; };
+		9426B3C2261D3B6100BA6A00 /* Metropolis-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B0261D3B6100BA6A00 /* Metropolis-RegularItalic.otf */; };
+		9426B3C3261D3B6100BA6A00 /* Metropolis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B1261D3B6100BA6A00 /* Metropolis-ExtraBold.otf */; };
+		9426B3C4261D3B6100BA6A00 /* Metropolis-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B2261D3B6100BA6A00 /* Metropolis-SemiBoldItalic.otf */; };
+		9426B3C5261D3B6100BA6A00 /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B3261D3B6100BA6A00 /* Metropolis-Light.otf */; };
+		9426B3C6261D3B6100BA6A00 /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B4261D3B6100BA6A00 /* Metropolis-Regular.otf */; };
+		9426B3C7261D3B6100BA6A00 /* Metropolis-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B5261D3B6100BA6A00 /* Metropolis-Black.otf */; };
+		9426B3C8261D3B6100BA6A00 /* Metropolis-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B6261D3B6100BA6A00 /* Metropolis-ExtraLightItalic.otf */; };
+		9426B3C9261D3B6100BA6A00 /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B7261D3B6100BA6A00 /* Metropolis-Medium.otf */; };
+		9426B3CA261D3B6100BA6A00 /* Metropolis-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B8261D3B6100BA6A00 /* Metropolis-BlackItalic.otf */; };
+		9426B3CB261D3B6100BA6A00 /* Metropolis-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3B9261D3B6100BA6A00 /* Metropolis-ThinItalic.otf */; };
+		9426B3CC261D3B6100BA6A00 /* Metropolis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BA261D3B6100BA6A00 /* Metropolis-ExtraLight.otf */; };
+		9426B3CD261D3B6100BA6A00 /* Metropolis-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BB261D3B6100BA6A00 /* Metropolis-MediumItalic.otf */; };
+		9426B3CE261D3B6100BA6A00 /* Metropolis-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BC261D3B6100BA6A00 /* Metropolis-LightItalic.otf */; };
+		9426B3CF261D3B6100BA6A00 /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BD261D3B6100BA6A00 /* Metropolis-SemiBold.otf */; };
+		9426B3D0261D3B6100BA6A00 /* Metropolis-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BE261D3B6100BA6A00 /* Metropolis-BoldItalic.otf */; };
+		9426B3D1261D3B6100BA6A00 /* Metropolis-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9426B3BF261D3B6100BA6A00 /* Metropolis-ExtraBoldItalic.otf */; };
+		9426B407261D442500BA6A00 /* ButtonPrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B406261D442500BA6A00 /* ButtonPrimaryColor.swift */; };
+		9426B40B261D524F00BA6A00 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B40A261D524F00BA6A00 /* LoginScreen.swift */; };
+		9426B412261D531700BA6A00 /* lbl_Top_Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B411261D531700BA6A00 /* lbl_Top_Title.swift */; };
+		94E0AF3B261CB4F1003128E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */; };
+		94E0AF3D261CB4F1003128E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */; };
+		94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3E261CB4F1003128E9 /* MainViewcontroller.swift */; };
+		94E0AF42261CB4F1003128E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E0AF40261CB4F1003128E9 /* Main.storyboard */; };
+		94E0AF44261CB4F2003128E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E0AF43261CB4F2003128E9 /* Assets.xcassets */; };
+		94E0AF47261CB4F2003128E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E0AF45261CB4F2003128E9 /* LaunchScreen.storyboard */; };
+		FF9338BE011C1F0A91D1C350 /* Pods_MonkeyFoodProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA53300BDA3E6F9139DFEC76 /* Pods_MonkeyFoodProject.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FF8822D3EC6BA39D0463784 /* Pods-MonkeyFoodProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFoodProject.release.xcconfig"; path = "Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject.release.xcconfig"; sourceTree = "<group>"; };
+		9426B397261CB64D00BA6A00 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9426B398261CB64D00BA6A00 /* Demension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
+		9426B399261CB64D00BA6A00 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		9426B39F261CB66600BA6A00 /* LauchLoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchLoginScreen.swift; sourceTree = "<group>"; };
+		9426B3A0261CB66600BA6A00 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
+		9426B3A4261CB6A100BA6A00 /* BaseUIView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIView1.swift; sourceTree = "<group>"; };
+		9426B3A7261CB6C600BA6A00 /* BaseViewcontroller1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewcontroller1.swift; sourceTree = "<group>"; };
+		9426B3AE261D3B6100BA6A00 /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Bold.otf"; sourceTree = "<group>"; };
+		9426B3AF261D3B6100BA6A00 /* Metropolis-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Thin.otf"; sourceTree = "<group>"; };
+		9426B3B0261D3B6100BA6A00 /* Metropolis-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-RegularItalic.otf"; sourceTree = "<group>"; };
+		9426B3B1261D3B6100BA6A00 /* Metropolis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraBold.otf"; sourceTree = "<group>"; };
+		9426B3B2261D3B6100BA6A00 /* Metropolis-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		9426B3B3261D3B6100BA6A00 /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Light.otf"; sourceTree = "<group>"; };
+		9426B3B4261D3B6100BA6A00 /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
+		9426B3B5261D3B6100BA6A00 /* Metropolis-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Black.otf"; sourceTree = "<group>"; };
+		9426B3B6261D3B6100BA6A00 /* Metropolis-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		9426B3B7261D3B6100BA6A00 /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
+		9426B3B8261D3B6100BA6A00 /* Metropolis-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BlackItalic.otf"; sourceTree = "<group>"; };
+		9426B3B9261D3B6100BA6A00 /* Metropolis-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ThinItalic.otf"; sourceTree = "<group>"; };
+		9426B3BA261D3B6100BA6A00 /* Metropolis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraLight.otf"; sourceTree = "<group>"; };
+		9426B3BB261D3B6100BA6A00 /* Metropolis-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-MediumItalic.otf"; sourceTree = "<group>"; };
+		9426B3BC261D3B6100BA6A00 /* Metropolis-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-LightItalic.otf"; sourceTree = "<group>"; };
+		9426B3BD261D3B6100BA6A00 /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		9426B3BE261D3B6100BA6A00 /* Metropolis-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BoldItalic.otf"; sourceTree = "<group>"; };
+		9426B3BF261D3B6100BA6A00 /* Metropolis-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		9426B406261D442500BA6A00 /* ButtonPrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimaryColor.swift; sourceTree = "<group>"; };
+		9426B40A261D524F00BA6A00 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		9426B411261D531700BA6A00 /* lbl_Top_Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lbl_Top_Title.swift; sourceTree = "<group>"; };
+		94E0AF37261CB4F1003128E9 /* MonkeyFoodProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFoodProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		94E0AF3E261CB4F1003128E9 /* MainViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
+		94E0AF41261CB4F1003128E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94E0AF43261CB4F2003128E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94E0AF46261CB4F2003128E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94E0AF48261CB4F2003128E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD07F25351D187EF58377E99 /* Pods-MonkeyFoodProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFoodProject.debug.xcconfig"; path = "Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject.debug.xcconfig"; sourceTree = "<group>"; };
+		EA53300BDA3E6F9139DFEC76 /* Pods_MonkeyFoodProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonkeyFoodProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94E0AF34261CB4F1003128E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9338BE011C1F0A91D1C350 /* Pods_MonkeyFoodProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9426B390261CB5B300BA6A00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9426B409261D523600BA6A00 /* LoginScreen */,
+				9426B39E261CB66600BA6A00 /* LauchLoginScreen */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9426B391261CB5B800BA6A00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9426B392261CB5BE00BA6A00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9426B393261CB5C400BA6A00 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9426B3AC261D3B5400BA6A00 /* Fonts */,
+				9426B395261CB5D200BA6A00 /* Style */,
+				9426B394261CB5CD00BA6A00 /* Base */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		9426B394261CB5CD00BA6A00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9426B40F261D52DA00BA6A00 /* LabelReusable */,
+				9426B40E261D52C000BA6A00 /* Button_Reusable */,
+				9426B3A7261CB6C600BA6A00 /* BaseViewcontroller1.swift */,
+				9426B3A4261CB6A100BA6A00 /* BaseUIView1.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9426B395261CB5D200BA6A00 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				9426B398261CB64D00BA6A00 /* Demension.swift */,
+				9426B399261CB64D00BA6A00 /* Resource.swift */,
+				9426B397261CB64D00BA6A00 /* Theme.swift */,
+			);
+			name = Style;
+			sourceTree = "<group>";
+		};
+		9426B39E261CB66600BA6A00 /* LauchLoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9426B39F261CB66600BA6A00 /* LauchLoginScreen.swift */,
+				9426B3A0261CB66600BA6A00 /* WelcomeScreenViewController.swift */,
+			);
+			path = LauchLoginScreen;
+			sourceTree = "<group>";
+		};
+		9426B3AC261D3B5400BA6A00 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9426B3AD261D3B6100BA6A00 /* Metropolis.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9426B3AD261D3B6100BA6A00 /* Metropolis.ttf */ = {
+			isa = PBXGroup;
+			children = (
+				9426B3AE261D3B6100BA6A00 /* Metropolis-Bold.otf */,
+				9426B3AF261D3B6100BA6A00 /* Metropolis-Thin.otf */,
+				9426B3B0261D3B6100BA6A00 /* Metropolis-RegularItalic.otf */,
+				9426B3B1261D3B6100BA6A00 /* Metropolis-ExtraBold.otf */,
+				9426B3B2261D3B6100BA6A00 /* Metropolis-SemiBoldItalic.otf */,
+				9426B3B3261D3B6100BA6A00 /* Metropolis-Light.otf */,
+				9426B3B4261D3B6100BA6A00 /* Metropolis-Regular.otf */,
+				9426B3B5261D3B6100BA6A00 /* Metropolis-Black.otf */,
+				9426B3B6261D3B6100BA6A00 /* Metropolis-ExtraLightItalic.otf */,
+				9426B3B7261D3B6100BA6A00 /* Metropolis-Medium.otf */,
+				9426B3B8261D3B6100BA6A00 /* Metropolis-BlackItalic.otf */,
+				9426B3B9261D3B6100BA6A00 /* Metropolis-ThinItalic.otf */,
+				9426B3BA261D3B6100BA6A00 /* Metropolis-ExtraLight.otf */,
+				9426B3BB261D3B6100BA6A00 /* Metropolis-MediumItalic.otf */,
+				9426B3BC261D3B6100BA6A00 /* Metropolis-LightItalic.otf */,
+				9426B3BD261D3B6100BA6A00 /* Metropolis-SemiBold.otf */,
+				9426B3BE261D3B6100BA6A00 /* Metropolis-BoldItalic.otf */,
+				9426B3BF261D3B6100BA6A00 /* Metropolis-ExtraBoldItalic.otf */,
+			);
+			path = Metropolis.ttf;
+			sourceTree = "<group>";
+		};
+		9426B409261D523600BA6A00 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9426B40A261D524F00BA6A00 /* LoginScreen.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		9426B40E261D52C000BA6A00 /* Button_Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				9426B406261D442500BA6A00 /* ButtonPrimaryColor.swift */,
+			);
+			name = Button_Reusable;
+			sourceTree = "<group>";
+		};
+		9426B40F261D52DA00BA6A00 /* LabelReusable */ = {
+			isa = PBXGroup;
+			children = (
+				9426B411261D531700BA6A00 /* lbl_Top_Title.swift */,
+			);
+			name = LabelReusable;
+			sourceTree = "<group>";
+		};
+		94E0AF2E261CB4F1003128E9 = {
+			isa = PBXGroup;
+			children = (
+				94E0AF39261CB4F1003128E9 /* MonkeyFoodProject */,
+				94E0AF38261CB4F1003128E9 /* Products */,
+				B70115A48B99D41F2152B3AB /* Pods */,
+				BEB151041F29AE0A69A2D196 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		94E0AF38261CB4F1003128E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94E0AF37261CB4F1003128E9 /* MonkeyFoodProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94E0AF39261CB4F1003128E9 /* MonkeyFoodProject */ = {
+			isa = PBXGroup;
+			children = (
+				9426B393261CB5C400BA6A00 /* Common */,
+				9426B392261CB5BE00BA6A00 /* Controller */,
+				9426B391261CB5B800BA6A00 /* Views */,
+				9426B390261CB5B300BA6A00 /* Models */,
+				94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */,
+				94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */,
+				94E0AF3E261CB4F1003128E9 /* MainViewcontroller.swift */,
+				94E0AF40261CB4F1003128E9 /* Main.storyboard */,
+				94E0AF43261CB4F2003128E9 /* Assets.xcassets */,
+				94E0AF45261CB4F2003128E9 /* LaunchScreen.storyboard */,
+				94E0AF48261CB4F2003128E9 /* Info.plist */,
+			);
+			path = MonkeyFoodProject;
+			sourceTree = "<group>";
+		};
+		B70115A48B99D41F2152B3AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD07F25351D187EF58377E99 /* Pods-MonkeyFoodProject.debug.xcconfig */,
+				0FF8822D3EC6BA39D0463784 /* Pods-MonkeyFoodProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BEB151041F29AE0A69A2D196 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA53300BDA3E6F9139DFEC76 /* Pods_MonkeyFoodProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94E0AF36261CB4F1003128E9 /* MonkeyFoodProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94E0AF4B261CB4F2003128E9 /* Build configuration list for PBXNativeTarget "MonkeyFoodProject" */;
+			buildPhases = (
+				7F75A5D6196817C46A3F677D /* [CP] Check Pods Manifest.lock */,
+				94E0AF33261CB4F1003128E9 /* Sources */,
+				94E0AF34261CB4F1003128E9 /* Frameworks */,
+				94E0AF35261CB4F1003128E9 /* Resources */,
+				04FE87D133CFB89CA56AA194 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyFoodProject;
+			productName = MonkeyFoodProject;
+			productReference = 94E0AF37261CB4F1003128E9 /* MonkeyFoodProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94E0AF2F261CB4F1003128E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					94E0AF36261CB4F1003128E9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 94E0AF32261CB4F1003128E9 /* Build configuration list for PBXProject "MonkeyFoodProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94E0AF2E261CB4F1003128E9;
+			productRefGroup = 94E0AF38261CB4F1003128E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94E0AF36261CB4F1003128E9 /* MonkeyFoodProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94E0AF35261CB4F1003128E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9426B3CB261D3B6100BA6A00 /* Metropolis-ThinItalic.otf in Resources */,
+				9426B3C9261D3B6100BA6A00 /* Metropolis-Medium.otf in Resources */,
+				9426B3C7261D3B6100BA6A00 /* Metropolis-Black.otf in Resources */,
+				9426B3C6261D3B6100BA6A00 /* Metropolis-Regular.otf in Resources */,
+				9426B3CA261D3B6100BA6A00 /* Metropolis-BlackItalic.otf in Resources */,
+				9426B3C5261D3B6100BA6A00 /* Metropolis-Light.otf in Resources */,
+				9426B3C1261D3B6100BA6A00 /* Metropolis-Thin.otf in Resources */,
+				9426B3CD261D3B6100BA6A00 /* Metropolis-MediumItalic.otf in Resources */,
+				9426B3CC261D3B6100BA6A00 /* Metropolis-ExtraLight.otf in Resources */,
+				9426B3C3261D3B6100BA6A00 /* Metropolis-ExtraBold.otf in Resources */,
+				9426B3D0261D3B6100BA6A00 /* Metropolis-BoldItalic.otf in Resources */,
+				94E0AF47261CB4F2003128E9 /* LaunchScreen.storyboard in Resources */,
+				9426B3C2261D3B6100BA6A00 /* Metropolis-RegularItalic.otf in Resources */,
+				9426B3D1261D3B6100BA6A00 /* Metropolis-ExtraBoldItalic.otf in Resources */,
+				9426B3C4261D3B6100BA6A00 /* Metropolis-SemiBoldItalic.otf in Resources */,
+				9426B3CF261D3B6100BA6A00 /* Metropolis-SemiBold.otf in Resources */,
+				94E0AF44261CB4F2003128E9 /* Assets.xcassets in Resources */,
+				9426B3C0261D3B6100BA6A00 /* Metropolis-Bold.otf in Resources */,
+				94E0AF42261CB4F1003128E9 /* Main.storyboard in Resources */,
+				9426B3CE261D3B6100BA6A00 /* Metropolis-LightItalic.otf in Resources */,
+				9426B3C8261D3B6100BA6A00 /* Metropolis-ExtraLightItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04FE87D133CFB89CA56AA194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F75A5D6196817C46A3F677D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonkeyFoodProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94E0AF33261CB4F1003128E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */,
+				9426B39A261CB64D00BA6A00 /* Theme.swift in Sources */,
+				94E0AF3B261CB4F1003128E9 /* AppDelegate.swift in Sources */,
+				9426B3A1261CB66600BA6A00 /* LauchLoginScreen.swift in Sources */,
+				9426B39C261CB64D00BA6A00 /* Resource.swift in Sources */,
+				9426B40B261D524F00BA6A00 /* LoginScreen.swift in Sources */,
+				9426B3A2261CB66600BA6A00 /* WelcomeScreenViewController.swift in Sources */,
+				9426B412261D531700BA6A00 /* lbl_Top_Title.swift in Sources */,
+				9426B3A5261CB6A100BA6A00 /* BaseUIView1.swift in Sources */,
+				94E0AF3D261CB4F1003128E9 /* SceneDelegate.swift in Sources */,
+				9426B39B261CB64D00BA6A00 /* Demension.swift in Sources */,
+				9426B3A8261CB6C600BA6A00 /* BaseViewcontroller1.swift in Sources */,
+				9426B407261D442500BA6A00 /* ButtonPrimaryColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		94E0AF40261CB4F1003128E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94E0AF41261CB4F1003128E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		94E0AF45261CB4F2003128E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94E0AF46261CB4F2003128E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94E0AF49261CB4F2003128E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94E0AF4A261CB4F2003128E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94E0AF4C261CB4F2003128E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD07F25351D187EF58377E99 /* Pods-MonkeyFoodProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonkeyFoodProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sang-truong.MonkeyFoodProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94E0AF4D261CB4F2003128E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FF8822D3EC6BA39D0463784 /* Pods-MonkeyFoodProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonkeyFoodProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "sang-truong.MonkeyFoodProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94E0AF32261CB4F1003128E9 /* Build configuration list for PBXProject "MonkeyFoodProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94E0AF49261CB4F2003128E9 /* Debug */,
+				94E0AF4A261CB4F2003128E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94E0AF4B261CB4F2003128E9 /* Build configuration list for PBXNativeTarget "MonkeyFoodProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94E0AF4C261CB4F2003128E9 /* Debug */,
+				94E0AF4D261CB4F2003128E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94E0AF2F261CB4F1003128E9 /* Project object */;
+}

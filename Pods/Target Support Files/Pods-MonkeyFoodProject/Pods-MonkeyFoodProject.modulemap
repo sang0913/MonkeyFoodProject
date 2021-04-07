@@ -1,0 +1,6 @@
+framework module Pods_MonkeyFoodProject {
+  umbrella header "Pods-MonkeyFoodProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

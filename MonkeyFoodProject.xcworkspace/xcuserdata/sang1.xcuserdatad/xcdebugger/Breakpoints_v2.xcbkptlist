@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "65D6DA38-4F4E-44C7-826F-DB6E068A9E07"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BCE7C0D-41AE-4AF0-A5A4-577685A14168"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonkeyFoodProject/Resource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "SourceImageLogin"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2BCE7C0D-41AE-4AF0-A5A4-577685A14168 - 94460baad5993414"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_FFE479B77C1A71CA1B42623476F9C91D_func0"
+                  moduleName = "MonkeyFoodProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sang1/Desktop/MonKeyMeal/TestmonkeyMeal/MonkeyFoodProject/MonkeyFoodProject/Resource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  uuid = "2BCE7C0D-41AE-4AF0-A5A4-577685A14168 - b1dec46f79b1386c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MonkeyFoodProject.Resource.SourceImage.SourceImageLogin.logo.unsafeMutableAddressor : Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "MonkeyFoodProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sang1/Desktop/MonKeyMeal/TestmonkeyMeal/MonkeyFoodProject/MonkeyFoodProject/Resource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
