@@ -47,6 +47,9 @@ class Demension {
     var captionFontSize_13: CGFloat {
         return 13 * self.heightScale
     }
+    var captionFontSize_12: CGFloat {
+        return 12 * self.heightScale
+    }
       var smallCaptionFontSize_10: CGFloat {
           return 10 * self.heightScale
       }
@@ -122,7 +125,7 @@ class Demension {
       }
 
       var largeVerticalMargin_36: CGFloat {
-          return 36 * self.widthScale
+          return 36 * self.heightScale
       }
 
       var largeHorizontalMargin_42: CGFloat {

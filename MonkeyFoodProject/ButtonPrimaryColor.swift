@@ -15,10 +15,11 @@ public class ButtonPrimaryColor:BaseUIView {
         //MARK:UI Elements
      public  let button_Primary :UIButton = {
           let button = UIButton()
+    
         button.layer.cornerRadius = Demension.shared.superCornerRadius_28
         button.backgroundColor = Theme.shared.accentColor
         button.titleLabel?.textAlignment = .center
-        
+       
            return button
        }()
     

@@ -78,7 +78,7 @@ class LauchLoginScreen: BaseViewcontroller {
     //MARK:Button
     private let button_LoginLauchScreen:ButtonPrimaryColor = {
         let button = ButtonPrimaryColor()
-        button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.LauchScreen.titleButtonSignUp, for: .normal)
+        button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.LauchScreen.titleButtonLogin, for: .normal)
         button.button_Primary.addTarget(self, action: #selector(tappedButtonSign), for: .touchUpInside)
         return button
     }()

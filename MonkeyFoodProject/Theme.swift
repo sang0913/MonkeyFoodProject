@@ -24,10 +24,19 @@ public class Theme {
       }
 
       //MARK: Background
+    
+    var backgroundColorTextField: UIColor {
+        return #colorLiteral(red: 0.948936522, green: 0.9490728974, blue: 0.9489069581, alpha: 1)
+    }
       var defaultBGColor: UIColor {
           return #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998808503, alpha: 1)
       }
-
+    var buttonBG_FB_Color: UIColor {
+        return #colorLiteral(red: 0.04068637639, green: 0.4989762902, blue: 0.7746939063, alpha: 1)
+    }
+    var buttonBG_GG_Color: UIColor {
+        return #colorLiteral(red: 0.9374391437, green: 0.2323300838, blue: 0.1726239622, alpha: 1)
+    }
       var darkBGColor: UIColor {
           return #colorLiteral(red: 0.9802858233, green: 0.9804534316, blue: 0.9802753329, alpha: 1)
       }
@@ -135,3 +144,4 @@ public class Theme {
 
 
 }
+

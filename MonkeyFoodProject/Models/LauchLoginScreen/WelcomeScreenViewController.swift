@@ -94,7 +94,7 @@ class WelcomeScreenViewController: BaseViewcontroller {
         viewForLogo.snp.makeConstraints({(make) in
             make.top.equalToSuperview().offset(Demension.shared.heightViewLogoScreen_314)
             make.left.equalTo(Demension.shared.widthlogoScreen_80)
-            make.height.equalTo(Demension.shared.heightLogoScreen_184)
+            make.height.equalTo(Demension.shared.heightLogoScreen_184) 
             make.width.equalTo(Demension.shared.widthLogoScreen_216)
 
             imgLogoBG.snp.makeConstraints({(make) in
