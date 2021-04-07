@@ -30,16 +30,25 @@ class Resource {
             public static var titleButtonLoginGG  = "Login with Google"
             public static var titleFooterLoginLeft = "Don't have an Account?"
             public static var titleFooterLoginRight  = "Sign Up"
-            
-            
-            
             public static var txt_PlaceholderEmail =  "     " + "Your Email"
             public static var txt_PlaceholderPassword =  "     " + "Password"
-            
-            
+         
+        }
+        class SignUpScreen {
+            public static var TopTile_SignUp = "Sign Up"
+            public static var titleTopDiscriptionSignUpScreen = "Add your details to login"
+            public static var txt_Placeholder_Name =  "     " + "Name"
+            public static var txt_Placeholder_Email =  "     " + "Email"
+            public static var txt_Placeholder_MobileNo =  "     " + "Mobile No"
+            public static var txt_Placeholder_Address =  "     " + "Address"
+            public static var txt_Placeholder_Password =  "     " + "Password"
+            public static var txt_Placeholder_Confirm_Password =  "     " + "Confirm Password"
+            public static var TopTile_ResetPassword = "Reset Password"
+            public static var titleTopDiscription_Reset_Screen = "Please enter your email to receive a link to  create a new password via email"
             
             
         }
+        
         
     }
     

@@ -141,11 +141,11 @@ class Demension {
       }
 
       var largeVerticalMargin_56: CGFloat {
-          return 56 * self.widthScale
+          return 56 * self.heightScale
       }
 
       var largeHorizontalMargin_60: CGFloat {
-          return 60 * self.heightScale
+          return 60 * self.widthScale
       }
    
       var largeVerticalMargin_60: CGFloat {

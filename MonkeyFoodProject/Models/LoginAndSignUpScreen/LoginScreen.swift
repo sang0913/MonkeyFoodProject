@@ -129,7 +129,7 @@ class LoginScreen : BaseViewcontroller {
            
         })
     }
-    
+   
      private func setup_txt_Email_LoginScreen(){
          view.addSubview(txt_Email_LoginScreen)
         txt_Email_LoginScreen.snp.makeConstraints({(make) in
