@@ -9,9 +9,7 @@ public class BaseViewcontroller:UIViewController,ReusableView {
         super.viewDidLoad()
         view.backgroundColor = .white
         initialize()
-  
-        
-        
+       
     }
     func initialize() {
    

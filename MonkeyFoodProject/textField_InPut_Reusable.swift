@@ -13,6 +13,12 @@ public class textField_InPut_Reusable:BaseUIView {
             txt_inputReusable.placeholder = txtPlaceholder
         }
     }
+    public var isercurityTextEntry:Bool = false {
+           didSet {
+            txt_inputReusable.isSecureTextEntry = isercurityTextEntry
+           }
+           
+       }
         //MARK:UI Elements
      public  let txt_inputReusable :UITextField = {
         let txt_TextField = UITextField()

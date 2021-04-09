@@ -28,8 +28,8 @@ class Resource {
             public static var title_OrLoginWith_LoginScreen = "or Login With"
             public static var titleButtonLoginFB  = "Login with Facebook"
             public static var titleButtonLoginGG  = "Login with Google"
-            public static var titleFooterLoginLeft = "Don't have an Account?"
-            public static var titleFooterLoginRight  = "Sign Up"
+            public static var titleFooterLoginLeft = "Already have an Account?"
+           
             public static var txt_PlaceholderEmail =  "     " + "Your Email"
             public static var txt_PlaceholderPassword =  "     " + "Password"
          
@@ -37,7 +37,7 @@ class Resource {
         class SignUpScreen {
             public static var TopTile_SignUp = "Sign Up"
             public static var titleTopDiscriptionSignUpScreen = "Add your details to login"
-            public static var txt_Placeholder_Name =  "     " + "Name"
+            public static var txt_Placeholder_Name =  "     " + "User Name"
             public static var txt_Placeholder_Email =  "     " + "Email"
             public static var txt_Placeholder_MobileNo =  "     " + "Mobile No"
             public static var txt_Placeholder_Address =  "     " + "Address"

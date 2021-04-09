@@ -9,6 +9,22 @@ import UIKit
 //
 class LauchLoginScreen: BaseViewcontroller {
     
+    
+      override func viewDidAppear(_ animated: Bool) {
+          print("viewDidAppearLauchLoginScreen")
+      
+      }
+      override func viewDidDisappear(_ animated: Bool) {
+          print("viewDidDisappearLauchLoginScreen")
+      }
+      override func viewWillAppear(_ animated: Bool) {
+          print("viewWillAppearLauchLoginScreen")
+        navigationController?.navigationBar.isHidden = true
+        
+      }
+      override func viewWillDisappear(_ animated: Bool) {
+          print("viewWillDisappearLauchLoginScreen")
+      }
     //MARK: UI Elements
     //View lớn bao trùm lên 3 chủ thể viewcon
     private let viewForLogo:UIView = {
@@ -79,7 +95,7 @@ class LauchLoginScreen: BaseViewcontroller {
     private let button_LoginLauchScreen:ButtonPrimaryColor = {
         let button = ButtonPrimaryColor()
         button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.LauchScreen.titleButtonLogin, for: .normal)
-        button.button_Primary.addTarget(self, action: #selector(tappedButtonSign), for: .touchUpInside)
+        button.button_Primary.addTarget(self, action: #selector(tappedButtonLogin), for: .touchUpInside)
         return button
     }()
    private let button_CreateLauchScreen:ButtonPrimaryColor = {
@@ -95,13 +111,21 @@ class LauchLoginScreen: BaseViewcontroller {
 //
         return button
     }()
-    
-    @objc func tappedButtonSign(){
+    //MARK:Tap Button
+    @objc func tappedButtonLogin(){
         print("touch")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "LoginScreen") as! LoginScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.navigationBar.isHidden = false
     }
     
     @objc func tappedButtonCreate(){
-        print("touch")
+        print("touchtappedButtonCreate")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SignUpScreen") as! SignUpScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.navigationBar.isHidden = false
     }
     //MARK:Life Cycle
     

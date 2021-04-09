@@ -1,36 +1,22 @@
-////
-////  WelcomeScreenViewController.swift
-////  TestLoginScreeen
-////
-////  Created by sang1 on 04/04/2021.
-////
-//
-//import UIKit
-//class WelcomeScreenViewController: UIViewController {
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-////        let viewShadow = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-////        viewShadow.center = self.view.center
-////        viewShadow.backgroundColor = UIColor.yellow
-////        viewShadow.layer.shadowColor = UIColor.gray.cgColor
-////        viewShadow.layer.shadowOpacity = 50
-////        viewShadow.layer.shadowOffset = CGSize.zero
-////        viewShadow.layer.shadowRadius = 50
-////        self.view.addSubview(viewShadow)
-//    }
-//
 
 
 import  UIKit
 class WelcomeScreenViewController: BaseViewcontroller {
+    //MARK:Properties
+  
+    @objc func tapgessture(){
+        print("tapgessture1")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "LauchLoginScreen") as? LauchLoginScreen
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     //MARK: UI Elements
 
 
     private let viewForLogo:UIView = {
         let viewLogo = UIView()
-
+        viewLogo.isUserInteractionEnabled = true
+       
         return viewLogo
     }()
 
@@ -76,13 +62,14 @@ class WelcomeScreenViewController: BaseViewcontroller {
         return lblRightLogo
     }()
     //MARK:Life Cycle
-
+  
+ 
     override func initialize() {
         setupviewLogoWelcomeScreen()
-        
-        
+        print("LauchLoginScreen")
+        navigationController?.navigationBar.isHidden = true
     }
-
+   
     private func setupviewLogoWelcomeScreen() {
         view.addSubview(viewForLogo)
         view.addSubview(imgLogoBG)
@@ -92,6 +79,9 @@ class WelcomeScreenViewController: BaseViewcontroller {
 
         view.addSubview(lblRightLogo)
         viewForLogo.snp.makeConstraints({(make) in
+            let labelTapGesture = UITapGestureRecognizer(target:self,action:#selector(tapgessture))
+            viewForLogo.isUserInteractionEnabled = true
+            viewForLogo.addGestureRecognizer(labelTapGesture)
             make.top.equalToSuperview().offset(Demension.shared.heightViewLogoScreen_314)
             make.left.equalTo(Demension.shared.widthlogoScreen_80)
             make.height.equalTo(Demension.shared.heightLogoScreen_184) 

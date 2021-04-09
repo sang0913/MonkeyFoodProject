@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class SignUpScreen:BaseViewcontroller {
+ class SignUpScreen:BaseViewcontroller {
    
     private let lbl_Top_Title_SignUp : lbl_Top_Title = {
         let label = lbl_Top_Title()
@@ -22,7 +22,7 @@ class SignUpScreen:BaseViewcontroller {
     
     private let txt_Name_SignUp:textField_InPut_Reusable = {
        let txt_Name = textField_InPut_Reusable()
-        
+        print(txt_Name.txt_inputReusable.text!)
         txt_Name.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Name
         return txt_Name
     }()
@@ -46,14 +46,14 @@ class SignUpScreen:BaseViewcontroller {
     }()
     private let txt_Password_SignUp:textField_InPut_Reusable = {
        let textField = textField_InPut_Reusable()
-        
+        textField.isercurityTextEntry = true
             textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Password
         return textField
     }()
     
     private let txt_ComformPassword_SignUp:textField_InPut_Reusable = {
        let textField = textField_InPut_Reusable()
-        
+        textField.isercurityTextEntry = true
             textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Confirm_Password
         return textField
     }()
@@ -63,21 +63,18 @@ class SignUpScreen:BaseViewcontroller {
         
       
         button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp, for: .normal)
-        button.button_Primary.addTarget(self, action: #selector(tapButtonLogin), for: .touchUpInside)
+        button.button_Primary.addTarget(self, action: #selector(tapButtonSignUp), for: .touchUpInside)
         return button
     }()
     
     private let lbl_titleFooter_SignUpScreen :lbl_Footer_Login_Reusable = {
        let label = lbl_Footer_Login_Reusable()
         label.lbl_footerLeft_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.titleFooterLoginLeft
-        label.lbl_footerRight_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.titleFooterLoginRight
+        label.lbl_footerRight_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.TopTile_Login
         
         return label
     }()
     
-    @objc func tapButtonLogin(){
-        print("tapButtonLogin")
-    }
     
     
     //MARK:UI Elements
@@ -100,7 +97,7 @@ class SignUpScreen:BaseViewcontroller {
     private func setup_lbl_Top_Title_SignUp(){
         view.addSubview(lbl_Top_Title_SignUp)
         lbl_Top_Title_SignUp.snp.makeConstraints({(make) in
-            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_69)
+            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_90)
             make.centerX.equalToSuperview()
         })
     }
@@ -180,6 +177,9 @@ class SignUpScreen:BaseViewcontroller {
     
     private func setup_lbl_titleFooter_LoginScreen(){
         view.addSubview( lbl_titleFooter_SignUpScreen)
+        view.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(lbl_titleFooter_SignUpScreen_Tapgesture))
+        self.view.addGestureRecognizer(tapGesture)
         lbl_titleFooter_SignUpScreen.snp.makeConstraints({(make) in
            make.top.equalTo(button_SignUpScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_28 )
             make.width.equalTo(Demension.shared.widthScale * 210)
@@ -188,3 +188,112 @@ class SignUpScreen:BaseViewcontroller {
     }
 }
 
+extension SignUpScreen {
+    //MARK:Button Send data
+    @objc func tapButtonSignUp(){
+        if (txt_Name_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập UserName", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(txt_Email_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập Email", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(txt_Mobile_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập Mobile", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(txt_Address_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập Address", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(txt_Password_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập Password", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(txt_ComformPassword_SignUp.txt_inputReusable.text == ""){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập ComformPassword", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        else if(txt_ComformPassword_SignUp.txt_inputReusable.text != txt_Password_SignUp.txt_inputReusable.text){
+            let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập đúng xác nhận mật khẩu", preferredStyle: .alert)
+            alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        else {
+            print("tapButtonLogin")
+            let url = URL(string: Config.serverURL + "/register")
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            var sData = "Username=" + self.txt_Name_SignUp.txt_inputReusable.text!
+            sData += "&Password=" + self.txt_Password_SignUp.txt_inputReusable.text!
+            sData += "&Email=" + self.txt_Email_SignUp.txt_inputReusable.text!
+            
+           
+            let postData = sData.data(using: .utf8)
+                                         request.httpBody = postData
+            let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+                                          guard error == nil else { print("error"); return }
+                                          guard let data = data else { return }
+                                          
+                                          do{
+                                              guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                                              print(json)
+                                            
+                                              if(json["kq"] as! Int == 1){
+                                                 //Login thanh cong
+                                                 print("đăng kí thành công")
+                                                    //alert thành công
+                                             
+                                                DispatchQueue.main.async {
+                                                    let alert = UIAlertController(title: "Thông báo", message: "Đăng kí thành công", preferredStyle: .alert)
+                                                    alert.addAction(.init(title: "Đồng ý",
+                                                                          style: .cancel,
+                                                                          handler: {_ in
+                                                                            let sb = UIStoryboard(name: "Main", bundle: nil)
+                                                                            let vc  = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
+                                                                            self.navigationController?.pushViewController(vc, animated: true)
+//                                                                            self.navigationController?.navigationBar.isHidden = true
+                                                                          } ))
+                                                    
+                                                    self.present(alert, animated: true, completion: nil)
+                                                    
+                                                    
+                                                }
+                                                
+                                                
+                                              }
+                                              else {
+//                                                  alert that bai
+                                                
+                                                   DispatchQueue.main.async {
+                                                       let alert = UIAlertController(title: "Thông báo", message: "Username/Email đã tồn tại", preferredStyle: .alert)
+                                                       alert.addAction(.init(title: "Đồng ý",
+                                                                             style: .cancel,
+                                                                             handler: nil))
+                                                       self.present(alert, animated: true, completion: nil)
+                                                   }
+                                               }
+                                              }catch let error { print(error.localizedDescription) }
+                                      })
+                                      taskUserRegister.resume()
+        }
+
+    }
+    
+    
+    @objc func lbl_titleFooter_SignUpScreen_Tapgesture(){
+        self.navigationController?.popViewController(animated: true)
+    }
+ 
+  
+}

@@ -41,6 +41,8 @@
 		9426B427261DCC1600BA6A00 /* lbl_Footer_Login_Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B426261DCC1600BA6A00 /* lbl_Footer_Login_Reusable.swift */; };
 		9426B42B261DD70300BA6A00 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B42A261DD70300BA6A00 /* SignUpScreen.swift */; };
 		9426B42E261DE73F00BA6A00 /* ResetPassworldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B42D261DE73F00BA6A00 /* ResetPassworldScreen.swift */; };
+		9496BFC7261F3E2B008A1CEF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9496BFC6261F3E2B008A1CEF /* Config.swift */; };
+		94CC5748261FE2FB0005C27E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC5747261FE2FB0005C27E /* HomeScreen.swift */; };
 		94E0AF3B261CB4F1003128E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */; };
 		94E0AF3D261CB4F1003128E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */; };
 		94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3E261CB4F1003128E9 /* MainViewcontroller.swift */; };
@@ -86,6 +88,8 @@
 		9426B426261DCC1600BA6A00 /* lbl_Footer_Login_Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lbl_Footer_Login_Reusable.swift; sourceTree = "<group>"; };
 		9426B42A261DD70300BA6A00 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		9426B42D261DE73F00BA6A00 /* ResetPassworldScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassworldScreen.swift; sourceTree = "<group>"; };
+		9496BFC6261F3E2B008A1CEF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		94CC5747261FE2FB0005C27E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		94E0AF37261CB4F1003128E9 /* MonkeyFoodProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFoodProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		9426B390261CB5B300BA6A00 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				94CC5746261FE2E90005C27E /* HomeScreen */,
 				9426B409261D523600BA6A00 /* LoginAndSignUpScreen */,
 				9426B39E261CB66600BA6A00 /* LauchLoginScreen */,
 			);
@@ -139,6 +144,7 @@
 				9426B3AC261D3B5400BA6A00 /* Fonts */,
 				9426B395261CB5D200BA6A00 /* Style */,
 				9426B394261CB5CD00BA6A00 /* Base */,
+				9496BFC6261F3E2B008A1CEF /* Config.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -250,6 +256,14 @@
 			children = (
 			);
 			path = LauchNextScreen;
+			sourceTree = "<group>";
+		};
+		94CC5746261FE2E90005C27E /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				94CC5747261FE2FB0005C27E /* HomeScreen.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		94E0AF2E261CB4F1003128E9 = {
@@ -439,6 +453,7 @@
 			files = (
 				9426B427261DCC1600BA6A00 /* lbl_Footer_Login_Reusable.swift in Sources */,
 				94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */,
+				94CC5748261FE2FB0005C27E /* HomeScreen.swift in Sources */,
 				9426B39A261CB64D00BA6A00 /* Theme.swift in Sources */,
 				94E0AF3B261CB4F1003128E9 /* AppDelegate.swift in Sources */,
 				9426B3A1261CB66600BA6A00 /* LauchLoginScreen.swift in Sources */,
@@ -454,6 +469,7 @@
 				9426B39B261CB64D00BA6A00 /* Demension.swift in Sources */,
 				9426B3A8261CB6C600BA6A00 /* BaseViewcontroller1.swift in Sources */,
 				9426B407261D442500BA6A00 /* ButtonPrimaryColor.swift in Sources */,
+				9496BFC7261F3E2B008A1CEF /* Config.swift in Sources */,
 				9426B417261D632000BA6A00 /* textField_InPut_Reusable.swift in Sources */,
 				9426B41A261D6CA600BA6A00 /* lbl_Top_Discription_Titile.swift in Sources */,
 			);

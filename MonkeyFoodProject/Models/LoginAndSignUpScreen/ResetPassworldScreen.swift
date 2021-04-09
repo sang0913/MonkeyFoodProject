@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResetPassworldScreen: BaseViewcontroller {
+ class ResetPassworldScreen: BaseViewcontroller {
     //MARK:UI Elements
     private let lbl_TopTitle_RS_ :lbl_Top_Title = {
        let label = lbl_Top_Title()
@@ -57,7 +57,7 @@ class ResetPassworldScreen: BaseViewcontroller {
     private func setup_lbl_TopTitle(){
         view.addSubview(lbl_TopTitle_RS_)
         lbl_TopTitle_RS_.snp.makeConstraints({(make) in
-            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_69)
+            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_90)
             make.centerX.equalToSuperview()
            
         })
