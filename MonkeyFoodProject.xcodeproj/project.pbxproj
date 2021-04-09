@@ -43,6 +43,7 @@
 		9426B42E261DE73F00BA6A00 /* ResetPassworldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B42D261DE73F00BA6A00 /* ResetPassworldScreen.swift */; };
 		9496BFC7261F3E2B008A1CEF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9496BFC6261F3E2B008A1CEF /* Config.swift */; };
 		94CC5748261FE2FB0005C27E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC5747261FE2FB0005C27E /* HomeScreen.swift */; };
+		94CC576726203F950005C27E /* FuncCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC576626203F950005C27E /* FuncCommon.swift */; };
 		94E0AF3B261CB4F1003128E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */; };
 		94E0AF3D261CB4F1003128E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */; };
 		94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0AF3E261CB4F1003128E9 /* MainViewcontroller.swift */; };
@@ -90,6 +91,7 @@
 		9426B42D261DE73F00BA6A00 /* ResetPassworldScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassworldScreen.swift; sourceTree = "<group>"; };
 		9496BFC6261F3E2B008A1CEF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		94CC5747261FE2FB0005C27E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		94CC576626203F950005C27E /* FuncCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncCommon.swift; sourceTree = "<group>"; };
 		94E0AF37261CB4F1003128E9 /* MonkeyFoodProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFoodProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				9426B395261CB5D200BA6A00 /* Style */,
 				9426B394261CB5CD00BA6A00 /* Base */,
 				9496BFC6261F3E2B008A1CEF /* Config.swift */,
+				94CC576626203F950005C27E /* FuncCommon.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				9426B3A1261CB66600BA6A00 /* LauchLoginScreen.swift in Sources */,
 				9426B39C261CB64D00BA6A00 /* Resource.swift in Sources */,
 				9426B423261DB49400BA6A00 /* ButtonnLoginFB_GG_Reusable.swift in Sources */,
+				94CC576726203F950005C27E /* FuncCommon.swift in Sources */,
 				9426B40B261D524F00BA6A00 /* LoginScreen.swift in Sources */,
 				9426B3A2261CB66600BA6A00 /* WelcomeScreenViewController.swift in Sources */,
 				9426B412261D531700BA6A00 /* lbl_Top_Title.swift in Sources */,

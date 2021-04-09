@@ -7,21 +7,7 @@
 
 import UIKit
 class LoginScreen : BaseViewcontroller {
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppearLoginScreen")
-        
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappearLoginScreen")
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppearLoginScreen")
-        navigationController?.navigationBar.isTranslucent = true
-        
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappearLoginScreen")
-    }
+  
     
     //MARK:UI Elements
     private let lbl_TopTitle :lbl_Top_Title = {
@@ -111,7 +97,28 @@ class LoginScreen : BaseViewcontroller {
     
     
     //MARK:Object LifeCycle
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppearLoginScreen")
+        
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappearLoginScreen")
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppearLoginScreen")
+        navigationController?.navigationBar.isTranslucent = true
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappearLoginScreen")
+    }
+        
     override func initialize() {
+        print("ViewdidLoad")
+      
+     
+        
         setup_lbl_TopTitle()
         setup_lbl_TopTitle_Discription()
         setup_txt_Email_LoginScreen()
@@ -122,6 +129,8 @@ class LoginScreen : BaseViewcontroller {
         setup_button_LoginWithFB_LoginScreen()
         setup_button_LoginWithGG_LoginScreen()
         setup_lbl_titleFooter_LoginScreen()
+        
+        
     }
     //MARK:Setup UI Elements
     private func setup_lbl_TopTitle(){
@@ -275,7 +284,13 @@ extension LoginScreen {
                     if(json["kq"] as! Int == 1){
                         //Login thanh cong
                         print("đăng nhập thành công")
-                       DispatchQueue.main.async {
+                        //Tạo Token
+                        let defaults = UserDefaults.standard
+                        defaults.setValue(json["Token"], forKey: "UserToken")
+                        print(defaults)
+                        
+                        
+                        DispatchQueue.main.async {
                             let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công", preferredStyle: .alert)
                             alert.addAction(.init(title: "Đồng ý",
                                                   style: .cancel,
@@ -290,7 +305,7 @@ extension LoginScreen {
                         }
                     }
                     else {
-                       //So sánh xem user đã đăng kí hay sai password
+                        //So sánh xem user đã đăng kí hay sai password
                         if(json["kq"] as! Int == 0){
                             
                             if(json["errMsg"] as! String == "Sai password.") {
@@ -313,18 +328,8 @@ extension LoginScreen {
                                 }
                             }
                         }
-                        DispatchQueue.main.async {
-                            let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thất bại", preferredStyle: .alert)
-                            alert.addAction(.init(title: "Đồng ý",
-                                                  style: .cancel,
-                                                  handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                        }
+                        
                     }
-                    
-                    
-                    
-                    
                     
                     //if
                 }catch let error { print(error.localizedDescription) }
@@ -332,7 +337,9 @@ extension LoginScreen {
             taskUserRegister.resume()
         }
     }
+   
 }
+
 //
 //
 //
