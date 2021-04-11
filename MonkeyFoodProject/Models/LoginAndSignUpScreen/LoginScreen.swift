@@ -7,7 +7,7 @@
 
 import UIKit
 class LoginScreen : BaseViewcontroller {
-  
+   
     
     //MARK:UI Elements
     private let lbl_TopTitle :lbl_Top_Title = {
@@ -130,7 +130,10 @@ class LoginScreen : BaseViewcontroller {
         setup_button_LoginWithGG_LoginScreen()
         setup_lbl_titleFooter_LoginScreen()
         
+        let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
+        view.addGestureRecognizer(screenTapGesture)
         
+       
     }
     //MARK:Setup UI Elements
     private func setup_lbl_TopTitle(){
@@ -289,20 +292,13 @@ extension LoginScreen {
                         defaults.setValue(json["Token"], forKey: "UserToken")
                         print(defaults)
                         
-                        
                         DispatchQueue.main.async {
-                            let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công", preferredStyle: .alert)
-                            alert.addAction(.init(title: "Đồng ý",
-                                                  style: .cancel,
-                                                  handler: {_ in
-                                                    let sb = UIStoryboard(name: "Main", bundle: nil)
-                                                    let vc  = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
-                                                    self.navigationController?.pushViewController(vc, animated: true)
-                                                    //                                                                            self.navigationController?.navigationBar.isHidden = true
-                                                  } ))
-                            
-                            self.present(alert, animated: true, completion: nil)
+                            let sb = UIStoryboard(name: "Main", bundle: nil)
+                            let vc  = sb.instantiateViewController(identifier: "NavigationBarController") as! NavigationBarController
+                            self.navigationController?.pushViewController(vc, animated: true)
+                           
                         }
+                        
                     }
                     else {
                         //So sánh xem user đã đăng kí hay sai password
@@ -337,41 +333,11 @@ extension LoginScreen {
             taskUserRegister.resume()
         }
     }
+    
+    
+    @objc func superScreenTapGesture() {
+        view.endEditing(true)
+    }
    
 }
 
-//
-//
-//
-//if(json["kq"] as! Int == 1){
-//    //Login thanh cong
-//    print("đăng nhập thành công")
-//    //alert thành công
-//
-//    print(json)
-//
-//    DispatchQueue.main.async {
-//        let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công", preferredStyle: .alert)
-//        alert.addAction(.init(title: "Đồng ý",
-//                              style: .cancel,
-//                              handler: {_ in
-//                                let sb = UIStoryboard(name: "Main", bundle: nil)
-//                                let vc  = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
-//                                self.navigationController?.pushViewController(vc, animated: true)
-//                                //                                                                            self.navigationController?.navigationBar.isHidden = true
-//                              } ))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
-// }
-//else {
-//    //alert that bai
-//
-//    DispatchQueue.main.async {
-//        let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thất bại", preferredStyle: .alert)
-//        alert.addAction(.init(title: "Đồng ý",
-//                              style: .cancel,
-//                              handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//}

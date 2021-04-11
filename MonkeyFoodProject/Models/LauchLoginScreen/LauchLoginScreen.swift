@@ -130,7 +130,7 @@ class LauchLoginScreen: BaseViewcontroller {
     //MARK:Life Cycle
     
     override func initialize() {
-        checkToken()
+//        checkToken()
         setupviewLogoWelcomeScreen()
         setupImageTopLogin()
         setUptitleLoginScreen()

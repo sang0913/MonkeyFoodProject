@@ -50,6 +50,11 @@ import UIKit
         setup_lbl_TopTitle_Discription_RS_Screen()
         setup_txt_Email_RS_Screen()
         setup_button_Send_RS_Screen()
+        
+        
+        let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
+        view.addGestureRecognizer(screenTapGesture)
+       
     }
     
        //MARK:Setup UI Elements
@@ -88,6 +93,9 @@ import UIKit
             make.width.height.equalTo(txt_Email_RS_Screen)
            make.centerX.equalToSuperview()
         })
+    }
+    @objc func superScreenTapGesture() {
+        view.endEditing(true)
     }
 }
 

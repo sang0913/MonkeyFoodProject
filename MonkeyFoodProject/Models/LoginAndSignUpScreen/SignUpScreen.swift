@@ -91,6 +91,11 @@ import UIKit
         setup_txt_ComformPassword_SignUp()
         setup_LoginButon_LoginScreen()
         setup_lbl_titleFooter_LoginScreen()
+        
+        let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
+        view.addGestureRecognizer(screenTapGesture)
+        
+      
     }
     
     //MARK:Setup UI Elements
@@ -237,8 +242,8 @@ extension SignUpScreen {
             var sData = "Username=" + self.txt_Name_SignUp.txt_inputReusable.text!
             sData += "&Password=" + self.txt_Password_SignUp.txt_inputReusable.text!
             sData += "&Email=" + self.txt_Email_SignUp.txt_inputReusable.text!
-            
-           
+            sData += "&Mobile=" + self.txt_Mobile_SignUp.txt_inputReusable.text!
+            sData += "&Address=" + self.txt_Address_SignUp.txt_inputReusable.text!
             let postData = sData.data(using: .utf8)
                                          request.httpBody = postData
             let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
@@ -258,10 +263,11 @@ extension SignUpScreen {
                                                     let alert = UIAlertController(title: "Thông báo", message: "Đăng kí thành công", preferredStyle: .alert)
                                                     alert.addAction(.init(title: "Đồng ý",
                                                                           style: .cancel,
-                                                                          handler: {_ in
+                                                                          handler: {[weak self] _ in
+                                                                            guard let strongSelf = self else { return}
                                                                             let sb = UIStoryboard(name: "Main", bundle: nil)
                                                                             let vc  = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
-                                                                            self.navigationController?.pushViewController(vc, animated: true)
+                                                                            strongSelf.navigationController?.pushViewController(vc, animated: true)
 //                                                                            self.navigationController?.navigationBar.isHidden = true
                                                                           } ))
                                                     
@@ -295,5 +301,7 @@ extension SignUpScreen {
         self.navigationController?.popViewController(animated: true)
     }
  
-  
+    @objc func superScreenTapGesture() {
+        view.endEditing(true)
+    }
 }

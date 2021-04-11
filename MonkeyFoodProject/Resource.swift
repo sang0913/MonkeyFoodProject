@@ -9,6 +9,10 @@ class Resource {
             public static var ImageFaceBook = UIImage(named: "facebook")
             public static var ImageGoogle = UIImage(named: "google")
         }
+        class SourceImageHomeScreen{
+            public static var img_Shopping = UIImage(named: "shopping")
+            public static var img_arrowDroplistdown = UIImage(named: "arrowDroplistdown")
+        }
     }
     
     class SourceSignInSignUpScreen {

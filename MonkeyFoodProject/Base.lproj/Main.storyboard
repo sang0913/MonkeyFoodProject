@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y7M-ud-2dc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h3V-8n-0E3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -84,26 +84,64 @@
             </objects>
             <point key="canvasLocation" x="3271.0144927536235" y="32.8125"/>
         </scene>
-        <!--Home Screen Viewcontroller-->
-        <scene sceneID="v7X-d9-a3p">
+        <!--Navigation Bar Controller-->
+        <scene sceneID="a4H-Gc-9Bd">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenViewcontroller" id="agl-Mb-Lri" customClass="HomeScreenViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7OY-9o-GiD">
+                <tabBarController storyboardIdentifier="NavigationBarController" id="h3V-8n-0E3" customClass="NavigationBarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="95I-V5-bt3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hQ6-WO-Nif" kind="relationship" relationship="viewControllers" id="0QV-op-0yp"/>
+                        <segue destination="NGF-82-3FQ" kind="relationship" relationship="viewControllers" id="N85-7a-kDT"/>
+                        <segue destination="GPF-nh-5jB" kind="relationship" relationship="viewControllers" id="pRp-u4-OCp"/>
+                        <segue destination="e03-Rl-18U" kind="relationship" relationship="viewControllers" id="sFp-zU-Ib5"/>
+                        <segue destination="Owh-JU-BlL" kind="relationship" relationship="viewControllers" id="goW-Nl-OgH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSR-St-jkR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3677" y="1159"/>
+        </scene>
+        <!--Offers Bar Controller-->
+        <scene sceneID="utM-96-F65">
+            <objects>
+                <viewController storyboardIdentifier="OffersBarController" id="9wj-Ib-2jM" customClass="OffersBarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIo-Gg-5Du">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eor-SZ-AH9">
-                                <rect key="frame" x="78" y="245.5" width="299" height="255"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fQP-Ez-vxP">
+                                <rect key="frame" x="40" y="177" width="335" height="453"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="IS0-FP-Y91"/>
+                        <viewLayoutGuide key="safeArea" id="kQf-OL-weP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="h0h-IQ-fQ6"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uRA-Vk-fBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eym-sN-WAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234.7826086956525" y="755.35714285714278"/>
+            <point key="canvasLocation" x="2851" y="2863"/>
+        </scene>
+        <!--Home Screen Viewcontroller-->
+        <scene sceneID="MFI-3A-MMZ">
+            <objects>
+                <viewController storyboardIdentifier="HomeScreenViewcontroller" id="FIe-X8-l0g" customClass="HomeScreenViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pxy-lj-e9h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rSd-nT-nFX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PVG-Sj-Z7G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKv-iA-tDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3706" y="2859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cw3-P1-U9O">
@@ -130,84 +168,177 @@
                     <view key="view" contentMode="scaleToFill" id="mjJ-uw-ncN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fD-4f-qGd">
-                                <rect key="frame" x="84" y="611" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="chooseimg:" destination="Gj7-cr-vm6" eventType="touchUpInside" id="bm7-ge-ChN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-aR-emF">
-                                <rect key="frame" x="226" y="611" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="upload:" destination="Gj7-cr-vm6" eventType="touchUpInside" id="ODQ-xp-aCl"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afc-Co-y9q">
-                                <rect key="frame" x="43" y="405" width="302" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-R9-twh">
-                                <rect key="frame" x="146" y="44" width="187" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L38-I5-kXh">
-                                <rect key="frame" x="146" y="86" width="217" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-Py-00p">
-                                <rect key="frame" x="146" y="128" width="257" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajF-TB-CN5">
-                                <rect key="frame" x="146" y="170" width="217" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-gp-kLH">
-                                <rect key="frame" x="146" y="227" width="168" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBt-77-y6O">
-                                <rect key="frame" x="146" y="282" width="168" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="n6c-aH-3fr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="imghinh" destination="afc-Co-y9q" id="tWK-ZL-Eaa"/>
-                        <outlet property="txtAddress" destination="9dp-gp-kLH" id="uJ3-VY-ohg"/>
-                        <outlet property="txtEmail" destination="ajF-TB-CN5" id="C1N-XT-Ibm"/>
-                        <outlet property="txtName" destination="ufO-Py-00p" id="EFy-QH-JWV"/>
-                        <outlet property="txtPassWord" destination="L38-I5-kXh" id="7bE-e9-goW"/>
-                        <outlet property="txtPhoneNumber" destination="wBt-77-y6O" id="GCS-2Y-Fis"/>
-                        <outlet property="txtUserName" destination="yhZ-R9-twh" id="ghR-yZ-LiE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKL-Sh-8Qi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1371.0144927536232" y="939.50892857142856"/>
+            <point key="canvasLocation" x="2186" y="913"/>
+        </scene>
+        <!--Menu Bar Viewcontroller-->
+        <scene sceneID="k7G-Qv-GMj">
+            <objects>
+                <viewController storyboardIdentifier="MenuBarViewcontroller" id="EXu-Tv-nZW" customClass="MenuBarViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c1G-Xk-Sq9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 6816" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-FW-mjh">
+                                <rect key="frame" x="20" y="202" width="335" height="453"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WbH-Kv-fZY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zpa-kS-lOY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoC-QG-mXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="2863"/>
+        </scene>
+        <!--Profile Bar Controller-->
+        <scene sceneID="3dE-QJ-hs5">
+            <objects>
+                <viewController storyboardIdentifier="ProfileBarController" id="S7t-VB-qax" customClass="ProfileBarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YFo-3H-mBp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yR-uu-efj">
+                                <rect key="frame" x="184" y="213" width="46" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ILr-jL-4jI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="esU-Dm-dgU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tm-s8-y1Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4595.652173913044" y="2863.3928571428569"/>
+        </scene>
+        <!--Morebar Controller-->
+        <scene sceneID="Kgy-Rg-THm">
+            <objects>
+                <viewController storyboardIdentifier="MorebarController" id="da9-RL-f15" customClass="MorebarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VK9-8e-Vkb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menubar.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WUz-pf-ZjA">
+                                <rect key="frame" x="40" y="148" width="335" height="453"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BN2-R4-Dum"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5w7-e5-zMp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtW-XG-D06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5680" y="2863"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="A13-LF-JPs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="e03-Rl-18U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zuF-Og-dJU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Sr-dN-WJ4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EXu-Tv-nZW" kind="relationship" relationship="rootViewController" id="Icx-La-X94"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfJ-9G-1lT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="2036"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="b7h-gF-I56">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hQ6-WO-Nif" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="IQq-bA-2oT"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Vcc-FL-1gW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KsC-gK-xUT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FIe-X8-l0g" kind="relationship" relationship="rootViewController" id="URb-Oi-Mrf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQ4-AK-SGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3677" y="2036"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="XaE-0I-LZv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="NGF-82-3FQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="x1h-ZO-iAP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9eo-98-GaK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9wj-Ib-2jM" kind="relationship" relationship="rootViewController" id="Nhu-VU-lTe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEH-yn-UgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="2036"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="h3j-zO-grT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Owh-JU-BlL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="xKh-MH-vjm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dfo-qq-c5o">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="da9-RL-f15" kind="relationship" relationship="rootViewController" id="dXm-St-aNm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRF-ym-9bo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5680" y="2036"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hzf-Fq-ISq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GPF-nh-5jB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="HRB-DC-w8d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="svz-va-qEq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S7t-VB-qax" kind="relationship" relationship="rootViewController" id="dZw-Af-mwi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Eo-oW-TSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4596" y="2036"/>
         </scene>
     </scenes>
     <resources>
-        <image name="trash.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="Group 6816" width="34" height="34"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="menubar.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

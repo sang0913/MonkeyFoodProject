@@ -7,108 +7,147 @@
 
 import UIKit
 
-class MainViewcontroller: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+
+
+class MainViewcontroller: UIViewController{
+    var array = ["Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo"]
+    let collectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(customCell.self, forCellWithReuseIdentifier: "cell")
+        
+        return cv
+    }()
     
-    @IBOutlet var txtUserName: UITextField!
-    @IBOutlet var txtPassWord: UITextField!
-    @IBOutlet var txtName: UITextField!
-    @IBOutlet var txtEmail: UITextField!
-    @IBOutlet var txtAddress: UITextField!
-    @IBOutlet var txtPhoneNumber: UITextField!
-    @IBOutlet var imghinh: UIImageView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        collectionView.backgroundColor = .white
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints({(make) in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(100)
+            make.height.equalTo(113)
+            
+        })
+        
+    }
+}
+
+
+extension MainViewcontroller: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
     }
     
-    @IBAction func chooseimg(_ sender: Any) {
-        let image = UIImagePickerController()
-        image.sourceType = .photoLibrary
-        image.allowsEditing = false
-        image.delegate = self
-        self.present(image, animated: true
-                     , completion: nil)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customCell
+        cell.backgroundColor = .red
+        
+        return cell
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue:  UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage{
-            self.imghinh.image = image
-        }
-        else {
-            print("cant choose your image from photoGallery!")
-        }
-        self.dismiss(animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 88, height: 113)
     }
     
-    @IBAction func upload(_ sender: Any) {
-        var url = URL(string: "http://192.168.1.3:3000/uploadFile")
-        let boundary = UUID().uuidString
-        let session = URLSession.shared
-        
-        var urlRequest = URLRequest(url: url!)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        
-        var data = Data()
-        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-        data.append("Content-Disposition: form-data; name=\"hinhdaidien\"; filename=\"avatar.png\"\r\n".data(using: .utf8)!)
-        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-        data.append((imghinh.image?.pngData())!)
-        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-        
-        session.uploadTask(with: urlRequest,
-                           from: data,
-                           completionHandler: { responseData, response, error in
-                            if error == nil {
-                                
-                                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-                                if let json  = jsonData as? [String: Any]{
-                                    
-                                    if(json["kq"] as! Int == 1){
-                                        let urlHinh = json["urlFile"] as? [String:Any]
-                                        print(urlHinh!["filename"])
-                                        //co  du lieu tam hinh
-                                        DispatchQueue.main.async {
-                                            
-                                            url = URL(string: "http://192.168.1.3:3000/register")
-                                            var request = URLRequest(url: url!)
-                                            request.httpMethod = "POST"
-                                            
-                                            let fileName = urlHinh!["filename"] as! String
-                                            var sData = "Username=" + self.txtUserName.text!
-                                            sData += "&Password=" + self.txtPassWord.text!
-                                            sData += "&Name=" +  self.txtName.text!
-                                            sData += "&Image=" + fileName
-                                            sData += "&Email=" + self.txtEmail.text!
-                                            sData += "&Address=" + self.txtAddress.text!
-                                            sData += "&PhoneNumber" + self.txtPhoneNumber.text!
-                                            
-                                            let postData = sData.data(using: .utf8)
-                                            request.httpBody = postData
-                                            
-                                            let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
-                                                guard error == nil else { print("error"); return }
-                                                guard let data = data else { return }
-                                                
-                                                do{
-                                                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
-                                                    print(json)
-                                                    
-                                                }catch let error { print(error.localizedDescription) }
-                                            })
-                                            taskUserRegister.resume()
-                                        }
-                                        
-                                        
-                                    }else{
-                                        print("Upload failed!")
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                           }).resume()
-    }
     
 }
+class customCell: UICollectionViewCell{
+    
+    fileprivate var image :UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "Logo")
+        image.clipsToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    let label:UILabel = {
+      let label = UILabel()
+        label.text = "abc"
+        label.textAlignment = .center
+        return label
+    }()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(image)
+        contentView.addSubview(label)
+        image.snp.makeConstraints({(make) in
+            make.top.right.left.equalToSuperview()
+            make.height.equalTo(88)
+             
+        })
+      
+        label.snp.makeConstraints({(make) in
+            make.top.equalTo(image.snp.bottom)
+            make.bottom.left.right.equalToSuperview()
+           
+             
+        })
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+//
+//    var array = ["Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo"]
+//
+//    private let myTable:UITableView = {
+//        let table = UITableView()
+//        table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.identifier)
+//
+//        return table
+//    }()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.addSubview(myTable)
+//        //        myTable.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: "HomeScreenTableViewCell")
+//        myTable.frame  = view.bounds
+//        myTable.dataSource = self
+//        myTable.delegate = self
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//
+//        return array.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//
+//            let cell1 = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
+//        cell1.imageView?.image = UIImage(named: array[indexPath.row])
+//
+//            cell1.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+//            return cell1
+//        }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150
+//    }
+//
+//}
+//
+//extension MainViewcontroller:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 2
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath)
+//        return cell
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 500, height: 500)
+//    }
+
 
