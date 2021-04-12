@@ -53,6 +53,9 @@ class Demension {
       var smallCaptionFontSize_10: CGFloat {
           return 10 * self.heightScale
       }
+    var smallCaptionFontSize_11: CGFloat {
+        return 11 * self.heightScale
+    }
 
       var titleButtonFontSize_14: CGFloat {
           return 14 * self.heightScale
@@ -73,11 +76,18 @@ class Demension {
       var smallHorizontalMargin_4: CGFloat {
           return 4 * self.widthScale
       }
-
+    var smallHorizontalMargin_6: CGFloat {
+        return 6 * self.widthScale
+    }
       var smallVerticalMargin_4: CGFloat {
           return 4 * self.heightScale
       }
-
+    var smallVerticalMargin_6: CGFloat {
+        return 6 * self.heightScale
+    }
+    var smallVerticalMargin_7: CGFloat {
+        return 7 * self.heightScale
+    }
       var mediumHorizontalMargin_8: CGFloat {
           return 8 * self.widthScale
       }
@@ -85,6 +95,9 @@ class Demension {
       var mediumVerticalMargin_8: CGFloat {
           return 8 * self.heightScale
       }
+    var mediumVerticalMargin_9: CGFloat {
+        return 9 * self.heightScale
+    }
 
       var normalHorizontalMargin_16: CGFloat {
           return 16 * self.widthScale
@@ -115,11 +128,15 @@ class Demension {
     var  largeVerticalMargin_30: CGFloat {
         return 30 * self.heightScale
     }
-   
+    var  largeVerticalMargin_33: CGFloat {
+        return 33 * self.heightScale
+    }
       var largeHorizontalMargin_32: CGFloat {
           return 32 * self.widthScale
       }
-    
+    var largeHorizontalMargin_33: CGFloat {
+        return 33 * self.widthScale
+    }
        var   largeHorizontalMargin_34: CGFloat {
            return 34 * self.widthScale
        }
@@ -131,14 +148,19 @@ class Demension {
       var largeVerticalMargin_36: CGFloat {
           return 36 * self.heightScale
       }
-
+    var   largeHorizontalMargin_38: CGFloat {
+        return 38 * self.widthScale
+    }
       var largeHorizontalMargin_42: CGFloat {
           return 42 * self.heightScale
       }
 
       var largeVerticalMargin_42: CGFloat {
-          return 42 * self.widthScale
+          return 42 * self.heightScale
       }
+    var largeVerticalMargin_45: CGFloat {
+        return 45 * self.heightScale
+    }
 
       var largeHorizontalMargin_56: CGFloat {
           return 56 * self.heightScale
@@ -158,10 +180,24 @@ class Demension {
     var  largeVerticalMargin_69: CGFloat {
         return 69 * self.heightScale
     }
-
+    var largeHorizontalMargin_69: CGFloat {
+        return 69 * self.widthScale
+    }
+    var largeHorizontalMargin_87: CGFloat {
+        return 87 * self.widthScale
+    }
+    var largeVertical_87: CGFloat {
+        return 87 * self.heightScale
+    }
       var largeHorizontalMargin_90: CGFloat {
           return 90 * self.widthScale
       }
+    var largeHorizontalMargin_97: CGFloat {
+        return 97 * self.widthScale
+    }
+    var largeVerticalMargin_75: CGFloat {
+        return 75 * self.heightScale
+    }
     var largeVerticalMargin_80: CGFloat {
         return 80 * self.heightScale
     }
@@ -178,6 +214,12 @@ class Demension {
     }
     var largeHorizontalMargin_176: CGFloat {
         return 176 * self.widthScale
+    }
+    var largeHorizontalMargin_280: CGFloat {
+        return 280 * self.widthScale
+    }
+    var largeHorizontalMargin_333: CGFloat {
+        return 333 * self.widthScale
     }
     
     var largeVerticalMargin_110: CGFloat {
@@ -199,7 +241,9 @@ class Demension {
     var defaultWidthButton_307: CGFloat {
         return 307 * self.widthScale
     }
-    
+    var defaultWidthButton_333: CGFloat {
+        return 333 * self.widthScale
+    }
       var defaultHeightButton_42: CGFloat {
           return 42 * self.heightScale
       }

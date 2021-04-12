@@ -8,21 +8,26 @@
 import UIKit
 
 class RecomendFoodTableViewCell: UITableViewCell {
-
+    
     static let identifier = "RecomendFoodTableViewCell"
     
     //MARK:UI Elements
-   private let img_Food:UIImageView = {
+    private let subview : UIView = {
+        let view = UIView()
+        
+        return view
+    }()
+    private let img_Food:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "Logo")
-    image.backgroundColor = .red
-    image.contentMode = .scaleAspectFit
+        image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
+     
+        image.contentMode = .scaleToFill
         return image
     }()
     private let lbl_TitleFood:UILabel = {
         let label = UILabel()
         label.text = "Minute by tuk tuk"
-      
+        
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisExtraBold, size: Demension.shared.messageFontSize_16)
         return label
     }()
@@ -48,33 +53,44 @@ class RecomendFoodTableViewCell: UITableViewCell {
     //MARK:Setup UI Elements
     
     func setupUI(){
-        contentView.addSubview(img_Food)
-      
+        
+        
+        contentView.addSubview(subview)
+        
+        subview.snp.makeConstraints({(make) in
+            make.top.left.right.height.bottom.equalToSuperview()
+       
+            
+        })
+        subview.addSubview(img_Food)
+        
         img_Food.snp.makeConstraints({(make) in
-            make.top.left.right.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_32)
             make.height.equalTo(Demension.shared.largeVerticalMargin_193)
             
         })
-        contentView.addSubview(lbl_TitleFood)
+        subview.addSubview(lbl_TitleFood)
         lbl_TitleFood.snp.makeConstraints({(make) in
-            make.top.equalTo(img_Food.snp.bottom).offset(Demension.shared.mediumVerticalMargin_8)
+            make.top.equalTo(img_Food.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
             
         })
-        contentView.addSubview(img_RateStar)
+        subview.addSubview(img_RateStar)
         img_RateStar.snp.makeConstraints({(make) in
             make.top.equalTo(lbl_TitleFood.snp.bottom).offset(Demension.shared.mediumVerticalMargin_8)
             make.left.equalTo(lbl_TitleFood)
             
         })
-        contentView.addSubview(lbl_ResultRatStart)
+        subview.addSubview(lbl_ResultRatStart)
         lbl_ResultRatStart.snp.makeConstraints({(make) in
-           make.bottom.equalTo(img_RateStar)
+            make.bottom.equalTo(img_RateStar)
             make.left.equalTo(img_RateStar.snp.right).offset(4)
         })
+     
         
     }
     
     
-
+    
 }

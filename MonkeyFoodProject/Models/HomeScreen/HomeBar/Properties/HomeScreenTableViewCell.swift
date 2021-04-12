@@ -66,13 +66,3 @@ class HomeScreenTableViewCell: UITableViewCell {
   
     
 }
-//
-//  @objc func tapgessture(){
-//      print("tapgessture1")
-//      let sb = UIStoryboard(name: "Main", bundle: nil)
-//      let vc = sb.instantiateViewController(identifier: "LauchLoginScreen") as? LauchLoginScreen
-//      self.navigationController?.pushViewController(vc!, animated: true)
-//  }
-//let labelTapGesture = UITapGestureRecognizer(target:self,action:#selector(tapgessture))
-//viewForLogo.isUserInteractionEnabled = true
-//viewForLogo.addGestureRecognizer(labelTapGesture)

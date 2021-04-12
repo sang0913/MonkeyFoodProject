@@ -46,7 +46,7 @@ extension MainViewcontroller: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customCell
-        cell.backgroundColor = .red
+        
         
         return cell
     }
@@ -56,10 +56,14 @@ extension MainViewcontroller: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     
 }
+
 class customCell: UICollectionViewCell{
-    
+  
     fileprivate var image :UIImageView = {
         let image = UIImageView()
+        
+        image.isUserInteractionEnabled = true
+       
         image.image = UIImage(named: "Logo")
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -70,32 +74,53 @@ class customCell: UICollectionViewCell{
       let label = UILabel()
         label.text = "abc"
         label.textAlignment = .center
+        
         return label
     }()
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+ 
+    override func layoutSubviews() {
         contentView.addSubview(image)
         contentView.addSubview(label)
-        image.snp.makeConstraints({(make) in
+         image.snp.makeConstraints({(make) in
             make.top.right.left.equalToSuperview()
             make.height.equalTo(88)
-             
+            let tapgs = UITapGestureRecognizer(target: self, action: #selector(ttappss))
+            image.addGestureRecognizer(tapgs)
         })
-      
         label.snp.makeConstraints({(make) in
-            make.top.equalTo(image.snp.bottom)
-            make.bottom.left.right.equalToSuperview()
-           
-             
-        })
+            make.top.equalTo(image.snp.bottom).offset(2)
+            make.bottom.left.equalToSuperview()
+            make.width.equalTo(40)
+          })
         
+    }
+    @objc func ttappss(){
+        print("ttappss")
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+     
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
+class CustomCell2:UIViewController{
+  
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    func callapi(){
+        print("callAPI")
+    }
+    
+}
+protocol call {
+    func calll()
+}
+//dône
 
 //
 //    var array = ["Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo","Logo"]

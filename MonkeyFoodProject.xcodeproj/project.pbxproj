@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		940E7E892622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E7E882622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift */; };
 		940E7E8C2622AA7D008FB200 /* RecomendFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E7E8B2622AA7D008FB200 /* RecomendFoodTableViewCell.swift */; };
+		940EE3522624292600C26AE1 /* BeveragesFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940EE3512624292600C26AE1 /* BeveragesFunc.swift */; };
+		9415A0152622E4A600A49FED /* Title_Footer_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A0142622E4A600A49FED /* Title_Footer_TableViewCell.swift */; };
+		9415A0192622E81F00A49FED /* Footer_Tableview_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A0182622E81F00A49FED /* Footer_Tableview_TableViewCell.swift */; };
+		9415A01F2622EF4600A49FED /* TopTitle_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A01E2622EF4600A49FED /* TopTitle_TableViewCell.swift */; };
+		9415A0242622F36300A49FED /* SearchBarMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A0232622F36300A49FED /* SearchBarMenuTableViewCell.swift */; };
+		9415A0292622F7C700A49FED /* BodyMenuBar_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A0282622F7C700A49FED /* BodyMenuBar_TableViewCell.swift */; };
+		9415A0332623389400A49FED /* ViewReusble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A0322623389400A49FED /* ViewReusble.swift */; };
+		9415A03F26233C2300A49FED /* Food_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415A03E26233C2300A49FED /* Food_extension.swift */; };
 		9426B39A261CB64D00BA6A00 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B397261CB64D00BA6A00 /* Theme.swift */; };
 		9426B39B261CB64D00BA6A00 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B398261CB64D00BA6A00 /* Demension.swift */; };
 		9426B39C261CB64D00BA6A00 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426B399261CB64D00BA6A00 /* Resource.swift */; };
@@ -70,6 +78,14 @@
 		0FF8822D3EC6BA39D0463784 /* Pods-MonkeyFoodProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFoodProject.release.xcconfig"; path = "Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject.release.xcconfig"; sourceTree = "<group>"; };
 		940E7E882622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitileMiddle_cell5_TableViewCell.swift; sourceTree = "<group>"; };
 		940E7E8B2622AA7D008FB200 /* RecomendFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendFoodTableViewCell.swift; sourceTree = "<group>"; };
+		940EE3512624292600C26AE1 /* BeveragesFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeveragesFunc.swift; sourceTree = "<group>"; };
+		9415A0142622E4A600A49FED /* Title_Footer_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title_Footer_TableViewCell.swift; sourceTree = "<group>"; };
+		9415A0182622E81F00A49FED /* Footer_Tableview_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer_Tableview_TableViewCell.swift; sourceTree = "<group>"; };
+		9415A01E2622EF4600A49FED /* TopTitle_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitle_TableViewCell.swift; sourceTree = "<group>"; };
+		9415A0232622F36300A49FED /* SearchBarMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarMenuTableViewCell.swift; sourceTree = "<group>"; };
+		9415A0282622F7C700A49FED /* BodyMenuBar_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMenuBar_TableViewCell.swift; sourceTree = "<group>"; };
+		9415A0322623389400A49FED /* ViewReusble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReusble.swift; sourceTree = "<group>"; };
+		9415A03E26233C2300A49FED /* Food_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_extension.swift; sourceTree = "<group>"; };
 		9426B397261CB64D00BA6A00 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9426B398261CB64D00BA6A00 /* Demension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
 		9426B399261CB64D00BA6A00 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -142,6 +158,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940EE34726240D6B00C26AE1 /* Body_MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				9415A0282622F7C700A49FED /* BodyMenuBar_TableViewCell.swift */,
+				9415A03926233BD700A49FED /* Food */,
+				9415A03D26233C0700A49FED /* Promotions */,
+				9415A03B26233BE900A49FED /* Beverages */,
+				9415A03C26233BFA00A49FED /* Desserts */,
+			);
+			path = Body_MenuBar;
+			sourceTree = "<group>";
+		};
+		9415A01C2622EF0600A49FED /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				940EE34726240D6B00C26AE1 /* Body_MenuBar */,
+				94CC576F262081C40005C27E /* MenubarController.swift */,
+				9415A01E2622EF4600A49FED /* TopTitle_TableViewCell.swift */,
+				9415A0232622F36300A49FED /* SearchBarMenuTableViewCell.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		9415A01D2622EF0E00A49FED /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				94CC57912620B5060005C27E /* HomeScreenTableViewCell.swift */,
+				94CC579626215D0B0005C27E /* SecondTableViewCell.swift */,
+				94CC579926216B330005C27E /* SearchBarTableViewCell.swift */,
+				94CC579C2621F09F0005C27E /* CollectionViewTableViewCell.swift */,
+				940E7E882622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift */,
+				940E7E8B2622AA7D008FB200 /* RecomendFoodTableViewCell.swift */,
+				9415A0142622E4A600A49FED /* Title_Footer_TableViewCell.swift */,
+				9415A0182622E81F00A49FED /* Footer_Tableview_TableViewCell.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		9415A02C2623383600A49FED /* UiViewReusable */ = {
+			isa = PBXGroup;
+			children = (
+				9415A0322623389400A49FED /* ViewReusble.swift */,
+			);
+			path = UiViewReusable;
+			sourceTree = "<group>";
+		};
+		9415A03926233BD700A49FED /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				9415A03E26233C2300A49FED /* Food_extension.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		9415A03B26233BE900A49FED /* Beverages */ = {
+			isa = PBXGroup;
+			children = (
+				940EE3512624292600C26AE1 /* BeveragesFunc.swift */,
+			);
+			path = Beverages;
+			sourceTree = "<group>";
+		};
+		9415A03C26233BFA00A49FED /* Desserts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Desserts;
+			sourceTree = "<group>";
+		};
+		9415A03D26233C0700A49FED /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
 		9426B390261CB5B300BA6A00 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +274,7 @@
 		9426B394261CB5CD00BA6A00 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9415A02C2623383600A49FED /* UiViewReusable */,
 				9426B3A7261CB6C600BA6A00 /* BaseViewcontroller1.swift */,
 				9426B3A4261CB6A100BA6A00 /* BaseUIView.swift */,
 				9426B415261D62E100BA6A00 /* TextFieldReusable */,
@@ -304,12 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				94CC5747261FE2FB0005C27E /* HomeScreen.swift */,
-				94CC57912620B5060005C27E /* HomeScreenTableViewCell.swift */,
-				94CC579626215D0B0005C27E /* SecondTableViewCell.swift */,
-				94CC579926216B330005C27E /* SearchBarTableViewCell.swift */,
-				94CC579C2621F09F0005C27E /* CollectionViewTableViewCell.swift */,
-				940E7E882622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift */,
-				940E7E8B2622AA7D008FB200 /* RecomendFoodTableViewCell.swift */,
+				9415A01D2622EF0E00A49FED /* Properties */,
 			);
 			path = HomeBar;
 			sourceTree = "<group>";
@@ -317,7 +405,7 @@
 		94CC576A2620817D0005C27E /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
-				94CC576F262081C40005C27E /* MenubarController.swift */,
+				9415A01C2622EF0600A49FED /* Properties */,
 			);
 			path = MenuBar;
 			sourceTree = "<group>";
@@ -543,9 +631,12 @@
 			files = (
 				9426B427261DCC1600BA6A00 /* lbl_Footer_Login_Reusable.swift in Sources */,
 				94CC57922620B5060005C27E /* HomeScreenTableViewCell.swift in Sources */,
+				9415A0242622F36300A49FED /* SearchBarMenuTableViewCell.swift in Sources */,
 				94E0AF3F261CB4F1003128E9 /* MainViewcontroller.swift in Sources */,
+				9415A0292622F7C700A49FED /* BodyMenuBar_TableViewCell.swift in Sources */,
 				94CC5748261FE2FB0005C27E /* HomeScreen.swift in Sources */,
 				9426B39A261CB64D00BA6A00 /* Theme.swift in Sources */,
+				9415A0192622E81F00A49FED /* Footer_Tableview_TableViewCell.swift in Sources */,
 				940E7E892622A118008FB200 /* TitileMiddle_cell5_TableViewCell.swift in Sources */,
 				94CC577D262082040005C27E /* MorebarController.swift in Sources */,
 				94CC5770262081C40005C27E /* MenubarController.swift in Sources */,
@@ -556,9 +647,11 @@
 				9426B3A1261CB66600BA6A00 /* LauchLoginScreen.swift in Sources */,
 				9426B39C261CB64D00BA6A00 /* Resource.swift in Sources */,
 				94CC579D2621F09F0005C27E /* CollectionViewTableViewCell.swift in Sources */,
+				9415A0332623389400A49FED /* ViewReusble.swift in Sources */,
 				94CC5781262087A30005C27E /* NavigationBarController.swift in Sources */,
 				9426B423261DB49400BA6A00 /* ButtonnLoginFB_GG_Reusable.swift in Sources */,
 				94CC576726203F950005C27E /* FuncCommon.swift in Sources */,
+				9415A0152622E4A600A49FED /* Title_Footer_TableViewCell.swift in Sources */,
 				940E7E8C2622AA7D008FB200 /* RecomendFoodTableViewCell.swift in Sources */,
 				9426B40B261D524F00BA6A00 /* LoginScreen.swift in Sources */,
 				9426B3A2261CB66600BA6A00 /* WelcomeScreenViewController.swift in Sources */,
@@ -567,14 +660,17 @@
 				9426B42B261DD70300BA6A00 /* SignUpScreen.swift in Sources */,
 				9426B42E261DE73F00BA6A00 /* ResetPassworldScreen.swift in Sources */,
 				94E0AF3D261CB4F1003128E9 /* SceneDelegate.swift in Sources */,
+				9415A01F2622EF4600A49FED /* TopTitle_TableViewCell.swift in Sources */,
 				9426B39B261CB64D00BA6A00 /* Demension.swift in Sources */,
 				9426B3A8261CB6C600BA6A00 /* BaseViewcontroller1.swift in Sources */,
 				94CC57A22621F6A30005C27E /* MainTableViewCell.swift in Sources */,
 				9426B407261D442500BA6A00 /* ButtonPrimaryColor.swift in Sources */,
 				9496BFC7261F3E2B008A1CEF /* Config.swift in Sources */,
+				9415A03F26233C2300A49FED /* Food_extension.swift in Sources */,
 				94CC577A262081F60005C27E /* ProfileBarController.swift in Sources */,
 				9426B417261D632000BA6A00 /* textField_InPut_Reusable.swift in Sources */,
 				9426B41A261D6CA600BA6A00 /* lbl_Top_Discription_Titile.swift in Sources */,
+				940EE3522624292600C26AE1 /* BeveragesFunc.swift in Sources */,
 				94CC57A52621FAF80005C27E /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,7 +820,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TUKD5UXC58;
 				INFOPLIST_FILE = MonkeyFoodProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,7 +841,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TUKD5UXC58;
 				INFOPLIST_FILE = MonkeyFoodProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
