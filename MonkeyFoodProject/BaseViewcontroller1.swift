@@ -18,3 +18,13 @@ public class BaseViewcontroller:UIViewController,ReusableView {
     }
     
 }
+public class BaseUITableviewcell:UITableViewCell,ReusableView{
+    func initialize() {
+        
+    }
+
+    
+    public override func layoutSubviews() {
+        initialize()
+    }
+}

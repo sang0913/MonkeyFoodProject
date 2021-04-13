@@ -19,10 +19,10 @@ class NavigationBarController:UITabBarController {
         self.navigationController?.isNavigationBarHidden = true
     }
     func  configure(){
-        var tabbar_Menu = MenuBarViewcontroller()
+        let tabbar_Menu = MenuBarViewcontroller()
         let tabbar_Offers = OffersBarController()
         let tabbar_Home = HomeScreenViewcontroller()
-        let tabbar_Profile = ProfileBarController()
+        let tabbar_Profile = ProfileBar_ViewController()
         let tabbar_More = MorebarController()
        
       

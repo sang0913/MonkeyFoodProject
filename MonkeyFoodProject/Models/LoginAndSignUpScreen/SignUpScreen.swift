@@ -26,6 +26,7 @@ import UIKit
         txt_Name.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Name
         return txt_Name
     }()
+    
     private let txt_Email_SignUp:textField_InPut_Reusable = {
        let textField = textField_InPut_Reusable()
         

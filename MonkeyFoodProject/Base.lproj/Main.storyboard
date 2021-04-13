@@ -199,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="1765" y="2863"/>
         </scene>
-        <!--Profile Bar Controller-->
+        <!--Profile Bar View Controller-->
         <scene sceneID="3dE-QJ-hs5">
             <objects>
-                <viewController storyboardIdentifier="ProfileBarController" id="S7t-VB-qax" customClass="ProfileBarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileBar_ViewController" id="S7t-VB-qax" customClass="ProfileBar_ViewController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFo-3H-mBp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

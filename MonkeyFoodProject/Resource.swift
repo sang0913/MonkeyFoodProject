@@ -65,6 +65,7 @@ class Resource {
             public static var  MetropolisBold = "Metropolis-Bold"
             public static var  MetropolisThin = "Metropolis-Thin"
             public static var  MetropolisExtraBold = "Metropolis-ExtraBold"
+           public static var  MetropolisSemiBold = "Metropolis-SemiBold"
             
         }
     }
