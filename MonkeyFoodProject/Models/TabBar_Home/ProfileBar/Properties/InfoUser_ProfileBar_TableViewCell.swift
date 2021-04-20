@@ -21,7 +21,7 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 51
+        image.layer.cornerRadius = Demension.shared.heightScale * 51
         image.layer.masksToBounds = true
         return image
     }()
@@ -68,16 +68,16 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
         
         return label
     }()
-    private let lbl_SignOut_ProfileBar :UILabel = {
+     let lbl_SignOut_ProfileBar :UILabel = {
         let label = UILabel()
-        label.text = "Sign Out"
+        label.text = "Sign out"
       
         label.textAlignment = .center
         
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.smallCaptionFontSize_11)
-        
-        return label
+         return label
     }()
+    
     //MARK:Object LifeCycle
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -156,13 +156,19 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
             make.centerX.equalToSuperview()
         })
     }
-    private func setup_lbl_SignOut_ProfileBarr(){
+     func setup_lbl_SignOut_ProfileBarr(){
         viewInfo_User.addSubview(lbl_SignOut_ProfileBar)
+        lbl_SignOut_ProfileBar.isUserInteractionEnabled = true
+    
+       
+        
         lbl_SignOut_ProfileBar.snp.makeConstraints({(make) in
             make.top.equalTo(lbl_BigTitle_ProfileBar.snp.bottom).offset(Demension.shared.mediumVerticalMargin_8)
             make.centerX.equalToSuperview()
         })
     }
+
+  
 }
 
 

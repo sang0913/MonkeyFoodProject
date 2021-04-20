@@ -18,9 +18,7 @@ class Demension {
         widthScale = UIScreen.main.bounds.width / witdhIP6
         heightScale = UIScreen.main.bounds.height / heightIP6
     }
-    
-    
-    //MARK: FontSize
+   //MARK: FontSize
     
     public var headlineFontSize_24: CGFloat {
         return 24 * heightScale
@@ -33,6 +31,9 @@ class Demension {
     }
     var titleFontSize_20: CGFloat {
         return 20 * self.widthScale
+    }
+    var titleFontSize_24: CGFloat {
+        return 24  * self.widthScale
     }
     var titleFontSize32:CGFloat {
         return 32 * widthScale
@@ -221,6 +222,9 @@ class Demension {
     }
     var largeHorizontalMargin_69: CGFloat {
         return 69 * self.widthScale
+    }
+    var largeHorizontalMargin_75: CGFloat {
+        return 75 * self.widthScale
     }
     var largeHorizontalMargin_87: CGFloat {
         return 87 * self.widthScale

@@ -6,6 +6,58 @@ class WelcomeScreenViewController: BaseViewcontroller {
   
     @objc func tapgessture(){
         print("tapgessture1")
+        let defaults = UserDefaults.standard
+        if let UserToken = defaults.string(forKey: "UserToken"){
+            
+            //co token
+            
+            let url = URL(string: Config.serverURL + "/verifyToken")
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            var sData = "Token=" + UserToken
+            let postData = sData.data(using: .utf8)
+            request.httpBody = postData
+            
+            let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+                guard error == nil else { print("error"); return }
+                guard let data = data else { return }
+                
+                do{
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                 
+                    
+                    if(json["kq"] as! Int == 1){
+                        //Trùng Token
+                        print(json)
+                        DispatchQueue.main.async {
+                            let sb = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                    else {
+                        //alert that bai
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Thông báo", message: json["errMsg"] as? String, preferredStyle: .alert)
+                            alert.addAction(.init(title: "Ok", style: .default, handler: nil))
+                            self.present(alert,
+                                         animated: true,
+                                         completion: nil )
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    
+                }catch let error { print(error.localizedDescription) }
+            })
+            taskUserRegister.resume()
+            
+        } else {
+            //k co token
+            //Đứng ở màn hình gốc
+        }
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "LauchLoginScreen") as? LauchLoginScreen
         self.navigationController?.pushViewController(vc!, animated: true)

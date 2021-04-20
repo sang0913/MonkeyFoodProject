@@ -14,23 +14,30 @@ class RecomendFoodTableViewCell: UITableViewCell {
     //MARK:UI Elements
     private let subview : UIView = {
         let view = UIView()
-        
         return view
     }()
-    private let img_Food:UIImageView = {
+    public let img_Food:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
-     
+        
+//        let urlhinh = "http://192.168.1.2:3000/upload/1617866248178-avatar.png"
+//        do {
+//            let data = try Data(contentsOf: URL(string: urlhinh)!)
+//            image.image = UIImage(data: data)
+//        }catch { }
+//
+//
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
         return image
     }()
-    private let lbl_TitleFood:UILabel = {
+   let lbl_TitleFood:UILabel = {
         let label = UILabel()
-        label.text = "Minute by tuk tuk"
+       
         
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisExtraBold, size: Demension.shared.messageFontSize_16)
         return label
     }()
+    
     private let img_RateStar:UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "RateStar")
@@ -49,21 +56,25 @@ class RecomendFoodTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         setupUI()
+     
     }
+    
+  
     //MARK:Setup UI Elements
     
     func setupUI(){
+       
         
-        
+      
         contentView.addSubview(subview)
         
         subview.snp.makeConstraints({(make) in
             make.top.left.right.height.bottom.equalToSuperview()
-       
+          
             
         })
         subview.addSubview(img_Food)
-        
+       
         img_Food.snp.makeConstraints({(make) in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_32)
@@ -71,6 +82,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
             
         })
         subview.addSubview(lbl_TitleFood)
+       
         lbl_TitleFood.snp.makeConstraints({(make) in
             make.top.equalTo(img_Food.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
@@ -83,6 +95,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
             
         })
         subview.addSubview(lbl_ResultRatStart)
+       
         lbl_ResultRatStart.snp.makeConstraints({(make) in
             make.bottom.equalTo(img_RateStar)
             make.left.equalTo(img_RateStar.snp.right).offset(4)

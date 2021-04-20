@@ -9,7 +9,6 @@ import UIKit
 class MenuBarViewcontroller: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     //MARK:UI Elements
-    
     var array = ["1","","1","1","","1","1","","1","1","","1"]
     
     private let myTable:UITableView = {
@@ -21,7 +20,6 @@ class MenuBarViewcontroller: UIViewController, UITableViewDelegate, UITableViewD
         return table
     }()
    
-    
     //MARK:Object LifeCycle
    override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +29,14 @@ class MenuBarViewcontroller: UIViewController, UITableViewDelegate, UITableViewD
         myTable.dataSource = self
         myTable.delegate = self
     }
-    
-    
-    
+   
     //MARK:Setup UI Elements
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 3
+       return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //title menu
         if indexPath.row  == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TopTitle_TableViewCell.identifier, for: indexPath) as! TopTitle_TableViewCell
         
@@ -51,17 +45,24 @@ class MenuBarViewcontroller: UIViewController, UITableViewDelegate, UITableViewD
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
+        //Search bar
         if indexPath.row  == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchBarMenuTableViewCell.identifier, for: indexPath) as! SearchBarMenuTableViewCell
-         
+            
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
+        //4 properties
         if indexPath.row  == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: BodyMenuBar_TableViewCell.identifier, for: indexPath) as! BodyMenuBar_TableViewCell
-         
+            //tap Food lable
+            cell.ViewFood_BodyMenuBarItem.isUserInteractionEnabled = true
+            let foodTapGesture = UITapGestureRecognizer(target: self, action: #selector(tappFood_BobyMenuBar))
+            cell.ViewFood_BodyMenuBarItem.addGestureRecognizer(foodTapGesture)
+            
+            
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
@@ -91,14 +92,14 @@ class MenuBarViewcontroller: UIViewController, UITableViewDelegate, UITableViewD
       
         return 0
     }
-    
-    
-    
-   
-    
-    
-    
-    
 
-
+}
+extension MenuBarViewcontroller{
+    
+    @objc func tappFood_BobyMenuBar(){
+      print("tappsssssss")
+     let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "Food_ViewController") as! Food_ViewController
+        self.present(vc, animated: true, completion: nil)
+    }
 }

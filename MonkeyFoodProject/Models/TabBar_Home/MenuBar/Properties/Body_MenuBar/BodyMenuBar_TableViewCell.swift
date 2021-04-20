@@ -6,8 +6,10 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //MARK:Object LifeCycle
     override func layoutSubviews() {
         super.layoutSubviews()
-        setup_ViewFood_LargeView ()
+        setup_viewBodyMenuBar()
         setup_img_SidebarOrange()
+        setup_ViewFood_LargeView ()
+   
   
         //Food Body
         setup_ViewFood_BodyMenuBarItem()
@@ -20,13 +22,14 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
       
         //Beverages
         setup_ViewBeverages_LargeView()
+
         setup_ViewBeverages_BodyMenuBarItem()
         setup_img_ViewBeverages_BodyMenuBar()
         setup_lbl_TiTle_ViewBeverages()
         setup_lbl_CountItem_ViewBeverages()
         setup_ViewBeverages_forArrow()
         setup_img_arrow_ViewBeverages()
-     
+
         //Deserts
         setup_ViewDesserts_LargeView()
         setup_ViewDesserts_BodyMenuBarItem()
@@ -35,7 +38,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         setup_lbl_CountItem_ViewDesserts()
         setup_ViewDesserts_forArrow()
         setup_img_arrow_ViewDesserts()
-        
+
         //Promotions
         setup_ViewPromotions_LargeView()
         setup_ViewPromotions_BodyMenuBarItem()
@@ -49,7 +52,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //MARK:View tổng chứa body và side bar
     private let viewBodyMenuBar :UIView = {
         let view = UIView()
-        
+      
         return view
     }()
     
@@ -71,7 +74,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         view.layer.shadowRadius = 5
         return view
     }()
-    private let ViewFood_BodyMenuBarItem :UIView = {
+     let ViewFood_BodyMenuBarItem :UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.isUserInteractionEnabled = true
@@ -82,7 +85,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     }()
     private let img_ViewFood_BodyMenuBar:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "abc")
+        image.image = #imageLiteral(resourceName: "s1")
         
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = Demension.shared.largeVerticalMargin_36
@@ -109,7 +112,11 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //Arrow and view
     private let ViewFood_forArrow :UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
+        view.layer.shadowOffset = .zero
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 5
         
         view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         return view
@@ -127,6 +134,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     private let ViewBeverages_LargeView :UIView = {
         let view = UIView()
         view.layer.masksToBounds = false
+      
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.2
         view.layer.shadowOffset = .zero
@@ -144,7 +152,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     }()
     private let img_ViewBeverages_BodyMenuBar:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "abc")
+        image.image = #imageLiteral(resourceName: "4444")
         
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = Demension.shared.largeVerticalMargin_36
@@ -171,7 +179,11 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //Arrow and view
     private let ViewBeverages_forArrow :UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
+        view.layer.shadowOffset = .zero
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 5
         
         view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         return view
@@ -209,9 +221,8 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     }()
     private let img_ViewDesserts_BodyMenuBar:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "abc")
-        
-        image.contentMode = .scaleAspectFill
+        image.image = #imageLiteral(resourceName: "s2")
+        image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = Demension.shared.largeVerticalMargin_36
         image.layer.masksToBounds = true
         return image
@@ -236,8 +247,11 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //Arrow and view
     private let ViewDesserts_forArrow :UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
-        
+        view.backgroundColor = .white
+        view.layer.shadowOffset = .zero
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 5
         view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         return view
     }()
@@ -273,7 +287,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     }()
     private let img_ViewPromotions_BodyMenuBar:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "abc")
+        image.image = UIImage(named: "s9")
         
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = Demension.shared.largeVerticalMargin_36
@@ -283,7 +297,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     
     let lbl_TiTle_ViewPromotions:UILabel = {
         let lable = UILabel()
-        lable.text = "Desserts"
+        lable.text = "Promotions"
         
         lable.textAlignment = .center
         lable.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisBold, size: Demension.shared.titleFontSize_20)
@@ -291,7 +305,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     }()
     let lbl_CountItem_ViewPromotions:UILabel = {
         let lable = UILabel()
-        lable.text = "155 Items"
+        lable.text = "25 Items"
         
         lable.textAlignment = .center
         lable.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisThin, size: Demension.shared.smallCaptionFontSize_11)
@@ -300,7 +314,11 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
     //Arrow and view
     private let ViewPromotions_forArrow :UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
+        view.layer.shadowOffset = .zero
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 5
         
         view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         return view
@@ -321,18 +339,20 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         
         viewBodyMenuBar.snp.makeConstraints({(make) in
        make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_30)
-            make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
-            make.width.equalTo(Demension.shared.largeHorizontalMargin_333)
-            make.height.equalTo(Demension.shared.largeVertical_87)
+            make.left.bottom.right.equalToSuperview()
             
         })
     }
     //side bar
     private func setup_img_SidebarOrange(){
-        contentView.addSubview( img_SidebarOrange )
+        viewBodyMenuBar.addSubview( img_SidebarOrange )
+        let foodTapGesture2 = UITapGestureRecognizer(target: self, action: #selector(tapBeveragesView))
+    
+        img_SidebarOrange.addGestureRecognizer(foodTapGesture2)
+        img_SidebarOrange.isUserInteractionEnabled = true
         img_SidebarOrange.snp.makeConstraints({(make) in
             make.left.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_30)
+            make.top.equalToSuperview()
             make.width.equalTo(Demension.shared.largeHorizontalMargin_97)
         })
     }
@@ -347,10 +367,8 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
             make.centerX.equalToSuperview()
         })
     }
-    private func setup_ViewFood_BodyMenuBarItem(){
-        let foodTapGesture = UITapGestureRecognizer(target: self, action: #selector(tappFood_BobyMenuBar))
-    
-        ViewFood_BodyMenuBarItem.addGestureRecognizer(foodTapGesture)
+     func setup_ViewFood_BodyMenuBarItem(){
+        
         ViewFood_LargeView.addSubview(  ViewFood_BodyMenuBarItem )
         ViewFood_BodyMenuBarItem.snp.makeConstraints({(make) in
             make.top.bottom.equalToSuperview()
@@ -415,14 +433,13 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
             make.top.equalTo(ViewFood_LargeView.snp.bottom).offset(Demension.shared.largeVerticalMargin)
         })
     }
-    private func setup_ViewBeverages_BodyMenuBarItem(){
-        let tapgs = UITapGestureRecognizer(target: self, action: #selector(tapBeveragesView))
+     func setup_ViewBeverages_BodyMenuBarItem(){
+        let foodTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBeveragesView))
+    
+        ViewBeverages_BodyMenuBarItem.addGestureRecognizer(foodTapGesture)
         ViewBeverages_BodyMenuBarItem.isUserInteractionEnabled = true
-        ViewBeverages_BodyMenuBarItem.addGestureRecognizer(tapgs)
-        
         ViewBeverages_LargeView.addSubview(  ViewBeverages_BodyMenuBarItem )
       ViewBeverages_BodyMenuBarItem.snp.makeConstraints({(make) in
-    
             make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(Demension.shared.largeHorizontalMargin_38)
             make.width.equalTo(Demension.shared.largeHorizontalMargin_280)
@@ -441,6 +458,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         })
     }
     private func setup_lbl_TiTle_ViewBeverages(){
+       
         ViewBeverages_BodyMenuBarItem.addSubview(lbl_TiTle_ViewBeverages )
         
         lbl_TiTle_ViewBeverages.snp.makeConstraints({(make) in
@@ -484,9 +502,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         })
     }
     private func setup_ViewDesserts_BodyMenuBarItem(){
-        let beverageTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBeveragesView))
-
-        ViewFood_BodyMenuBarItem.addGestureRecognizer(beverageTapGesture)
+      
         ViewDessert_LargeView.addSubview(  ViewDessert_BodyMenuBarItem )
         ViewDessert_BodyMenuBarItem.snp.makeConstraints({(make) in
             make.top.bottom.equalToSuperview()

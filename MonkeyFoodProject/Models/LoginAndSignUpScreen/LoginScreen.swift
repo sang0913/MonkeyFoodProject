@@ -8,7 +8,8 @@
 import UIKit
 class LoginScreen : BaseViewcontroller {
    
-    
+ 
+   
     //MARK:UI Elements
     private let lbl_TopTitle :lbl_Top_Title = {
         let label = lbl_Top_Title()
@@ -255,6 +256,7 @@ class LoginScreen : BaseViewcontroller {
 }
 extension LoginScreen {
     @objc func tapButtonLogin(){
+        
         print("tapButtonLogin")
         if (txt_Email_LoginScreen.txt_inputReusable.text == ""){
             let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập UserName", preferredStyle: .alert)
@@ -268,7 +270,9 @@ extension LoginScreen {
         }
         
         else {
+            
             print("tapButtonLogin")
+            
             let url = URL(string: Config.serverURL + "/login")
             var request = URLRequest(url: url!)
             request.httpMethod = "POST"
@@ -293,8 +297,11 @@ extension LoginScreen {
                         print(defaults)
                         
                         DispatchQueue.main.async {
+                          
+                            
                             let sb = UIStoryboard(name: "Main", bundle: nil)
                             let vc  = sb.instantiateViewController(identifier: "NavigationBarController") as! NavigationBarController
+                       
                             self.navigationController?.pushViewController(vc, animated: true)
                            
                         }

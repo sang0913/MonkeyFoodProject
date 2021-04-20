@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h3V-8n-0E3">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeScreenViewController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,7 +30,7 @@
             <objects>
                 <viewController storyboardIdentifier="LauchLoginScreen" id="4gb-zh-sDK" customClass="LauchLoginScreen" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnZ-sq-TTt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4Lr-1k-uuy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,7 +45,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" id="dKl-co-NQg" customClass="LoginScreen" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kya-xx-3du">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nHk-no-Xr9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,7 +60,7 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpScreen" id="5hD-SK-4zi" customClass="SignUpScreen" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WvA-cM-OSr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vcb-xn-N4J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,7 +75,7 @@
             <objects>
                 <viewController storyboardIdentifier="ResetPassworldScreen" id="IIx-e1-R38" customClass="ResetPassworldScreen" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Uf-jX-gW7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="hHU-No-fU9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,7 +111,7 @@
             <objects>
                 <viewController storyboardIdentifier="OffersBarController" id="9wj-Ib-2jM" customClass="OffersBarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hIo-Gg-5Du">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fQP-Ez-vxP">
@@ -126,14 +126,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eym-sN-WAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851" y="2863"/>
+            <point key="canvasLocation" x="2162" y="2875"/>
         </scene>
         <!--Home Screen Viewcontroller-->
         <scene sceneID="MFI-3A-MMZ">
             <objects>
                 <viewController storyboardIdentifier="HomeScreenViewcontroller" id="FIe-X8-l0g" customClass="HomeScreenViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pxy-lj-e9h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rSd-nT-nFX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,7 +150,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y7M-ud-2dc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="153-p6-A1n">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -167,7 +167,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewcontroller" id="Gj7-cr-vm6" customClass="MainViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjJ-uw-ncN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="n6c-aH-3fr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -182,7 +182,7 @@
             <objects>
                 <viewController storyboardIdentifier="MenuBarViewcontroller" id="EXu-Tv-nZW" customClass="MenuBarViewcontroller" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1G-Xk-Sq9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 6816" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-FW-mjh">
@@ -197,14 +197,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoC-QG-mXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765" y="2863"/>
+            <point key="canvasLocation" x="859" y="2862"/>
+        </scene>
+        <!--Food View Controller-->
+        <scene sceneID="ESr-R8-qL0">
+            <objects>
+                <viewController storyboardIdentifier="Food_ViewController" id="DRf-ap-kk3" customClass="Food_ViewController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MtV-vY-Jur">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bJQ-Y1-qcJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTn-xQ-cAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="3667.663043478261"/>
         </scene>
         <!--Profile Bar View Controller-->
         <scene sceneID="3dE-QJ-hs5">
             <objects>
                 <viewController storyboardIdentifier="ProfileBar_ViewController" id="S7t-VB-qax" customClass="ProfileBar_ViewController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFo-3H-mBp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yR-uu-efj">
@@ -227,7 +242,7 @@
             <objects>
                 <viewController storyboardIdentifier="MorebarController" id="da9-RL-f15" customClass="MorebarController" customModule="MonkeyFoodProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VK9-8e-Vkb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menubar.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WUz-pf-ZjA">
@@ -260,7 +275,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfJ-9G-1lT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="2036"/>
+            <point key="canvasLocation" x="859" y="2036"/>
         </scene>
         <!--Item-->
         <scene sceneID="b7h-gF-I56">
@@ -297,7 +312,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEH-yn-UgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="2036"/>
+            <point key="canvasLocation" x="2162" y="2049"/>
         </scene>
         <!--Item-->
         <scene sceneID="h3j-zO-grT">

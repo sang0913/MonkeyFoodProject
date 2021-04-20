@@ -21,8 +21,7 @@ public class ButtonnLoginFB_GG_Reusable:BaseUIView {
             button.titleLabel?.textAlignment = .right
           
             button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 25)
-            
-               return button
+             return button
            }()
     let viewLogo : UIImageView = {
      let image = UIImageView()
@@ -33,6 +32,7 @@ public class ButtonnLoginFB_GG_Reusable:BaseUIView {
         //MARK:Object LifeCycle
         public override func initialize() {
             setup_button_LoginWithApp()
+            
         }
         
         
@@ -42,10 +42,6 @@ public class ButtonnLoginFB_GG_Reusable:BaseUIView {
             button_LoginWithApp.snp.makeConstraints({(make) in
                 make.top.left.right.bottom.equalToSuperview()
             })
-            
-        }
-        
+          }
        
-    
-    
 }

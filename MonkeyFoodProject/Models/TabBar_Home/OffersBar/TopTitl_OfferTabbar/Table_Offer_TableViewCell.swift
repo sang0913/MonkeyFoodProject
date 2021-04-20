@@ -12,9 +12,9 @@ class Table_Offer_TableViewCell: UITableViewCell {
 
     //MARK:UI Elements
 
-    private let img_Food_Offers:UIImageView = {
+     let img_Food_Offers:UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
+        
      
         image.contentMode = .scaleToFill
         return image

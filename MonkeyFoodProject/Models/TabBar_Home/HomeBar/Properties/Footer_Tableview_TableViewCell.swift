@@ -3,24 +3,38 @@
 //  MonkeyFoodProject
 //
 //  Created by sang1 on 11/04/2021.
-//
+struct ListRecommendFood {
+    var image: String
+    var Title : String
+    var discription: String
+    var countRatingStart: String
+    init(img: String, title: String, discription: String, counRaing: String) {
+        self.image = img
+        self.Title = title
+        self.discription = discription
+        self.countRatingStart = counRaing
+    }
+}
 
 import UIKit
 
 class Footer_Tableview_TableViewCell: UITableViewCell {
 static let identifier = "Footer_Tableview_TableViewCell"
-    
+    var arrRecomendFood:[ListRecommendFood] = [
+        ListRecommendFood(img: "2222", title: "Mulberry Pizza by Josh", discription: "Café     Western Food", counRaing: "(124 Ratings)")
+    ]
+   
     //MARK:UI Elements
     private let subview : UIView = {
         let view = UIView()
         
         return view
     }()
-    private let img_Food:UIImageView = {
+     let img_Food:UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
-     
-        image.contentMode = .scaleToFill
+        image.backgroundColor = .red
+    
         return image
     }()
     private let lbl_TitleFood:UILabel = {
@@ -79,7 +93,8 @@ static let identifier = "Footer_Tableview_TableViewCell"
         img_Food.snp.makeConstraints({(make) in
             make.left.equalToSuperview()
             make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_32)
-            make.height.width.equalTo(Demension.shared.largeVerticalMargin_75)
+            make.height.equalTo(Demension.shared.largeVerticalMargin_75)
+          
             
         })
         subview.addSubview(lbl_TitleFood)

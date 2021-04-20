@@ -7,16 +7,16 @@
 
 import UIKit
 
-
 class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+    var arrColection:[FoodCountry] = []
+    var arrRecommendRestaurent:[Restaurents] = []
+    let arrImg = ["2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","s1","s2","s3","s4"]
     
     //MARK:UI Elements
     
-    var array = ["1","","1","1","","1","1","","1","1","","1"]
-    var array2 = ["1","","1","1","","1","1","","1","1","","1"]
-    
-    
+    var array = ["1","","1","1","","1","1","","1","1","","1","","1","1","","1","","1","1","","1","","1","1","","1","","1","1","","1"]
+  
+ 
     
     private let myTable:UITableView = {
         let table = UITableView()
@@ -42,34 +42,35 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(myTable)
-        //        myTable.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: "HomeScreenTableViewCell")
+        
         myTable.frame  = view.bounds
         myTable.dataSource = self
         myTable.delegate = self
-    }
-    
-    
-    
+        
+        loadDataRestaurents()
+   }
+ 
     //MARK:Setup UI Elements
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        return array.count
+      
+        return arrRecommendRestaurent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         
         if indexPath.row  == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableViewCell.identifier, for: indexPath) as! HomeScreenTableViewCell
             cell.configure()
-            cell.backgroundColor = .red
+          
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
         
-        else if indexPath.row  == 1 {
+         if indexPath.row  == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SecondTableViewCell.identifier, for: indexPath) as! SecondTableViewCell
             cell.configure()
             cell.separatorInset = .zero
@@ -78,7 +79,7 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
             return cell
         }
         
-        else if indexPath.row  == 2 {
+        if indexPath.row  == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchBarTableViewCell.identifier, for: indexPath) as! SearchBarTableViewCell
             
             cell.separatorInset = .zero
@@ -86,32 +87,42 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
-        else if indexPath.row  == 3 {
+         if indexPath.row  == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as! CollectionViewTableViewCell
+            cell.imageView?.image = UIImage(named: "Logo")
+//
             
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
-        else if indexPath.row == 4 {
+        if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TitileMiddle_cell5_TableViewCell.identifier, for: indexPath) as! TitileMiddle_cell5_TableViewCell
+           
+            cell.separatorInset = .zero
+            cell.selectionStyle = .none
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            return cell
+        }
+        if indexPath.row <= 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecomendFoodTableViewCell.identifier, for: indexPath) as! RecomendFoodTableViewCell
+                //image
+            let urlhinh = Config.serverURL + "/upload/" + arrRecommendRestaurent[indexPath.row].Image
+            do {
+                let data = try Data(contentsOf: URL(string: urlhinh)!)
+                cell.img_Food.image = UIImage(data: data)
+            }catch { }
+                //text
+            cell.lbl_TitleFood.text = arrRecommendRestaurent[indexPath.row].Name
             
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
-        else if indexPath.row <= 7 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RecomendFoodTableViewCell.identifier, for: indexPath) as! RecomendFoodTableViewCell
-            
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            return cell
-        } 
         
-        else if indexPath.row == 8 {
+        if indexPath.row == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Title_Footer_TableViewCell.identifier, for: indexPath) as! Title_Footer_TableViewCell
             
             cell.separatorInset = .zero
@@ -122,17 +133,20 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
         }
         else if indexPath.row <= 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Footer_Tableview_TableViewCell.identifier, for: indexPath) as! Footer_Tableview_TableViewCell
-            
+            cell.img_Food.image = UIImage(named: arrImg[indexPath.row])
+            cell.img_Food.contentMode = .scaleAspectFill
             cell.separatorInset = .zero
             cell.selectionStyle = .none
-            cell.backgroundColor = .gray
+         
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
-        
+     
+       
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeScreenTableViewCell", for: indexPath)
             cell.separatorInset = .zero
+             
             return cell
         }
         
@@ -164,14 +178,35 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
         if indexPath.row <= 11 {
             return 107
         }
-        return 100
+        
+        return 0
     }
     
     
   
+    private func loadDataRestaurents(){
+        let url = URL(string: Config.serverURL + "/Restaurents")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+            guard error == nil else { print("error"); return }
+            guard let data = data else { return }
+
+            let jsonDecoder = JSONDecoder()
+            let listRestaurent = try? jsonDecoder.decode(RestaurentPostRoute.self, from: data)
+            self.arrRecommendRestaurent = listRestaurent!.RestaurentList
+            DispatchQueue.main.async {
+                self.myTable.reloadData()
+            }
+       
+
+
+        }).resume()
+    }
     
-    
-    
+  
+  
+
     
 }
 

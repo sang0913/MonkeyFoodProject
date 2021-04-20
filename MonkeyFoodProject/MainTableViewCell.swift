@@ -10,7 +10,7 @@ import UIKit
 class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
  
 static let identifier = "MainTableViewCell"
-    
+   
     private let collectionView1 :UICollectionView = {
        let collec = UICollectionView()
         
@@ -34,7 +34,7 @@ static let identifier = "MainTableViewCell"
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

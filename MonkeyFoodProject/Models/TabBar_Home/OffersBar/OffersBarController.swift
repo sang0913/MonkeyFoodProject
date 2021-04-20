@@ -8,8 +8,8 @@
 import UIKit
 class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDelegate  {
    //MARK:UI Elements
-        
-        var array = ["1","","1","1","","1","1","","1","1","","1"]
+    let arrImg = ["2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","s1","s2","s3","s4"]
+     
     private let myTable:UITableView = {
             let table = UITableView()
         table.register(Toptitle_OfferTabbar_TableViewCell.self, forCellReuseIdentifier: Toptitle_OfferTabbar_TableViewCell.identifier)
@@ -28,13 +28,16 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             myTable.frame  = view.bounds
             myTable.dataSource = self
             myTable.delegate = self
+            
+          
+
         }
         
         //MARK:Setup UI Elements
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
             
-            return 5
+            return arrImg.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +60,7 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             }
             if indexPath.row  <= 4 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Table_Offer_TableViewCell.identifier, for: indexPath) as! Table_Offer_TableViewCell
-           
+                cell.img_Food_Offers.image = UIImage(named: arrImg[indexPath.row])
                 cell.separatorInset = .zero
                 cell.selectionStyle = .none
                 cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)

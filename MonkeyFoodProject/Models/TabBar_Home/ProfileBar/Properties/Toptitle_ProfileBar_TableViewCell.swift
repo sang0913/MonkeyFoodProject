@@ -50,9 +50,10 @@ private func setup_lbl_Toptile_ProfileBar(){
 }
 private func setup_img_TopTitile_ProfileBar(){
     contentView.addSubview(img_TopTitile_ProfileBar)
+    img_TopTitile_ProfileBar.isUserInteractionEnabled = true
     let tapGS_img_TopTitile_ProfileBar = UITapGestureRecognizer(target: self, action: #selector(tap_img_TopTitile_ProfileBar))
     img_TopTitile_ProfileBar.addGestureRecognizer(tapGS_img_TopTitile_ProfileBar)
-    img_TopTitile_ProfileBar.isUserInteractionEnabled = true
+ 
     img_TopTitile_ProfileBar.snp.makeConstraints({(make) in
         make.right.equalToSuperview().offset( -Demension.shared.largeHorizontalMargin_24)
         make.bottom.equalTo(lbl_Toptile_ProfileBar)

@@ -8,15 +8,17 @@
 import UIKit
 import RAMAnimatedTabBarController
 
-
 class NavigationBarController:UITabBarController {
     override func viewDidLoad() {
         self.navigationController?.isNavigationBarHidden = true
         configure()
-        
+     
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+      
         self.navigationController?.isNavigationBarHidden = true
+       
     }
     func  configure(){
         let tabbar_Menu = MenuBarViewcontroller()
@@ -24,8 +26,9 @@ class NavigationBarController:UITabBarController {
         let tabbar_Home = HomeScreenViewcontroller()
         let tabbar_Profile = ProfileBar_ViewController()
         let tabbar_More = MorebarController()
-       
-      
+        
+    
+        
         tabbar_Menu.tabBarItem =  RAMAnimatedTabBarItem(title: "Menu",
                                                 image: UIImage(named: "tabbarMenu"),
                                                 tag: 1)
@@ -51,6 +54,7 @@ class NavigationBarController:UITabBarController {
                                                 image: UIImage(named: "tabbarMore"),
                                                 tag: 1)
         (tabbar_More.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMRightRotationAnimation()
+//        tabbar_Home.select(isFirstResponder)
         self.setViewControllers([tabbar_Menu,tabbar_Offers,tabbar_Home,tabbar_Profile,tabbar_More], animated: true)
        
        
