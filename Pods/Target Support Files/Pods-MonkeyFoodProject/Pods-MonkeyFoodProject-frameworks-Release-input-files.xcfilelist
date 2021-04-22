@@ -1,3 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-MonkeyFoodProject/Pods-MonkeyFoodProject-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
+${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
 ${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework

@@ -105,12 +105,16 @@ class Food_ViewController: UIViewController {
             make.height.equalTo(Demension.shared.largeVerticalMargin)
         })
         
+        img_TopTitile_Arow.isUserInteractionEnabled = true
+        let tapGestureArrow = UITapGestureRecognizer(target: self, action: #selector(tapArrow))
+        img_TopTitile_Arow.addGestureRecognizer(tapGestureArrow)
         viewTitle.addSubview(img_TopTitile_Arow)
         img_TopTitile_Arow.snp.makeConstraints({(make) in
             
             make.left.top.bottom.equalToSuperview()
             make.width.equalTo(Demension.shared.normalHorizontalMargin_11)
         })
+        
         
         viewTitle.addSubview(lbl_topTextTitle)
         lbl_topTextTitle.snp.makeConstraints { (make) in
@@ -131,6 +135,7 @@ class Food_ViewController: UIViewController {
         })
         
     }
+    
     
     func setup_SearchBar() {
         view.addSubview(viewSearch)
@@ -222,4 +227,12 @@ extension Food_ViewController:UITableViewDataSource,UITableViewDelegate{
 
         }).resume()
     }
+    @objc func tapArrow(){
+       
+      let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "NavigationBarController") as NavigationBarController
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("tapArrow")
+    }
+    
 }

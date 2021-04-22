@@ -8,6 +8,3 @@ class CollectionViewCell: UITableViewCell {
     }
 }
 
-extension customCell {
- 
-}

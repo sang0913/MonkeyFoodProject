@@ -1,20 +1,43 @@
 PODS:
+  - FBSDKCoreKit (8.2.0):
+    - FBSDKCoreKit/Basics (= 8.2.0)
+    - FBSDKCoreKit/Core (= 8.2.0)
+  - FBSDKCoreKit/Basics (8.2.0)
+  - FBSDKCoreKit/Core (8.2.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (8.2.0):
+    - FBSDKLoginKit/Login (= 8.2.0)
+  - FBSDKLoginKit/Login (8.2.0):
+    - FBSDKCoreKit (~> 8.2.0)
+  - IQKeyboardManagerSwift (6.5.6)
   - RAMAnimatedTabBarController (5.2.0)
   - SnapKit (5.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
+  - IQKeyboardManagerSwift
   - RAMAnimatedTabBarController
   - SnapKit (~> 5.0.0)
+  - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - IQKeyboardManagerSwift
     - RAMAnimatedTabBarController
     - SnapKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
+  FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
+  FBSDKLoginKit: 7181765f2524d7ebf82d9629066c8e6caafc99d0
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fa1a11f223a455b1ec9c02d49978523412bb2059
+PODFILE CHECKSUM: 8f8b351ca4d7f4502198379f175a4550a5ded37e
 
 COCOAPODS: 1.10.0

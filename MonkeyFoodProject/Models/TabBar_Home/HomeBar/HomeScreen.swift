@@ -10,7 +10,7 @@ import UIKit
 class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableViewDelegate {
     var arrColection:[FoodCountry] = []
     var arrRecommendRestaurent:[Restaurents] = []
-    let arrImg = ["2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","s1","s2","s3","s4"]
+   
     
     //MARK:UI Elements
     
@@ -120,10 +120,18 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
         }
         else if indexPath.row <= 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Footer_Tableview_TableViewCell.identifier, for: indexPath) as! Footer_Tableview_TableViewCell
-            cell.img_Food.image = UIImage(named: arrImg[indexPath.row])
-            cell.img_Food.contentMode = .scaleAspectFill
-         
+            
+            let urlhinh = Config.serverURL + "/upload/" + arrRecommendRestaurent[indexPath.row].Image
+            do {
+                let data = try Data(contentsOf: URL(string: urlhinh)!)
+                cell.img_Food.image = UIImage(data: data)
+            }catch { }
+                //text
+            cell.lbl_FoodName.text = arrRecommendRestaurent[indexPath.row].Name
+           
             return cell
+         
+           
         }
      
        

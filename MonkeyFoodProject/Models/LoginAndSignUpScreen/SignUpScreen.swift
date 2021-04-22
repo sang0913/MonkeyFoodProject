@@ -271,6 +271,7 @@ extension SignUpScreen {
                                                                             guard let strongSelf = self else { return}
                                                                             self?.navigationController?.popViewController(animated: true)
 //                                                                            self.navigationController?.navigationBar.isHidden = true
+                                                                          
                                                                           } ))
                                                     
                                                     self.present(alert, animated: true, completion: nil)
