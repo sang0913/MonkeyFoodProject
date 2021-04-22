@@ -44,7 +44,7 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         let url = URL(string: Config.serverURL + "/FoodCountry")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
-        let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+        URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
             guard error == nil else { print("error"); return }
             guard let data = data else { return }
             
@@ -54,7 +54,7 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            print(listFoodCountry)
+            
             
             
         }).resume()
@@ -71,16 +71,16 @@ extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customCell1
-      
-//        cell.lbl_ScrollView.text = "ay dat"
         
-                    let urlhinh = Config.serverURL + "/upload/" + arrColection[indexPath.row].Image
-                    do {
-                        let data = try Data(contentsOf: URL(string: urlhinh)!)
-                        cell.image.image = UIImage(data: data)
-                    }catch { }
-                      
-                   
+        //        cell.lbl_ScrollView.text = "ay dat"
+        
+        let urlhinh = Config.serverURL + "/upload/" + arrColection[indexPath.row].Image
+        do {
+            let data = try Data(contentsOf: URL(string: urlhinh)!)
+            cell.image.image = UIImage(data: data)
+        }catch { }
+        
+        cell.lbl_ScrollView.text = arrColection[indexPath.row].Country
         
         
         return cell
@@ -106,7 +106,7 @@ class customCell1: UICollectionViewCell{
     }()
     let lbl_ScrollView:UILabel = {
         let label = UILabel()
-   
+        
         label.textAlignment = .center
         
         return label

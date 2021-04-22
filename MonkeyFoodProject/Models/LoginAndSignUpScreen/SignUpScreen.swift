@@ -185,7 +185,8 @@ import UIKit
         view.addSubview( lbl_titleFooter_SignUpScreen)
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(lbl_titleFooter_SignUpScreen_Tapgesture))
-        self.view.addGestureRecognizer(tapGesture)
+        self.lbl_titleFooter_SignUpScreen.addGestureRecognizer(tapGesture)
+        lbl_titleFooter_SignUpScreen.backgroundColor = .red
         lbl_titleFooter_SignUpScreen.snp.makeConstraints({(make) in
            make.top.equalTo(button_SignUpScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_28 )
             make.width.equalTo(Demension.shared.widthScale * 210)
@@ -259,16 +260,16 @@ extension SignUpScreen {
                                                  //Login thanh cong
                                                  print("đăng kí thành công")
                                                     //alert thành công
-                                             
+                                                let defaults = UserDefaults.standard
+                                                defaults.setValue(json["Token"], forKey: "UserToken")
+                                                print(defaults)
                                                 DispatchQueue.main.async {
                                                     let alert = UIAlertController(title: "Thông báo", message: "Đăng kí thành công", preferredStyle: .alert)
                                                     alert.addAction(.init(title: "Đồng ý",
                                                                           style: .cancel,
                                                                           handler: {[weak self] _ in
                                                                             guard let strongSelf = self else { return}
-                                                                            let sb = UIStoryboard(name: "Main", bundle: nil)
-                                                                            let vc  = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
-                                                                            strongSelf.navigationController?.pushViewController(vc, animated: true)
+                                                                            self?.navigationController?.popViewController(animated: true)
 //                                                                            self.navigationController?.navigationBar.isHidden = true
                                                                           } ))
                                                     
@@ -300,6 +301,7 @@ extension SignUpScreen {
     
     @objc func lbl_titleFooter_SignUpScreen_Tapgesture(){
         self.navigationController?.popViewController(animated: true)
+        print("táp")
     }
  
     @objc func superScreenTapGesture() {

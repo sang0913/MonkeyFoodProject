@@ -18,14 +18,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
     }()
     public let img_Food:UIImageView = {
         let image = UIImageView()
-        
-//        let urlhinh = "http://192.168.1.2:3000/upload/1617866248178-avatar.png"
-//        do {
-//            let data = try Data(contentsOf: URL(string: urlhinh)!)
-//            image.image = UIImage(data: data)
-//        }catch { }
-//
-//
+
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
         return image

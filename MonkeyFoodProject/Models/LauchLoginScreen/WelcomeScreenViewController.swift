@@ -28,28 +28,19 @@ class WelcomeScreenViewController: BaseViewcontroller {
                     
                     if(json["kq"] as! Int == 1){
                         //Trùng Token
-                        print(json)
+                        print(UserToken)
                         DispatchQueue.main.async {
                             let sb = UIStoryboard(name: "Main", bundle: nil)
-                            let vc = sb.instantiateViewController(identifier: "HomeScreenViewcontroller") as! HomeScreenViewcontroller
+                            let vc = sb.instantiateViewController(identifier: "NavigationBarController") as! NavigationBarController
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
                     else {
                         //alert that bai
-                        DispatchQueue.main.async {
-                            let alert = UIAlertController(title: "Thông báo", message: json["errMsg"] as? String, preferredStyle: .alert)
-                            alert.addAction(.init(title: "Ok", style: .default, handler: nil))
-                            self.present(alert,
-                                         animated: true,
-                                         completion: nil )
-                            
-                        }
-                        
-                        
+                       print("Không Trùng Token")
+                       
                     }
-                    
-                    
+                  
                 }catch let error { print(error.localizedDescription) }
             })
             taskUserRegister.resume()

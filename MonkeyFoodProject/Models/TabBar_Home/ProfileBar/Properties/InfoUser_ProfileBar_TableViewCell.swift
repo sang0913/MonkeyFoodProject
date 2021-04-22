@@ -10,7 +10,7 @@ import UIKit
 class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
     static let identifier = "InfoUser_ProfileBar_TableViewCell"
     
-  
+ 
     //MARK:UI Elements
     private let viewInfo_User:UIView = {
         let view = UIView()
@@ -81,6 +81,8 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
     //MARK:Object LifeCycle
     override func layoutSubviews() {
         super.layoutSubviews()
+  
+        
         setup_viewInfo_User()
         setup_img_infoUser_ProfileBar()
         setup_viewBounds_EditProfile()
@@ -168,7 +170,7 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
         })
     }
 
-  
+   
 }
 
 

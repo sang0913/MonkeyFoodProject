@@ -8,7 +8,7 @@
 import UIKit
 class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDelegate  {
    //MARK:UI Elements
-    let arrImg = ["2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","2222","3333","4444","s1","s2","s3","s4"]
+    private var arrTable:[Restaurents] = []
      
     private let myTable:UITableView = {
             let table = UITableView()
@@ -29,7 +29,7 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             myTable.dataSource = self
             myTable.delegate = self
             
-          
+            loadDataTable()
 
         }
         
@@ -37,7 +37,7 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
             
-            return arrImg.count
+            return arrTable.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,7 +60,16 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             }
             if indexPath.row  <= 4 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Table_Offer_TableViewCell.identifier, for: indexPath) as! Table_Offer_TableViewCell
-                cell.img_Food_Offers.image = UIImage(named: arrImg[indexPath.row])
+                //image
+            let urlhinh = Config.serverURL + "/upload/" + arrTable[indexPath.row].Image
+            do {
+                let data = try Data(contentsOf: URL(string: urlhinh)!)
+                cell.img_Food.image = UIImage(data: data)
+                cell.imageView?.contentMode = .scaleAspectFit
+            }catch { }
+                //text
+          
+                
                 cell.separatorInset = .zero
                 cell.selectionStyle = .none
                 cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
@@ -98,7 +107,25 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             }
         }
         
-        
+    private func loadDataTable(){
+        let url = URL(string: Config.serverURL + "/Restaurents")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+            guard error == nil else { print("error"); return }
+            guard let data = data else { return }
+
+            let jsonDecoder = JSONDecoder()
+            let listRestaurent = try? jsonDecoder.decode(RestaurentPostRoute.self, from: data)
+            self.arrTable = listRestaurent!.RestaurentList
+            DispatchQueue.main.async {
+                self.myTable.reloadData()
+            }
+       
+            print(self.arrTable)
+
+        }).resume()
+    }
         
         
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class textField_ProfileBar_TableViewCell: UITableViewCell {
     //MARK:UI Elements
-
+    private let defaults = UserDefaults.standard
     static let identifier = "textField_ProfileBar_TableViewCell"
     //MARK:Name
     private let viewReusable:UIView = {
@@ -108,8 +108,8 @@ class textField_ProfileBar_TableViewCell: UITableViewCell {
      }()
     private let  lbl_AddressProFileBar:UILabel = {
     let label = UILabel()
-       label.text = "Cần Giuộc, Long An"
-     
+        label.numberOfLines = 2
+   
        label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.captionFontSize_14)
 
         return label
@@ -171,6 +171,8 @@ class textField_ProfileBar_TableViewCell: UITableViewCell {
       //MARK:Object LifeCycle
     override func layoutSubviews() {
         super.layoutSubviews()
+        loadDataUser()
+    
         //name
         setup_viewReusable()
         setup_lbl_NameProFileBar_Title()
@@ -195,7 +197,7 @@ class textField_ProfileBar_TableViewCell: UITableViewCell {
         setup_viewReusableConformPassword()
         setup_lbl_ConformPasswordProFileBar_Title()
         setup_lbl_ConformPasswordProFileBar()
-
+        
     }
      
       //MARK:Setup UI Elements
@@ -307,10 +309,12 @@ class textField_ProfileBar_TableViewCell: UITableViewCell {
     }
     private func setup_lbl_AddressProFileBar(){
         viewReusableAddress.addSubview(lbl_AddressProFileBar)
+   
         lbl_AddressProFileBar.snp.makeConstraints({(make) in
             make.top.equalTo(lbl_AddressProFileBar_Title.snp.bottom).offset(Demension.shared.smallVerticalMargin_5)
             
             make.left.equalTo(lbl_AddressProFileBar_Title)
+            make.right.equalToSuperview().offset(-Demension.shared.largeHorizontalMargin_34)
             
         })
     }
@@ -374,6 +378,59 @@ class textField_ProfileBar_TableViewCell: UITableViewCell {
             
         })
     }
+    
+    private func loadDataUser(){
+    
+      if let UserToken = defaults.string(forKey: "UserToken"){
+          
+          //co token
+          
+          let url = URL(string: Config.serverURL + "/verifyToken")
+          var request = URLRequest(url: url!)
+          request.httpMethod = "POST"
+          var sData = "Token=" + UserToken
+          let postData = sData.data(using: .utf8)
+          request.httpBody = postData
+          
+          let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+              guard error == nil else { print("error"); return }
+              guard let data = data else { return }
+              
+              do{
+                  guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                if(json["kq"] as! Int == 1){
+                      //Trùng Token
+                        print(json["User"])
+              
+                  let User = json["User"] as? [String: Any]
+//                  print(User!["Email"]!)
+                    DispatchQueue.main.async {
+                        self.lbl_NameProFileBar.text = User!["Username"]! as? String
+                        self.lbl_EmailProFileBar.text = User!["Email"]! as? String
+                        self.lbl_MobileProFileBar.text = User!["Mobile"]! as? String
+                        self.lbl_AddressProFileBar.text = User!["Address"]! as? String
+                       
+                    }
+                   }
+                  else {
+                      //alert that bai
+                     print("Không Trùng Token")
+                     
+                  }
+                
+              }catch let error { print(error.localizedDescription) }
+          })
+          taskUserRegister.resume()
+          
+      } else {
+          //k co token
+          //Đứng ở màn hình gốc
+      }
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(identifier: "LauchLoginScreen") as? LauchLoginScreen
+//        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }
 
 

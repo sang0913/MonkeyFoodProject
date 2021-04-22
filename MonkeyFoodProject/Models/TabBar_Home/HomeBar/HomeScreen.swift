@@ -20,6 +20,10 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
     
     private let myTable:UITableView = {
         let table = UITableView()
+        
+        table.separatorInset = .zero
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        
         table.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: HomeScreenTableViewCell.identifier)
         table.register(SecondTableViewCell.self, forCellReuseIdentifier: SecondTableViewCell.identifier)
         table.register(SearchBarTableViewCell.self, forCellReuseIdentifier: SearchBarTableViewCell.identifier)
@@ -64,27 +68,21 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableViewCell.identifier, for: indexPath) as! HomeScreenTableViewCell
             cell.configure()
           
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+          
             return cell
         }
         
          if indexPath.row  == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SecondTableViewCell.identifier, for: indexPath) as! SecondTableViewCell
             cell.configure()
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+       
             return cell
         }
         
         if indexPath.row  == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchBarTableViewCell.identifier, for: indexPath) as! SearchBarTableViewCell
             
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+           
             return cell
         }
          if indexPath.row  == 3 {
@@ -92,17 +90,13 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
             cell.imageView?.image = UIImage(named: "Logo")
 //
             
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+           
             return cell
         }
         if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TitileMiddle_cell5_TableViewCell.identifier, for: indexPath) as! TitileMiddle_cell5_TableViewCell
            
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+           
             return cell
         }
         if indexPath.row <= 7 {
@@ -115,41 +109,29 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
             }catch { }
                 //text
             cell.lbl_TitleFood.text = arrRecommendRestaurent[indexPath.row].Name
-            
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+           
             return cell
         }
         
         if indexPath.row == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Title_Footer_TableViewCell.identifier, for: indexPath) as! Title_Footer_TableViewCell
-            
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
-         
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+          
             return cell
         }
         else if indexPath.row <= 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Footer_Tableview_TableViewCell.identifier, for: indexPath) as! Footer_Tableview_TableViewCell
             cell.img_Food.image = UIImage(named: arrImg[indexPath.row])
             cell.img_Food.contentMode = .scaleAspectFill
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
          
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         }
      
        
-        else{
+     
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeScreenTableViewCell", for: indexPath)
-            cell.separatorInset = .zero
+          
              
             return cell
-        }
-        
     }
     
     

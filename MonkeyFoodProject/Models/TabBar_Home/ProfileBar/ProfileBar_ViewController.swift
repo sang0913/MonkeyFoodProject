@@ -11,8 +11,8 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     //MARK:UI Elements
-    
-    var array = ["1","","1","1","","1","1","","1","1","","1"]
+    let defaults = UserDefaults.standard
+    var arrayUser:[User] = []
     
     private let myTable:UITableView = {
         let table = UITableView()
@@ -29,34 +29,14 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(myTable)
-        //        myTable.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: "HomeScreenTableViewCell")
+        loadDataUser()
         myTable.frame  = view.bounds
         myTable.dataSource = self
         myTable.delegate = self
         
-        //nháp
-        let url = URL(string: "http://192.168.1.2:3000/Restaurents")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
-            guard error == nil else { print("error"); return }
-            guard let data = data else { return }
-
-            let jsonDecoder = JSONDecoder()
-            let listFoodCountry = try? jsonDecoder.decode(RestaurentPostRoute.self, from: data)
-
-            print(listFoodCountry)
-
-
-        })
-        taskUserRegister.resume()
-        
-        
-        
+    
     }
-    
-    
-    
+   
     //MARK:Setup UI Elements
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -90,8 +70,7 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
         
         if indexPath.row  == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: textField_ProfileBar_TableViewCell.identifier, for: indexPath) as! textField_ProfileBar_TableViewCell
-            
-            
+               
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
@@ -153,7 +132,7 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
                         print(json)
                         
                         if(json["kq"] as! Int == 1){
-                            //Login thanh cong
+                       
                            
                             DispatchQueue.main.async {
                                 let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -174,9 +153,51 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
                 taskUserRegister.resume()
         }
         
-  
-        
    }
+    
+    private func loadDataUser(){
+        let defaults = UserDefaults.standard
+        if let UserToken = defaults.string(forKey: "UserToken"){
+            
+            //co token
+            
+            let url = URL(string: Config.serverURL + "/verifyToken")
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            var sData = "Token=" + UserToken
+            let postData = sData.data(using: .utf8)
+            request.httpBody = postData
+            
+            let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+                guard error == nil else { print("error"); return }
+                guard let data = data else { return }
+                
+                do{
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                 
+                    
+                    if(json["kq"] as! Int == 1){
+                        //Trùng Token
+                        print(UserToken)
+                       
+                    }
+                    else {
+                        //alert that bai
+                       print("Không Trùng Token")
+                       
+                    }
+                  
+                }catch let error { print(error.localizedDescription) }
+            })
+            taskUserRegister.resume()
+            
+        } else {
+            //k co token
+            //Đứng ở màn hình gốc
+        }
+     
+        print("something")
+    }
     
     
 }

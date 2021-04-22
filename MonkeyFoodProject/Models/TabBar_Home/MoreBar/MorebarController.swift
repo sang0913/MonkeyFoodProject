@@ -11,6 +11,12 @@ class MorebarController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     private let mytable:UITableView = {
         let table = UITableView()
+        
+        table.separatorInset = .zero
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+       
+       
+        
         table.register(Toptile_MoreBar_TableViewCell.self, forCellReuseIdentifier: Toptile_MoreBar_TableViewCell.identifier)
         table.register(Payment_MoreBar_TableViewCell.self, forCellReuseIdentifier: Payment_MoreBar_TableViewCell.identifier)
         table.register(order_MoreBar_TableViewCell.self, forCellReuseIdentifier: order_MoreBar_TableViewCell.identifier)
@@ -39,53 +45,38 @@ class MorebarController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Toptile_MoreBar_TableViewCell.identifier, for: indexPath) as! Toptile_MoreBar_TableViewCell
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+          
             return cell
         }
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Payment_MoreBar_TableViewCell.identifier, for: indexPath) as! Payment_MoreBar_TableViewCell
-        
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+           
             return cell
         }
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: order_MoreBar_TableViewCell.identifier, for: indexPath) as! order_MoreBar_TableViewCell
-        
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+            
+ 
             return cell
         }
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: notification_MoreBar_TableViewCell.identifier, for: indexPath) as! notification_MoreBar_TableViewCell
-        
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+            
             return cell
         }
         if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: inbox_MoreBar_TableViewCell.identifier, for: indexPath) as! inbox_MoreBar_TableViewCell
-        
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+            
             return cell
         }
         if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: aboutUS_MoreBar_TableViewCell.identifier, for: indexPath) as! aboutUS_MoreBar_TableViewCell
-        
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            cell.separatorInset = .zero
-            cell.selectionStyle = .none
+           
             return cell
         }
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "Toptile_MoreBar_TableViewCell", for: indexPath)
-        
+     
         return cell
     }
     
@@ -96,7 +87,7 @@ class MorebarController:UIViewController,UITableViewDataSource,UITableViewDelega
         if indexPath.row == 1 {
             return 106
         }
-        if indexPath.row <= 7 {
+        if indexPath.row <= 5 {
             return 94
         }
         else {
