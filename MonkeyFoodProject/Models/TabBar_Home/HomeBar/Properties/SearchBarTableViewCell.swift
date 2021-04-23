@@ -26,15 +26,15 @@ class SearchBarTableViewCell: UITableViewCell {
     }()
     let img_Search:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "imageSearch")
+        image.image = Resource.SourceTabbarScreen.tabbarHome.img_Search
         return image
     }()
     let textField_Search : UITextField = {
         let textfield = UITextField()
-        textfield.placeholder = "Search food"
+        textfield.placeholder = Resource.SourceTabbarScreen.tabbarHome.textField_Search
         return textfield
     }()
-
+    
     //MARK:Object LifeCycle
     
     
@@ -46,23 +46,23 @@ class SearchBarTableViewCell: UITableViewCell {
     //MARK:Setup UI Elements
     
     func setupUI() {
-        
-        self.addSubview(largView)
-     
-
-        //view tổng của cell
-        largView.snp.makeConstraints { (make) in
             
-            make.top.bottom.height.equalToSuperview()
-            make.width.equalTo(Demension.shared.widthScale * 333)
-            make.center.equalToSuperview()
-            //view  nhỏ chứa các properties
-            largView.addSubview(viewSearch)
-            viewSearch.snp.makeConstraints({(make) in
+                self.addSubview(largView)
+                //view tổng của cell
+                largView.snp.makeConstraints { (make) in
+                
+                make.top.bottom.height.equalToSuperview()
+                make.width.equalTo(Demension.shared.largeHorizontalMargin_333)
+                make.center.equalToSuperview()
+                
+                //view  nhỏ chứa các properties
+                largView.addSubview(viewSearch)
+                viewSearch.snp.makeConstraints({(make) in
                 make.bottom.equalToSuperview()
                 make.width.equalToSuperview()
                 make.height.equalTo(Demension.shared.largeVerticalMargin_42)
                 //imge
+                
                 largView.addSubview(img_Search)
                 img_Search.snp.makeConstraints({( make) in
                     make.left.equalTo(Demension.shared.normalHorizontalMargin_20)
@@ -74,7 +74,7 @@ class SearchBarTableViewCell: UITableViewCell {
                     make.left.equalTo(img_Search.snp.right).offset(Demension.shared.normalHorizontalMargin_16)
                     make.centerY.equalTo(viewSearch)
                 })
-              
+                
             })
             
         }

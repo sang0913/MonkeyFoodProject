@@ -28,14 +28,14 @@ class notification_MoreBar_TableViewCell: UITableViewCell {
        private let img_Notification: UIImageView = {
           let img = UIImageView()
          
-           img.image = UIImage(named: "bell")
+           img.image = Resource.SourceTabbarScreen.tabbarMore.img_Notification
         img.contentMode = .center
            return img
        }()
        //lable
        private let lbl_Title_Notification: UILabel = {
           let label = UILabel()
-           label.text = "Notifications"
+           label.text = Resource.SourceTabbarScreen.tabbarMore.lbl_Title_Notification
            return label
        }()
        
@@ -49,7 +49,7 @@ class notification_MoreBar_TableViewCell: UITableViewCell {
        private let img_ArrowGray: UIImageView = {
           let img = UIImageView()
            img.contentMode = .scaleAspectFit
-           img.image = UIImage(named: "arrowGray")
+           img.image = Resource.SourceTabbarScreen.tabbarMore.img_ArrowGray
            
            return img
        }()

@@ -33,7 +33,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
     
     private let img_RateStar:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "RateStar")
+        image.image = Resource.SourceTabbarScreen.tabbarOffers.img_RateStar
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -51,20 +51,15 @@ class RecomendFoodTableViewCell: UITableViewCell {
         setupUI()
      
     }
-    
-  
+   
     //MARK:Setup UI Elements
     
     func setupUI(){
-       
-        
-      
+     
         contentView.addSubview(subview)
-        
-        subview.snp.makeConstraints({(make) in
+       subview.snp.makeConstraints({(make) in
             make.top.left.right.height.bottom.equalToSuperview()
-          
-            
+           
         })
         subview.addSubview(img_Food)
        
@@ -77,7 +72,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
         subview.addSubview(lbl_TitleFood)
        
         lbl_TitleFood.snp.makeConstraints({(make) in
-            make.top.equalTo(img_Food.snp.bottom).offset(8)
+            make.top.equalTo(img_Food.snp.bottom).offset(Demension.shared.mediumVerticalMargin_8)
             make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
             
         })
@@ -91,7 +86,7 @@ class RecomendFoodTableViewCell: UITableViewCell {
        
         lbl_ResultRatStart.snp.makeConstraints({(make) in
             make.bottom.equalTo(img_RateStar)
-            make.left.equalTo(img_RateStar.snp.right).offset(4)
+            make.left.equalTo(img_RateStar.snp.right).offset(Demension.shared.smallVerticalMargin_4)
         })
      
         

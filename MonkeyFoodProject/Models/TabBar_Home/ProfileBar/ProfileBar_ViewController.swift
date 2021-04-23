@@ -16,13 +16,13 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
     
     private let myTable:UITableView = {
         let table = UITableView()
+        
         table.register(Toptitle_ProfileBar_TableViewCell.self, forCellReuseIdentifier: Toptitle_ProfileBar_TableViewCell.identifier)
         table.register(InfoUser_ProfileBar_TableViewCell.self, forCellReuseIdentifier: InfoUser_ProfileBar_TableViewCell.identifier)
         table.register(textField_ProfileBar_TableViewCell.self, forCellReuseIdentifier: textField_ProfileBar_TableViewCell.identifier)
         table.register(ButtonSave_ProfileBar_TableViewCell.self, forCellReuseIdentifier: ButtonSave_ProfileBar_TableViewCell.identifier)
         return table
     }()
-    
     
     //MARK:Object LifeCycle
     
@@ -33,11 +33,9 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
         myTable.frame  = view.bounds
         myTable.dataSource = self
         myTable.delegate = self
-        
-    
     }
-   
-    //MARK:Setup UI Elements
+    
+    //MARK:Setup TableView Elements
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
@@ -70,7 +68,7 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
         
         if indexPath.row  == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: textField_ProfileBar_TableViewCell.identifier, for: indexPath) as! textField_ProfileBar_TableViewCell
-               
+            
             cell.separatorInset = .zero
             cell.selectionStyle = .none
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
@@ -86,7 +84,7 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Toptitle_ProfileBar_TableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: textField_ProfileBar_TableViewCell.identifier  , for: indexPath)
             cell.separatorInset = .zero
             return cell
         }
@@ -96,75 +94,76 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 60
+            return Demension.shared.largeVerticalMargin_60
         }
         
         if indexPath.row == 1 {
-            return 245
+            return Demension.shared.largeVerticalMargin_245
+            
         }
         if indexPath.row == 2 {
-            return 438
+            return Demension.shared.largeVerticalMargin_438
+            
         }
         if indexPath.row == 3 {
-            return 73
+            return Demension.shared.largeVerticalMargin_75
         }
         return 0
     }
     
+    
+    //MARK:Action
     @objc public func tap_Button_SignOut(){
-           print("tap_Button_SignOut")
-      
+        print("tap_Button_SignOut")
+        
         let defaults = UserDefaults.standard
         if let UserToken = defaults.string(forKey: "UserToken") {
             let url = URL(string: Config.serverURL + "/logout")
-                       var request = URLRequest(url: url!)
-                       request.httpMethod = "POST"
-            var sData = "Token=" + UserToken
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            let sData = "Token=" + UserToken
             
             let postData = sData.data(using: .utf8)
-                request.httpBody = postData
-                let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
-                    guard error == nil else { print("error"); return }
-                    guard let data = data else { return }
+            request.httpBody = postData
+            let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
+                guard error == nil else { print("error"); return }
+                guard let data = data else { return }
+                
+                do{
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                    print(json)
                     
-                    do{
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
-                        print(json)
+                    if(json["kq"] as! Int == 1){
                         
-                        if(json["kq"] as! Int == 1){
-                       
-                           
-                            DispatchQueue.main.async {
-                                let sb = UIStoryboard(name: "Main", bundle: nil)
-                                  _ = sb.instantiateViewController(identifier: "LoginScreen") as! LoginScreen
-                                  self.navigationController?.popViewController(animated: true)
-                            }
-                            print("Logout thanhf coong")
-                          
-                           
+                        
+                        DispatchQueue.main.async {
+                            let sb = UIStoryboard(name: "Main", bundle: nil)
+                            _ = sb.instantiateViewController(identifier: "LoginScreen") as! LoginScreen
+                            self.navigationController?.popViewController(animated: true)
                         }
-                        else {
-                         
-                             }
+                        print("Logout thanhf coong")
                         
-                        //if
-                    }catch let error { print(error.localizedDescription) }
-                })
-                taskUserRegister.resume()
+                    }
+                    else {
+                        
+                    }
+                    
+                    //if
+                }catch let error { print(error.localizedDescription) }
+            })
+            taskUserRegister.resume()
         }
         
-   }
+    }
     
     private func loadDataUser(){
         let defaults = UserDefaults.standard
         if let UserToken = defaults.string(forKey: "UserToken"){
-            
             //co token
-            
             let url = URL(string: Config.serverURL + "/verifyToken")
             var request = URLRequest(url: url!)
             request.httpMethod = "POST"
-            var sData = "Token=" + UserToken
+            let sData = "Token=" + UserToken
             let postData = sData.data(using: .utf8)
             request.httpBody = postData
             
@@ -174,19 +173,17 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 do{
                     guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
-                 
-                    
                     if(json["kq"] as! Int == 1){
                         //Trùng Token
                         print(UserToken)
-                       
+                        
                     }
                     else {
                         //alert that bai
-                       print("Không Trùng Token")
-                       
+                        print("Không Trùng Token")
+                        
                     }
-                  
+                    
                 }catch let error { print(error.localizedDescription) }
             })
             taskUserRegister.resume()
@@ -195,8 +192,6 @@ class ProfileBar_ViewController: UIViewController, UITableViewDataSource, UITabl
             //k co token
             //Đứng ở màn hình gốc
         }
-     
-        print("something")
     }
     
     

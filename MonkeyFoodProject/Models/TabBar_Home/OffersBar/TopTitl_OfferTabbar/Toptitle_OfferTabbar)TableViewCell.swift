@@ -9,10 +9,10 @@ import UIKit
 
 class Toptitle_OfferTabbar_TableViewCell: UITableViewCell {
     static let identifier = "Toptitle_OfferTabbar_TableViewCell"
-        //MARK:UI Elements
+    //MARK:UI Elements
     private let lbl_Toptile_OfferBar :UILabel = {
         let label  = UILabel()
-        label.text = "Latest Offers"
+        label.text = Resource.SourceTabbarScreen.tabbarOffers.lbl_Toptile_OfferBar
         
         label.textAlignment = .center
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.titleFontSize_20)
@@ -21,22 +21,21 @@ class Toptitle_OfferTabbar_TableViewCell: UITableViewCell {
     let img_TopTitile_OfferBar:UIImageView = {
         let image = UIImageView()
         image.image = Resource.SourceImage.SourceImageHomeScreen.img_Shopping
-     
         image.isUserInteractionEnabled = true
-      
+        
         return image
     }()
     
     private let lbl_ToptileDiscription_OfferBar :UILabel = {
         let label  = UILabel()
-        label.text = "Find discounts, Offers special meals and more!"
+        label.text = Resource.SourceTabbarScreen.tabbarOffers.lbl_ToptileDiscription_OfferBar
         label.numberOfLines = 2
-      
+        
         label.textAlignment = .left
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.captionFontSize_14)
         return label
     }()
-        //MARK:Object LifeCycle
+    //MARK:Object LifeCycle
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -44,18 +43,16 @@ class Toptitle_OfferTabbar_TableViewCell: UITableViewCell {
         setup_img_TopTitile_OfferBar()
         setup_lbl_ToptileDiscription_OfferBar()
     }
-       
-        //MARK:Setup UI Elements
-
+    
+    //MARK:Setup UI Elements
+    
     private func setup_lbl_Toptile_OfferBar(){
         contentView.addSubview(lbl_Toptile_OfferBar)
         lbl_Toptile_OfferBar.snp.makeConstraints({(make) in
             make.top.equalToSuperview().offset(Demension.shared.largeVerticalMargin_36)
             make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
-            
-            
         })
-       
+        
     }
     private func setup_img_TopTitile_OfferBar(){
         contentView.addSubview(img_TopTitile_OfferBar)
@@ -65,12 +62,9 @@ class Toptitle_OfferTabbar_TableViewCell: UITableViewCell {
         img_TopTitile_OfferBar.snp.makeConstraints({(make) in
             make.right.equalToSuperview().offset( -Demension.shared.largeHorizontalMargin_24)
             make.bottom.equalTo(lbl_Toptile_OfferBar)
-            
         })
     }
-    @objc func tap_img_TopTitile_OfferBar(){
-        print("tap_img_TopTitile_OfferBar")
-    }
+    
     private func setup_lbl_ToptileDiscription_OfferBar(){
         contentView.addSubview(lbl_ToptileDiscription_OfferBar)
         lbl_ToptileDiscription_OfferBar.snp.makeConstraints({(make) in
@@ -80,5 +74,10 @@ class Toptitle_OfferTabbar_TableViewCell: UITableViewCell {
             make.width.equalTo(Demension.shared.largeHorizontalMargin_250)
         })
     }
+    
+    @objc func tap_img_TopTitile_OfferBar(){
+        print("tap_img_TopTitile_OfferBar")
+    }
+    
     
 }

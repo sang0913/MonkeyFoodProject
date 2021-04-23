@@ -23,7 +23,7 @@ static let identifier = "Footer_Tableview_TableViewCell"
     }()
    let lbl_FoodName:UILabel = {
         let label = UILabel()
-    label.text = "Mulberry Pizza by Josh"
+ 
         
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisExtraBold, size: Demension.shared.messageFontSize_16)
         return label
@@ -37,7 +37,7 @@ static let identifier = "Footer_Tableview_TableViewCell"
      }()
     private let img_RateStar:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "RateStar")
+        image.image = Resource.SourceTabbarScreen.tabbarOffers.img_RateStar
         image.contentMode = .scaleAspectFit
         return image
     }()

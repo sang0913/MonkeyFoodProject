@@ -12,7 +12,10 @@ class Resource {
         class SourceImageHomeScreen{
             public static var img_Shopping = UIImage(named: "shopping")
             public static var img_arrowDroplistdown = UIImage(named: "arrowDroplistdown")
-        }
+         
+         }
+      
+        
     }
     
     class SourceSignInSignUpScreen {
@@ -33,7 +36,8 @@ class Resource {
             public static var titleButtonLoginFB  = "Login with Facebook"
             public static var titleButtonLoginGG  = "Login with Google"
             public static var titleFooterLoginLeft = "Already have an Account?"
-           
+            public static var title_FooterLoginLeft = "Don't have an Account?"
+            
             public static var txt_PlaceholderEmail =  "     " + "Your Email"
             public static var txt_PlaceholderPassword =  "     " + "Password"
          
@@ -49,14 +53,66 @@ class Resource {
             public static var txt_Placeholder_Confirm_Password =  "     " + "Confirm Password"
             public static var TopTile_ResetPassword = "Reset Password"
             public static var titleTopDiscription_Reset_Screen = "Please enter your email to receive a link to  create a new password via email"
-            
-            
-        }
-        
+       }
+      
         
     }
     
-    
+    class SourceTabbarScreen {
+        class tabbarHome {
+            //imgae
+            public static var img_Search = UIImage(named: "imageSearch")
+
+            
+            //text
+            public static var lbl_topTextTitle = "Delivering to"
+            public static var lbl_DropListDown = "Current Location"
+            public static var lbl_MiddleHomeLeft = "Popular Restaurents"
+            public static var lbl_MiddleHomeRight = "View all"
+            public static var lbl_Title_FooterHomeLeft =  "Recent Items"
+            //placeholder
+            public static var textField_Search = "Current Location"
+           
+            
+        }
+        class tabbarProfile {
+            //imgae
+            public static var img_Camera_ProfileBar = UIImage(systemName: "camera.fill")
+            public static var img_Pencil_ProfileBar = UIImage(named: "pencil")
+
+            
+            //text
+            public static var lbl_Toptile_ProfileBar = "Profile"
+            public static var lbl_EditProfile = "Edit Profile"
+            public static var lbl_SignOut_ProfileBar = "Sign out"
+
+        }
+        class tabbarOffers {
+            //imgae
+            public static var img_RateStar = UIImage(named: "RateStar")
+            //text
+            public static var lbl_Toptile_OfferBar = "Latest Offers"
+            public static var lbl_ToptileDiscription_OfferBar = "Find discounts, Offers special meals and more!"
+
+        }
+        class tabbarMore{
+            //imgae
+            public static var img_ArrowGray = UIImage(named: "arrowGray")
+            public static var img_Hand = UIImage(named: "hand")
+            public static var img_Order = UIImage(named: "shopping-bag")
+            public static var img_Notification = UIImage(named: "bell")
+            public static var img_Inbox = UIImage(named: "mail")
+            public static var img_AboutUS = UIImage(named: "aboutus")
+            
+            //text
+            public static var lbl_Title_Payment = "Payment Details"
+            public static var lbl_Title_Order = "My Orders"
+            public static var lbl_Title_Notification = "Notifications"
+            public static var lbl_Title_Inbox = "Inbox"
+            public static var lbl_Title_AboutUS = "About Us"
+        }
+        
+    }
     class Fonts {
         class Metropolis {
             

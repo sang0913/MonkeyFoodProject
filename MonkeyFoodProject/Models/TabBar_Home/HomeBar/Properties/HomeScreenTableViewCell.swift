@@ -23,16 +23,11 @@ class HomeScreenTableViewCell: UITableViewCell {
     let img_TopTitile:UIImageView = {
         let image = UIImageView()
         image.image = Resource.SourceImage.SourceImageHomeScreen.img_Shopping
-     
-        image.isUserInteractionEnabled = true
+      image.isUserInteractionEnabled = true
       
-  
         return image
     }()
-    @objc func tapLogoShopping(){
-        print("tapLogoShopping")
-        
-    }
+  
     
     //MARK:Object LifeCycle
     override func layoutSubviews() {
@@ -47,13 +42,14 @@ class HomeScreenTableViewCell: UITableViewCell {
     public func configure(){
      //tapGesture for shopping logo
         let imageShopping = UITapGestureRecognizer(target: self, action: #selector(tapLogoShopping))
-       img_TopTitile.addGestureRecognizer(imageShopping)
-        //
+        img_TopTitile.addGestureRecognizer(imageShopping)
+      
     }
     func setupUI() {
         self.addSubview(lbl_topTextTitle)
         lbl_topTextTitle.snp.makeConstraints { (make) in
-            make.left.bottom.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalTo(Demension.shared.normalHorizontalMargin_20)
         }
         self.addSubview(img_TopTitile)
         img_TopTitile.snp.makeConstraints({(make) in
@@ -62,6 +58,14 @@ class HomeScreenTableViewCell: UITableViewCell {
             
         })
        
+    }
+    
+    
+    //MARK:Post to server
+    
+    @objc func tapLogoShopping(){
+        print("tapLogoShopping")
+        
     }
   
     

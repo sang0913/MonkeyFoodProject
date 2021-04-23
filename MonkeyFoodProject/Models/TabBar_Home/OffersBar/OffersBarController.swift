@@ -15,7 +15,8 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
         table.register(Toptitle_OfferTabbar_TableViewCell.self, forCellReuseIdentifier: Toptitle_OfferTabbar_TableViewCell.identifier)
         table.register(ButtonCheck_OfferTabbar_TableViewCell.self, forCellReuseIdentifier: ButtonCheck_OfferTabbar_TableViewCell.identifier)
         table.register(Table_Offer_TableViewCell.self, forCellReuseIdentifier: Table_Offer_TableViewCell.identifier)
-       
+        table.separatorInset = .zero
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return table
         }()
     
@@ -44,20 +45,16 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             
             if indexPath.row  == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Toptitle_OfferTabbar_TableViewCell.identifier, for: indexPath) as! Toptitle_OfferTabbar_TableViewCell
-           
-                cell.separatorInset = .zero
                 cell.selectionStyle = .none
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
                 return cell
             }
+            
             if indexPath.row  == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ButtonCheck_OfferTabbar_TableViewCell.identifier, for: indexPath) as! ButtonCheck_OfferTabbar_TableViewCell
-           
-                cell.separatorInset = .zero
                 cell.selectionStyle = .none
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
                 return cell
             }
+            
             if indexPath.row  <= 4 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Table_Offer_TableViewCell.identifier, for: indexPath) as! Table_Offer_TableViewCell
                 //image
@@ -68,17 +65,13 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
                 cell.imageView?.contentMode = .scaleAspectFit
             }catch { }
                 //text
-          
-                
-                cell.separatorInset = .zero
                 cell.selectionStyle = .none
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
                 return cell
             }
        
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Toptitle_OfferTabbar_TableViewCell", for: indexPath)
-                cell.separatorInset = .zero
+                
                 return cell
             }
             
@@ -87,13 +80,15 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
     
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             if indexPath.row == 0 {
-                return 111
+                return Demension.shared.largeVerticalMargin_110
             }
+            
             if indexPath.row == 1 {
-                return 51
+                return Demension.shared.largeVerticalMargin_51
             }
+            
             if indexPath.row <= 4 {
-                return 264
+                return Demension.shared.largeVerticalMargin_264
             }
           
            return 0
@@ -106,7 +101,7 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
                 tableView.isUserInteractionEnabled = false
             }
         }
-        
+    //MARK:Action Post to sever
     private func loadDataTable(){
         let url = URL(string: Config.serverURL + "/Restaurents")
         var request = URLRequest(url: url!)

@@ -10,21 +10,12 @@ import UIKit
 class LauchLoginScreen: BaseViewcontroller {
     
     
-      override func viewDidAppear(_ animated: Bool) {
-          print("viewDidAppearLauchLoginScreen")
-      
-      }
-      override func viewDidDisappear(_ animated: Bool) {
-          print("viewDidDisappearLauchLoginScreen")
-      }
+
       override func viewWillAppear(_ animated: Bool) {
           print("viewWillAppearLauchLoginScreen")
         navigationController?.navigationBar.isHidden = true
-       
-        }
-      override func viewWillDisappear(_ animated: Bool) {
-          print("viewWillDisappearLauchLoginScreen")
-      }
+       }
+     
     //MARK: UI Elements
     //View lớn bao trùm lên 3 chủ thể viewcon
     private let viewForLogo:UIView = {
@@ -141,8 +132,6 @@ class LauchLoginScreen: BaseViewcontroller {
     }
     //MARK:Setup view
     
-    
-    
     private func setupviewLogoWelcomeScreen() {
         view.addSubview(viewForLogo)
         view.addSubview(imgLogoLogin)
@@ -150,12 +139,11 @@ class LauchLoginScreen: BaseViewcontroller {
         view.addSubview(lblLeftLogoLogin)
         view.addSubview(lblRightLogoLogin)
         viewForLogo.snp.makeConstraints({(make) in
-            make.top.equalToSuperview().offset(Demension.shared.heightViewLogoScreen_314)
-            make.left.equalTo(Demension.shared.widthlogoScreen_80)
+          
             make.height.equalTo(Demension.shared.heightLogoScreen_184)
             make.width.equalTo(Demension.shared.widthLogoScreen_216)
-            
-            
+            make.center.equalToSuperview()
+           
             imgLogoLogin.snp.makeConstraints({(make) in
                 make.width.height.equalTo(Demension.shared.widthHeightLogo_104)
                 make.top.equalTo(viewForLogo)
@@ -187,7 +175,8 @@ class LauchLoginScreen: BaseViewcontroller {
         view.addSubview(imageTopLogin)
         imageTopLogin.snp.makeConstraints({(make) in
             make.left.right.equalToSuperview()
-            make.height.equalTo(Demension.shared.defaultHeightScreen_812 / 2.1)
+            make.top.equalToSuperview()
+            make.bottom.equalTo(viewForLogo.snp.top).offset(Demension.shared.largeVerticalMargin_69)
             
         })
     }

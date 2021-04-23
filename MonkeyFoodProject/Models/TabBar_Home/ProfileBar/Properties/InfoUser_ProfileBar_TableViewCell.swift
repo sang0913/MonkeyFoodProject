@@ -21,14 +21,14 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "7C4F96BD-AF2D-4FCD-843B-FABBD3A3B4B6_1_105_c")
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = Demension.shared.heightScale * 51
+        image.layer.cornerRadius = Demension.shared.superCornerRadius_51
         image.layer.masksToBounds = true
         return image
     }()
     
     private let img_Camera_ProfileBar:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "camera.fill")
+        image.image = Resource.SourceTabbarScreen.tabbarProfile.img_Camera_ProfileBar
         image.contentMode = .center
         image.tintColor = .gray
       
@@ -43,14 +43,14 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
     }()
     private let img_Pencil_ProfileBar:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "pencil")
+        image.image = Resource.SourceTabbarScreen.tabbarProfile.img_Pencil_ProfileBar
     
         
         return image
     }()
     private let lbl_EditProfile :UILabel = {
         let label = UILabel()
-        label.text = "Edit Profile"
+        label.text = Resource.SourceTabbarScreen.tabbarProfile.lbl_EditProfile
         label.textColor = Theme.shared.accentColor
         label.textAlignment = .center
         label.contentMode = .center
@@ -70,7 +70,7 @@ class InfoUser_ProfileBar_TableViewCell: UITableViewCell {
     }()
      let lbl_SignOut_ProfileBar :UILabel = {
         let label = UILabel()
-        label.text = "Sign out"
+        label.text = Resource.SourceTabbarScreen.tabbarProfile.lbl_SignOut_ProfileBar
       
         label.textAlignment = .center
         

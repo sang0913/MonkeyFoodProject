@@ -6,70 +6,70 @@
 //
 
 import UIKit
- class SignUpScreen:BaseViewcontroller {
-   
+class SignUpScreen:BaseViewcontroller {
+    
     private let lbl_Top_Title_SignUp : lbl_Top_Title = {
         let label = lbl_Top_Title()
         label.lbl_Top_Title.text = Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp
         return label
     }()
     private let lbl_TopTitle_Discription_SignUp :lbl_Top_Discription_Titile = {
-       let label = lbl_Top_Discription_Titile()
-      
+        let label = lbl_Top_Discription_Titile()
+        
         label.lbl_Top_Title_Discription.text = Resource.SourceSignInSignUpScreen.SignUpScreen.titleTopDiscriptionSignUpScreen
         return label
     }()
     
     private let txt_Name_SignUp:textField_InPut_Reusable = {
-       let txt_Name = textField_InPut_Reusable()
+        let txt_Name = textField_InPut_Reusable()
         print(txt_Name.txt_inputReusable.text!)
         txt_Name.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Name
         return txt_Name
     }()
     
     private let txt_Email_SignUp:textField_InPut_Reusable = {
-       let textField = textField_InPut_Reusable()
+        let textField = textField_InPut_Reusable()
         
-            textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Email
+        textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Email
         return textField
     }()
     private let txt_Mobile_SignUp:textField_InPut_Reusable = {
-       let textField = textField_InPut_Reusable()
+        let textField = textField_InPut_Reusable()
         
-            textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_MobileNo
+        textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_MobileNo
         return textField
     }()
     private let txt_Address_SignUp:textField_InPut_Reusable = {
-       let textField = textField_InPut_Reusable()
+        let textField = textField_InPut_Reusable()
         
-            textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Address
+        textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Address
         return textField
     }()
     private let txt_Password_SignUp:textField_InPut_Reusable = {
-       let textField = textField_InPut_Reusable()
+        let textField = textField_InPut_Reusable()
         textField.isercurityTextEntry = true
-            textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Password
+        textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Password
         return textField
     }()
     
     private let txt_ComformPassword_SignUp:textField_InPut_Reusable = {
-       let textField = textField_InPut_Reusable()
+        let textField = textField_InPut_Reusable()
         textField.isercurityTextEntry = true
-            textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Confirm_Password
+        textField.txtPlaceholder = Resource.SourceSignInSignUpScreen.SignUpScreen.txt_Placeholder_Confirm_Password
         return textField
     }()
     
     private let button_SignUpScreen:ButtonPrimaryColor = {
-       let button = ButtonPrimaryColor()
+        let button = ButtonPrimaryColor()
         
-      
+        
         button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp, for: .normal)
         button.button_Primary.addTarget(self, action: #selector(tapButtonSignUp), for: .touchUpInside)
         return button
     }()
     
     private let lbl_titleFooter_SignUpScreen :lbl_Footer_Login_Reusable = {
-       let label = lbl_Footer_Login_Reusable()
+        let label = lbl_Footer_Login_Reusable()
         label.lbl_footerLeft_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.titleFooterLoginLeft
         label.lbl_footerRight_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.TopTile_Login
         
@@ -79,7 +79,7 @@ import UIKit
     
     
     //MARK:UI Elements
-
+    
     //MARK:Object LifeCycle
     override func initialize() {
         setup_lbl_Top_Title_SignUp()
@@ -96,7 +96,7 @@ import UIKit
         let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
         view.addGestureRecognizer(screenTapGesture)
         
-      
+        
     }
     
     //MARK:Setup UI Elements
@@ -108,76 +108,76 @@ import UIKit
         })
     }
     
-     private func setup_lbl_TopTitle_Discription(){
-         view.addSubview( lbl_TopTitle_Discription_SignUp)
+    private func setup_lbl_TopTitle_Discription(){
+        view.addSubview( lbl_TopTitle_Discription_SignUp)
         lbl_TopTitle_Discription_SignUp.snp.makeConstraints({(make) in
-             make.top.equalTo(lbl_Top_Title_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_17)
-          
-             make.width.equalToSuperview()
+            make.top.equalTo(lbl_Top_Title_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_17)
             
-         })
-     }
+            make.width.equalToSuperview()
+            
+        })
+    }
     private func setup_txt_Name_SignUp(){
         view.addSubview(txt_Name_SignUp)
         txt_Name_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(lbl_TopTitle_Discription_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_36)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(lbl_TopTitle_Discription_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_36)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     private func setup_txt_Email_SignUp(){
         view.addSubview(txt_Email_SignUp)
         txt_Email_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_Name_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(txt_Name_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     private func setup_txt_Mobile_SignUp(){
         view.addSubview(txt_Mobile_SignUp)
         txt_Mobile_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_Email_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(txt_Email_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     private func setup_txt_Address_SignUp(){
         view.addSubview(txt_Address_SignUp)
         txt_Address_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_Mobile_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(txt_Mobile_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     private func setup_txt_Password_SignUp(){
         view.addSubview(txt_Password_SignUp)
         txt_Password_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_Address_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(txt_Address_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     private func setup_txt_ComformPassword_SignUp(){
         view.addSubview(txt_ComformPassword_SignUp)
         txt_ComformPassword_SignUp.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_Password_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
-           make.width.equalTo(Demension.shared.defaultWidthButton_307)
-           make.height.equalTo(Demension.shared.defaultHeightButton_56)
-           make.centerX.equalToSuperview()
+            make.top.equalTo(txt_Password_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
+            make.width.equalTo(Demension.shared.defaultWidthButton_307)
+            make.height.equalTo(Demension.shared.defaultHeightButton_56)
+            make.centerX.equalToSuperview()
         })
     }
     
     private func setup_LoginButon_LoginScreen(){
         view.addSubview( button_SignUpScreen)
         button_SignUpScreen.snp.makeConstraints({(make) in
-           make.top.equalTo(txt_ComformPassword_SignUp.snp.bottom).offset(Demension.shared.largeVerticalMargin_28)
+            make.top.equalTo(txt_ComformPassword_SignUp.snp.bottom).offset(Demension.shared.normalVerticalMargin_14)
             make.width.height.equalTo(txt_ComformPassword_SignUp)
-           make.centerX.equalToSuperview()
+            make.centerX.equalToSuperview()
         })
     }
     
@@ -186,11 +186,11 @@ import UIKit
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(lbl_titleFooter_SignUpScreen_Tapgesture))
         self.lbl_titleFooter_SignUpScreen.addGestureRecognizer(tapGesture)
-        lbl_titleFooter_SignUpScreen.backgroundColor = .red
+        
         lbl_titleFooter_SignUpScreen.snp.makeConstraints({(make) in
-           make.top.equalTo(button_SignUpScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_28 )
-            make.width.equalTo(Demension.shared.widthScale * 210)
-           make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-Demension.shared.normalVerticalMargin_14)
+            
+            make.centerX.equalToSuperview()
         })
     }
 }
@@ -247,56 +247,56 @@ extension SignUpScreen {
             sData += "&Mobile=" + self.txt_Mobile_SignUp.txt_inputReusable.text!
             sData += "&Address=" + self.txt_Address_SignUp.txt_inputReusable.text!
             let postData = sData.data(using: .utf8)
-                                         request.httpBody = postData
+            request.httpBody = postData
             let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
-                                          guard error == nil else { print("error"); return }
-                                          guard let data = data else { return }
-                                          
-                                          do{
-                                              guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
-                                              print(json)
-                                            
-                                              if(json["kq"] as! Int == 1){
-                                                 //Login thanh cong
-                                                 print("đăng kí thành công")
-                                                    //alert thành công
-                                                let defaults = UserDefaults.standard
-                                                defaults.setValue(json["Token"], forKey: "UserToken")
-                                                print(defaults)
-                                                DispatchQueue.main.async {
-                                                    let alert = UIAlertController(title: "Thông báo", message: "Đăng kí thành công", preferredStyle: .alert)
-                                                    alert.addAction(.init(title: "Đồng ý",
-                                                                          style: .cancel,
-                                                                          handler: {[weak self] _ in
-                                                                            guard let strongSelf = self else { return}
-                                                                            self?.navigationController?.popViewController(animated: true)
-//                                                                            self.navigationController?.navigationBar.isHidden = true
-                                                                          
-                                                                          } ))
+                guard error == nil else { print("error"); return }
+                guard let data = data else { return }
+                
+                do{
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+                    print(json)
+                    
+                    if(json["kq"] as! Int == 1){
+                        //Login thanh cong
+                        print("đăng kí thành công")
+                        //alert thành công
+                        let defaults = UserDefaults.standard
+                        defaults.setValue(json["Token"], forKey: "UserToken")
+                        print(defaults)
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Thông báo", message: "Đăng kí thành công", preferredStyle: .alert)
+                            alert.addAction(.init(title: "Đồng ý",
+                                                  style: .cancel,
+                                                  handler: {[weak self] _ in
+                                                    guard let strongSelf = self else { return}
+                                                    self?.navigationController?.popViewController(animated: true)
+                                                    //                                                                            self.navigationController?.navigationBar.isHidden = true
                                                     
-                                                    self.present(alert, animated: true, completion: nil)
-                                                    
-                                                    
-                                                }
-                                                
-                                                
-                                              }
-                                              else {
-//                                                  alert that bai
-                                                
-                                                   DispatchQueue.main.async {
-                                                       let alert = UIAlertController(title: "Thông báo", message: "Username/Email đã tồn tại", preferredStyle: .alert)
-                                                       alert.addAction(.init(title: "Đồng ý",
-                                                                             style: .cancel,
-                                                                             handler: nil))
-                                                       self.present(alert, animated: true, completion: nil)
-                                                   }
-                                               }
-                                              }catch let error { print(error.localizedDescription) }
-                                      })
-                                      taskUserRegister.resume()
+                                                  } ))
+                            
+                            self.present(alert, animated: true, completion: nil)
+                            
+                            
+                        }
+                        
+                        
+                    }
+                    else {
+                        //                                                  alert that bai
+                        
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Thông báo", message: "Username/Email đã tồn tại", preferredStyle: .alert)
+                            alert.addAction(.init(title: "Đồng ý",
+                                                  style: .cancel,
+                                                  handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }catch let error { print(error.localizedDescription) }
+            })
+            taskUserRegister.resume()
         }
-
+        
     }
     
     
@@ -304,7 +304,7 @@ extension SignUpScreen {
         self.navigationController?.popViewController(animated: true)
         print("táp")
     }
- 
+    
     @objc func superScreenTapGesture() {
         view.endEditing(true)
     }

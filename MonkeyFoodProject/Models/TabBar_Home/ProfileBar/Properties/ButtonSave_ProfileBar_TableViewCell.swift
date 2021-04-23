@@ -10,6 +10,7 @@ import UIKit
 class ButtonSave_ProfileBar_TableViewCell: UITableViewCell {
     
     static let identifier = "ButtonSave_ProfileBar_TableViewCell"
+    
     private let button_ButtonSave_ProfileBar:ButtonPrimaryColor = {
         let button = ButtonPrimaryColor()
         

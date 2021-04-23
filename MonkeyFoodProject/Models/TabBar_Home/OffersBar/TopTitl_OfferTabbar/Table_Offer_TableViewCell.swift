@@ -32,7 +32,7 @@ class Table_Offer_TableViewCell: UITableViewCell {
     
     private let img_RateStar:UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "RateStar")
+        image.image = Resource.SourceTabbarScreen.tabbarOffers.img_RateStar
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -58,8 +58,6 @@ class Table_Offer_TableViewCell: UITableViewCell {
         
         subview.snp.makeConstraints({(make) in
             make.left.right.height.bottom.equalToSuperview()
-          
-            
         })
         subview.addSubview(img_Food)
        
@@ -72,7 +70,7 @@ class Table_Offer_TableViewCell: UITableViewCell {
         subview.addSubview(lbl_TitleFood)
        
         lbl_TitleFood.snp.makeConstraints({(make) in
-            make.top.equalTo(img_Food.snp.bottom).offset(8)
+            make.top.equalTo(img_Food.snp.bottom).offset(Demension.shared.mediumVerticalMargin_8)
             make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
             
         })
@@ -86,7 +84,7 @@ class Table_Offer_TableViewCell: UITableViewCell {
        
         lbl_ResultRatStart.snp.makeConstraints({(make) in
             make.bottom.equalTo(img_RateStar)
-            make.left.equalTo(img_RateStar.snp.right).offset(4)
+            make.left.equalTo(img_RateStar.snp.right).offset(Demension.shared.smallHorizontalMargin_4)
         })
      
         

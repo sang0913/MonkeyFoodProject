@@ -42,16 +42,16 @@ public class lbl_Footer_Login_Reusable: BaseUIView {
         view_footer_Reusable.snp.makeConstraints({(make) in
             make.top.width.height.bottom.equalToSuperview()
             
-            //right
-            lbl_footerRight_Reusable.snp.makeConstraints({(make) in
-                make.top.right.bottom.equalToSuperview()
-                
-            })
+          
             lbl_footerLeft_Reusable.snp.makeConstraints({(make) in
                 make.top.left.bottom.equalToSuperview()
                
             })
-            
+            //right
+            lbl_footerRight_Reusable.snp.makeConstraints({(make) in
+                make.top.right.bottom.equalToSuperview()
+                make.left.equalTo(lbl_footerLeft_Reusable.snp.right)
+            })
         })
         
         

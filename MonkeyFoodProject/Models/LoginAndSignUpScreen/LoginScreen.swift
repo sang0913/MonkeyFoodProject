@@ -7,48 +7,53 @@
 
 import UIKit
 import FBSDKLoginKit
-class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        let token = result?.token?.tokenString
-        
-        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                 parameters: ["fields":"email, name"],
-                                                 tokenString: token,
-                                                 version: nil,
-                                                 httpMethod: .get)
-        request.start(completionHandler: { conection, result, error in
-            print("\(result)")
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(identifier: "NavigationBarController") as? NavigationBarController
-            self.navigationController?.pushViewController(vc!, animated: true)
-        })
-    }
+class LoginScreen : BaseViewcontroller
+
+{
+    // add for class LoginButtonDelegate
     
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        
-    }
     
-   
+    //    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+    //        let token = result?.token?.tokenString
+    //
+    //        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
+    //                                                 parameters: ["fields":"email, name"],
+    //                                                 tokenString: token,
+    //                                                 version: nil,
+    //                                                 httpMethod: .get)
+    //        request.start(completionHandler: { conection, result, error in
+    //            print("\(result)")
+    //            let sb = UIStoryboard(name: "Main", bundle: nil)
+    //            let vc = sb.instantiateViewController(identifier: "NavigationBarController") as? NavigationBarController
+    //            self.navigationController?.pushViewController(vc!, animated: true)
+    //        })
+    //    }
+    
+    //    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    //
+    //    }
+    
+    
     override func initialize() {
         print("ViewdidLoad")
-    
-   // FaceBook Login Sdk
-//        if let token = AccessToken.current,!token.isExpired {
-//            button_LoginWithFB_LoginScreen.delegate = self
-//
-//            button_LoginWithFB_LoginScreen.permissions = ["public_profile", "email"]
-//            let token = token.tokenString
-//
-//            let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
-//                                                     parameters: ["fields":"email, name"],
-//                                                     tokenString: token,
-//                                                     version: nil,
-//                                                     httpMethod: .get)
-//            request.start(completionHandler: { conection, result, error in
-//                print("\(result)")
-//            })
-//
-//        }
+        
+        // FaceBook Login Sdk
+        //        if let token = AccessToken.current,!token.isExpired {
+        //            button_LoginWithFB_LoginScreen.delegate = self
+        //
+        //            button_LoginWithFB_LoginScreen.permissions = ["public_profile", "email"]
+        //            let token = token.tokenString
+        //
+        //            let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
+        //                                                     parameters: ["fields":"email, name"],
+        //                                                     tokenString: token,
+        //                                                     version: nil,
+        //                                                     httpMethod: .get)
+        //            request.start(completionHandler: { conection, result, error in
+        //                print("\(result)")
+        //            })
+        //
+        //        }
         
         setup_lbl_TopTitle()
         setup_lbl_TopTitle_Discription()
@@ -64,9 +69,9 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
         let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
         view.addGestureRecognizer(screenTapGesture)
         
-       
+        
     }
-   
+    
     //MARK:UI Elements
     private let lbl_TopTitle :lbl_Top_Title = {
         let label = lbl_Top_Title()
@@ -99,14 +104,14 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
     
     private var button_LoginScreen:ButtonPrimaryColor = {
         let button = ButtonPrimaryColor()
-       
+        
         
         button.button_Primary.setTitle(Resource.SourceSignInSignUpScreen.LauchScreen.titleButtonLogin, for: .normal)
         button.button_Primary.addTarget(self, action: #selector(tapButtonLogin), for: .touchUpInside)
         return button
     }()
     
-        
+    
     
     private let lbl_title_ForgotPS_LoginScreen :lbl_Top_Discription_Titile = {
         let label = lbl_Top_Discription_Titile()
@@ -125,10 +130,15 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
     
     
     private let button_LoginWithFB_LoginScreen:ButtonnLoginFB_GG_Reusable = {
-//        let button = FBLoginButton()
+        //        let button = FBLoginButton()
         let button = ButtonnLoginFB_GG_Reusable()
         
+        button.button_LoginWithApp.setImage(Resource.SourceImage.SourceImageLogin.ImageFaceBook, for: .normal)
+        button.button_LoginWithApp.backgroundColor = Theme.shared.buttonBG_FB_Color
         
+        button.button_LoginWithApp.setTitle(Resource.SourceSignInSignUpScreen.LoginScreen.titleButtonLoginFB, for: .normal)
+        
+        button.button_LoginWithApp.addTarget(self, action: #selector(tapButtonLoginFB), for: .touchUpInside)
         
         return button
     }()
@@ -146,32 +156,26 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
     
     private let lbl_titleFooter_LoginScreen :lbl_Footer_Login_Reusable = {
         let label = lbl_Footer_Login_Reusable()
-        label.lbl_footerLeft_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.titleFooterLoginLeft
-        label.lbl_footerRight_Reusable.text = Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp
+        label.lbl_footerLeft_Reusable.text = Resource.SourceSignInSignUpScreen.LoginScreen.title_FooterLoginLeft
+        label.lbl_footerLeft_Reusable.textAlignment = .right
+       
         
+        label.lbl_footerRight_Reusable.text = Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp
+        label.lbl_footerRight_Reusable.textAlignment = .left
+  
         return label
     }()
     
     
     //MARK:Object LifeCycle
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppearLoginScreen")
-        
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappearLoginScreen")
-        
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppearLoginScreen")
         navigationController?.navigationBar.isTranslucent = true
         
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappearLoginScreen")
-    }
-        
-  
+    
+    
     //MARK:Setup UI Elements
     private func setup_lbl_TopTitle(){
         view.addSubview(lbl_TopTitle)
@@ -251,12 +255,15 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
             
             make.centerX.equalToSuperview()
         })
+        
+        
+        
     }
     
     private func setup_lbl_title_OrLoginWith_LoginScreen(){
         view.addSubview(  lbl_title_OrLoginWith_LoginScreen)
         lbl_title_OrLoginWith_LoginScreen.snp.makeConstraints({(make) in
-            make.top.equalTo(lbl_title_ForgotPS_LoginScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_56)
+            make.top.equalTo(lbl_title_ForgotPS_LoginScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_22)
             
             make.centerX.equalToSuperview()
         })
@@ -285,8 +292,9 @@ class LoginScreen : BaseViewcontroller, LoginButtonDelegate {
         lbl_titleFooter_LoginScreen.addGestureRecognizer(lableTapGesture)
         lbl_titleFooter_LoginScreen.isUserInteractionEnabled = true
         lbl_titleFooter_LoginScreen.snp.makeConstraints({(make) in
-            make.top.equalTo(button_LoginWithGG_LoginScreen.snp.bottom).offset(Demension.shared.largeVerticalMargin_90)
-            make.width.equalTo(Demension.shared.widthScale * 225)
+            make.bottom.equalToSuperview().offset(-Demension.shared.largeVerticalMargin_22)
+            
+         
             make.centerX.equalToSuperview()
         })
     }
@@ -334,13 +342,13 @@ extension LoginScreen {
                         print(defaults)
                         
                         DispatchQueue.main.async {
-                          
+                            
                             
                             let sb = UIStoryboard(name: "Main", bundle: nil)
                             let vc  = sb.instantiateViewController(identifier: "NavigationBarController") as! NavigationBarController
-                       
+                            
                             self.navigationController?.pushViewController(vc, animated: true)
-                           
+                            
                         }
                         
                     }
@@ -382,6 +390,6 @@ extension LoginScreen {
     @objc func superScreenTapGesture() {
         view.endEditing(true)
     }
-   
+    
 }
 

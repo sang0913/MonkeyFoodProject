@@ -28,14 +28,14 @@ class order_MoreBar_TableViewCell: UITableViewCell {
     private let img_Order: UIImageView = {
        let img = UIImageView()
       
-        img.image = UIImage(named: "shopping-bag")
+        img.image = Resource.SourceTabbarScreen.tabbarMore.img_Order
         img.contentMode = .center
         return img
     }()
     //lable
     private let lbl_Title_Order: UILabel = {
        let label = UILabel()
-        label.text = "My Orders"
+        label.text = Resource.SourceTabbarScreen.tabbarMore.lbl_Title_Order
       
         return label
     }()
@@ -43,16 +43,15 @@ class order_MoreBar_TableViewCell: UITableViewCell {
     private let view_Arroww: UIView = {
        let view = UIView()
         view.backgroundColor = Theme.shared.backgroundColorTextField
-        view.layer.cornerRadius = 17
+        view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         view.layer.masksToBounds = true
         return view
     }()
     private let img_ArrowGray: UIImageView = {
        let img = UIImageView()
         img.contentMode = .center
-        img.image = UIImage(named: "arrowGray")
-        
-        return img
+        img.image = Resource.SourceTabbarScreen.tabbarMore.img_ArrowGray
+      return img
     }()
       //MARK:Object LifeCycle
     override func layoutSubviews() {

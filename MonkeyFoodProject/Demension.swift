@@ -10,14 +10,51 @@
 import UIKit
 class Demension {
     public static var shared = Demension()
-    var widthScale:CGFloat = 1.0
-    var heightScale:CGFloat = 1.0
-    private init() {
-        let witdhIP6:CGFloat = 375
-        let heightIP6:CGFloat = 812
-        widthScale = UIScreen.main.bounds.width / witdhIP6
-        heightScale = UIScreen.main.bounds.height / heightIP6
-    }
+
+    
+// Iphone X
+//    var widthScale:CGFloat = 1.0
+//    var heightScale:CGFloat = 1.0
+//    private init() {
+//
+//
+//        let witdhIP_X:CGFloat = 375 * widthScale
+//        let heightIP_X:CGFloat = 812 * heightScale
+//
+//        widthScale = UIScreen.main.bounds.width / witdhIP_X
+//        heightScale = UIScreen.main.bounds.height / heightIP_X
+//    }
+
+    
+        //iphone 8
+//    var widthScale:CGFloat = 1
+//    var heightScale:CGFloat = 0.953
+//    private init() {
+//
+//        let witdhIP8:CGFloat = 375
+//        let heightIP8:CGFloat = 667
+//
+//
+//        widthScale = UIScreen.main.bounds.width / witdhIP8 * widthScale
+//        heightScale = UIScreen.main.bounds.height / heightIP8 * heightScale
+//
+//    }
+
+//    iphone 11 ProMax
+    
+    
+    var widthScale:CGFloat = 0.9057
+    var heightScale:CGFloat = 0.90625
+private init() {
+
+    let witdh_IP11Promax:CGFloat = 414 * widthScale
+    let height_IP11Promax:CGFloat = 896 * heightScale
+
+
+    widthScale = UIScreen.main.bounds.width / witdh_IP11Promax
+    heightScale = UIScreen.main.bounds.height / height_IP11Promax
+}
+    
    //MARK: FontSize
     
     public var headlineFontSize_24: CGFloat {
@@ -199,6 +236,15 @@ class Demension {
     var largeVerticalMargin_45: CGFloat {
         return 45 * self.heightScale
     }
+    var largeVerticalMargin_51: CGFloat {
+        return 51 * self.heightScale
+    }
+    var largeVerticalMargin_53: CGFloat {
+        return 53 * self.heightScale
+     }
+    var largeHorizontalMargin_53: CGFloat {
+        return 53 * self.heightScale
+    }
     
     var largeHorizontalMargin_56: CGFloat {
         return 56 * self.heightScale
@@ -244,6 +290,9 @@ class Demension {
     var largeVerticalMargin_80: CGFloat {
         return 80 * self.heightScale
     }
+    var largeVerticalMargin_88: CGFloat {
+        return 88 * self.heightScale
+    }
     var largeVerticalMargin_90: CGFloat {
         return 90 * self.heightScale
     }
@@ -277,12 +326,33 @@ class Demension {
     var largeVerticalMargin_102: CGFloat {
         return 102 * self.heightScale
     }
+    var largeVerticalMargin_107: CGFloat {
+        return 107 * self.heightScale
+    }
     var largeVerticalMargin_110: CGFloat {
         return 110 * self.heightScale
     }
     
     var largeVerticalMargin_120: CGFloat {
         return 120 * self.heightScale
+    }
+    var largeVerticalMargin_143: CGFloat {
+        return 143 * self.heightScale
+    }
+    var largeVerticalMargin_245: CGFloat {
+        return 245 * self.heightScale
+    }
+    var largeVerticalMargin_382: CGFloat {
+        return 382 * self.heightScale
+    }
+    var largeVerticalMargin_438: CGFloat {
+        return 438 * self.heightScale
+    }
+    var largeVerticalMargin_264: CGFloat {
+        return 264 * self.heightScale
+    }
+    var largeVerticalMargin_274: CGFloat {
+        return 274 * self.heightScale
     }
     var largeVerticalMargin_130: CGFloat {
         return 130 * self.heightScale
@@ -369,11 +439,10 @@ class Demension {
     var heightViewLogoScreen_233:CGFloat{
         return 233 * self.heightScale
     }
+   
     var  heightViewLogoScreen_314:CGFloat{
-        return 314 * self.heightScale
+        return  314 * self.heightScale
     }
-    
-    
     var widthLogoScreen_216:CGFloat {
         return 216 * self.widthScale
     }
@@ -420,6 +489,9 @@ class Demension {
     }
     var superCornerRadius_28: CGFloat {
         return 28 * self.heightScale
+    }
+    var superCornerRadius_51: CGFloat {
+        return 51 * self.heightScale
     }
     var widthOptionMenu: CGFloat {
         return 280 * self.widthScale

@@ -29,14 +29,14 @@ class aboutUS_MoreBar_TableViewCell: UITableViewCell {
          private let img_AboutUS: UIImageView = {
             let img = UIImageView()
            
-             img.image = UIImage(named: "aboutus")
+            img.image = Resource.SourceTabbarScreen.tabbarMore.img_AboutUS
           img.contentMode = .center
              return img
          }()
          //lable
          private let lbl_Title_AboutUS: UILabel = {
             let label = UILabel()
-             label.text = "About Us"
+             label.text = Resource.SourceTabbarScreen.tabbarMore.lbl_Title_AboutUS
              return label
          }()
          
@@ -50,7 +50,7 @@ class aboutUS_MoreBar_TableViewCell: UITableViewCell {
          private let img_ArrowGray: UIImageView = {
             let img = UIImageView()
              img.contentMode = .scaleAspectFit
-             img.image = UIImage(named: "arrowGray")
+             img.image = Resource.SourceTabbarScreen.tabbarMore.img_ArrowGray
              
              return img
          }()

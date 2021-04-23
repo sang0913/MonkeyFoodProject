@@ -19,7 +19,7 @@ class Title_Footer_TableViewCell: UITableViewCell {
     }
     let lbl_Title_FooterHomeLeft:UILabel = {
         let label = UILabel()
-        label.text = "Recent Items"
+        label.text = Resource.SourceTabbarScreen.tabbarHome.lbl_Title_FooterHomeLeft
         
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.titleFontSize_20)
         return label
@@ -27,7 +27,7 @@ class Title_Footer_TableViewCell: UITableViewCell {
     
     let lbl_Title_FooterHomeRight:UILabel = {
         let label = UILabel()
-        label.text = "View all"
+        label.text = Resource.SourceTabbarScreen.tabbarHome.lbl_MiddleHomeRight
         label.textColor = Theme.shared.accentColor
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisMedium, size: Demension.shared.smallCaptionFontSize_10)
         return label
@@ -53,7 +53,7 @@ class Title_Footer_TableViewCell: UITableViewCell {
         let tapgesture_lbl_MiddleHomeRight = UITapGestureRecognizer(target: self, action: #selector(tap_lbl_MiddleHomeRight))
         lbl_Title_FooterHomeRight.addGestureRecognizer(tapgesture_lbl_MiddleHomeRight)
         lbl_Title_FooterHomeRight.snp.makeConstraints({(make) in
-            make.right.equalToSuperview().offset(-20)
+            make.right.equalToSuperview().offset(-Demension.shared.normalHorizontalMargin_20)
             make.bottom.equalTo(lbl_Title_FooterHomeLeft)
         })
     }

@@ -78,7 +78,7 @@ class BodyMenuBar_TableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .white
         view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 35
+        view.layer.cornerRadius = Demension.shared.largeVerticalMargin_36
         view.layer.masksToBounds = true
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
         return view

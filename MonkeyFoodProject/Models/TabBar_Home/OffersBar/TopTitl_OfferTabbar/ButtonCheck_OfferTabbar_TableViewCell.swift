@@ -22,7 +22,7 @@ class ButtonCheck_OfferTabbar_TableViewCell: UITableViewCell {
     private let button_CheckOffer:UIButton = {
        let button = UIButton()
         button.backgroundColor = Theme.shared.accentColor
-        button.layer.cornerRadius = 14
+        button.layer.cornerRadius = Demension.shared.normalVerticalMargin_14
         button.setTitle("Check Offers", for: .normal)
         button.titleLabel?.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisSemiBold, size:Demension.shared.smallCaptionFontSize_11)
         button.titleLabel?.textColor = .black

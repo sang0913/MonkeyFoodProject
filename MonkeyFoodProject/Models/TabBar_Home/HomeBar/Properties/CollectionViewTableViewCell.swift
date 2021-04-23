@@ -29,17 +29,20 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
+        setup_collectionView()
         
         loadDataColectionview()
         
+    }
+    
+    //MARK: setup view
+    private func setup_collectionView(){
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints({(make) in
             make.top.left.right.bottom.equalToSuperview()
         })
-        print(arrColection)
-        
     }
-    
+    //MARK: Post data to server
     private func loadDataColectionview(){
         let url = URL(string: Config.serverURL + "/FoodCountry")
         var request = URLRequest(url: url!)
@@ -63,7 +66,7 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
 
 
 
-
+//MARK:UI tableview elements
 extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrColection.count
@@ -94,15 +97,14 @@ extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
 
 
 class customCell1: UICollectionViewCell{
+    //MARK:UI Elements
     
-    fileprivate var image :UIImageView = {
+        let image :UIImageView = {
         let image = UIImageView()
-        
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        
-        return image
+       return image
     }()
     let lbl_ScrollView:UILabel = {
         let label = UILabel()
@@ -111,37 +113,28 @@ class customCell1: UICollectionViewCell{
         
         return label
     }()
-    func configure(){
+    
+    //MARK:Object LifeCycle
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setup_cellColectionView()
+    }
+    
+    //MARK:Setup UI Element
+    func setup_cellColectionView(){
         contentView.addSubview(image)
         contentView.addSubview(lbl_ScrollView)
         image.snp.makeConstraints({(make) in
             make.top.right.left.equalToSuperview()
-            make.height.equalTo(88)
+            make.height.equalTo(Demension.shared.largeVerticalMargin_88)
             
         })
         lbl_ScrollView.snp.makeConstraints({(make) in
             make.bottom.equalToSuperview()
             make.width.equalTo(image)
-            
         })
-        
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        configure()
-        
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    
 }
 

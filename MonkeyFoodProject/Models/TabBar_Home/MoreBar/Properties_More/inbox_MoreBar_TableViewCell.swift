@@ -29,14 +29,14 @@ class inbox_MoreBar_TableViewCell: UITableViewCell {
        private let img_Inbox: UIImageView = {
           let img = UIImageView()
          
-           img.image = UIImage(named: "mail")
+           img.image = Resource.SourceTabbarScreen.tabbarMore.img_Inbox
         img.contentMode = .center
            return img
        }()
        //lable
        private let lbl_Title_Inbox: UILabel = {
           let label = UILabel()
-           label.text = "Inbox"
+           label.text = Resource.SourceTabbarScreen.tabbarMore.lbl_Title_Inbox
            return label
        }()
        
@@ -50,7 +50,7 @@ class inbox_MoreBar_TableViewCell: UITableViewCell {
        private let img_ArrowGray: UIImageView = {
           let img = UIImageView()
            img.contentMode = .scaleAspectFit
-           img.image = UIImage(named: "arrowGray")
+           img.image = Resource.SourceTabbarScreen.tabbarMore.img_ArrowGray
            
            return img
        }()

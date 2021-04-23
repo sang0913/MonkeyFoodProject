@@ -12,20 +12,16 @@ class TitileMiddle_cell5_TableViewCell: UITableViewCell {
     
     //MARK:UI Elements
     
-    @objc func tap_lbl_MiddleHomeRight(){
-        print("viewAll_tapgesture")
-    }
     let lbl_MiddleHomeLeft:UILabel = {
         let label = UILabel()
-        label.text = "Popular Restaurents"
-        
+        label.text = Resource.SourceTabbarScreen.tabbarHome.lbl_MiddleHomeLeft
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisRegular, size: Demension.shared.titleFontSize_20)
         return label
     }()
     
     let lbl_MiddleHomeRight:UILabel = {
         let label = UILabel()
-        label.text = "View all"
+        label.text = Resource.SourceTabbarScreen.tabbarHome.lbl_MiddleHomeRight
         label.textColor = Theme.shared.accentColor
         label.font = UIFont(name: Resource.Fonts.Metropolis.MetropolisMedium, size: Demension.shared.smallCaptionFontSize_10)
         return label
@@ -36,6 +32,8 @@ class TitileMiddle_cell5_TableViewCell: UITableViewCell {
         super.layoutSubviews()
         setupUI()
     }
+    
+    
     //MARK:Setup UI Elements
     
     func setupUI(){
@@ -43,7 +41,7 @@ class TitileMiddle_cell5_TableViewCell: UITableViewCell {
         
         lbl_MiddleHomeLeft.snp.makeConstraints({(make) in
             make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(20)
+            make.left.equalToSuperview().offset(Demension.shared.normalHorizontalMargin_20)
         })
         
         contentView.addSubview(lbl_MiddleHomeRight)
@@ -51,11 +49,12 @@ class TitileMiddle_cell5_TableViewCell: UITableViewCell {
         let tapgesture_lbl_MiddleHomeRight = UITapGestureRecognizer(target: self, action: #selector(tap_lbl_MiddleHomeRight))
         lbl_MiddleHomeRight.addGestureRecognizer(tapgesture_lbl_MiddleHomeRight)
         lbl_MiddleHomeRight.snp.makeConstraints({(make) in
-            make.right.equalToSuperview().offset(-20)
-            
+            make.right.equalToSuperview().offset(-Demension.shared.normalHorizontalMargin_20)
         })
     }
+    //MARK: Action post data to sever
     
-    
-    
+    @objc func tap_lbl_MiddleHomeRight(){
+        print("viewAll_tapgesture")
+    }
 }

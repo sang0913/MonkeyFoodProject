@@ -27,30 +27,28 @@ class Payment_MoreBar_TableViewCell: UITableViewCell {
     }()
     private let img_Payment: UIImageView = {
        let img = UIImageView()
-      
-        img.image = UIImage(named: "hand")
+        img.image = Resource.SourceTabbarScreen.tabbarMore.img_Hand
         img.contentMode = .center
         return img
     }()
     //lable
     private let lbl_Title_Payment: UILabel = {
        let label = UILabel()
-        label.text = "Payment Details"
-   
+        label.text = Resource.SourceTabbarScreen.tabbarMore.lbl_Title_Payment
         return label
     }()
     
     private let view_Arroww: UIView = {
        let view = UIView()
         view.backgroundColor = Theme.shared.backgroundColorTextField
-        view.layer.cornerRadius = 17
+        view.layer.cornerRadius = Demension.shared.normalVerticalMargin_17
         view.layer.masksToBounds = true
         return view
     }()
     private let img_ArrowGray: UIImageView = {
        let img = UIImageView()
         img.contentMode = .center
-        img.image = UIImage(named: "arrowGray")
+        img.image = Resource.SourceTabbarScreen.tabbarMore.img_ArrowGray
         
         return img
     }()
@@ -85,10 +83,7 @@ class Payment_MoreBar_TableViewCell: UITableViewCell {
            
             make.width.equalTo(Demension.shared.widthScale * 53)
             make.height.equalTo(Demension.shared.heightScale * 53)
-         
-            
-         
-       })
+        })
    }
    private func setup_img_Payment(){
         view_Payment_Icon.addSubview(img_Payment)
@@ -98,10 +93,7 @@ class Payment_MoreBar_TableViewCell: UITableViewCell {
             make.width.equalTo(Demension.shared.largeHorizontalMargin_30)
           
             make.height.equalTo(Demension.shared.largeVerticalMargin_30)
-           
-           
-
-       })
+      })
    }
     private func setup_lbl_Title_Payment(){
          view_Payment_Container.addSubview(lbl_Title_Payment)
