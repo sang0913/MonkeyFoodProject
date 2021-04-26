@@ -76,14 +76,20 @@ extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customCell1
         
         //        cell.lbl_ScrollView.text = "ay dat"
-        
-        let urlhinh = Config.serverURL + "/upload/" + arrColection[indexPath.row].Image
-        do {
-            let data = try Data(contentsOf: URL(string: urlhinh)!)
-            cell.image.image = UIImage(data: data)
-        }catch { }
-        
-        cell.lbl_ScrollView.text = arrColection[indexPath.row].Country
+        let queueImg = DispatchQueue.init(label: "queueImg")
+        queueImg.async {
+            let urlhinh = Config.serverURL + "/upload/" + self.arrColection[indexPath.row].Image
+            do {
+                let data = try Data(contentsOf: URL(string: urlhinh)!)
+                DispatchQueue.main.async {
+                    cell.image.image = UIImage(data: data)
+                    cell.lbl_ScrollView.text = self.arrColection[indexPath.row].Country
+                }
+
+            }catch { }
+            
+        }
+    
         
         
         return cell

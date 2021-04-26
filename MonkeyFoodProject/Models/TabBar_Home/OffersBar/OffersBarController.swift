@@ -57,14 +57,21 @@ class OffersBarController:UIViewController,UITableViewDataSource,UITableViewDele
             
             if indexPath.row  <= 4 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Table_Offer_TableViewCell.identifier, for: indexPath) as! Table_Offer_TableViewCell
-                //image
-            let urlhinh = Config.serverURL + "/upload/" + arrTable[indexPath.row].Image
-            do {
-                let data = try Data(contentsOf: URL(string: urlhinh)!)
-                cell.img_Food.image = UIImage(data: data)
-                cell.imageView?.contentMode = .scaleAspectFit
-            }catch { }
-                //text
+                let queueImg = DispatchQueue.init(label: "queueImg")
+                queueImg.async {
+                    //image
+                    let urlhinh = Config.serverURL + "/upload/" + self.arrTable[indexPath.row].Image
+                do {
+                    let data = try Data(contentsOf: URL(string: urlhinh)!)
+                    DispatchQueue.main.async {
+                        cell.img_Food.image = UIImage(data: data)
+                        cell.imageView?.contentMode = .scaleAspectFit
+                    }
+                   
+                }catch { }
+                    //text
+                }
+               
                 cell.selectionStyle = .none
                 return cell
             }

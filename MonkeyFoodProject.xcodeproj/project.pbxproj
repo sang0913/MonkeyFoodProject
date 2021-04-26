@@ -309,20 +309,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9426B391261CB5B800BA6A00 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9426B392261CB5BE00BA6A00 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		9426B393261CB5C400BA6A00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,7 +348,6 @@
 		9426B39E261CB66600BA6A00 /* LauchLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9426B430261DEF0500BA6A00 /* LauchNextScreen */,
 				9426B39F261CB66600BA6A00 /* LauchLoginScreen.swift */,
 				9426B3A0261CB66600BA6A00 /* WelcomeScreenViewController.swift */,
 			);
@@ -438,13 +423,6 @@
 				948C206F262521E7004C8247 /* TextField_Profile_Reusa ble.swift */,
 			);
 			name = TextFieldReusable;
-			sourceTree = "<group>";
-		};
-		9426B430261DEF0500BA6A00 /* LauchNextScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LauchNextScreen;
 			sourceTree = "<group>";
 		};
 		9440AB19262D38DF002FA6F1 /* Model_Server */ = {
@@ -564,8 +542,6 @@
 			isa = PBXGroup;
 			children = (
 				9426B393261CB5C400BA6A00 /* Common */,
-				9426B392261CB5BE00BA6A00 /* Controller */,
-				9426B391261CB5B800BA6A00 /* Views */,
 				9426B390261CB5B300BA6A00 /* Models */,
 				94E0AF3A261CB4F1003128E9 /* AppDelegate.swift */,
 				94E0AF3C261CB4F1003128E9 /* SceneDelegate.swift */,

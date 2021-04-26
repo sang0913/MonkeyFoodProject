@@ -7,7 +7,7 @@
 
 import Foundation
 struct Config {
-//    public static var serverURL =  "https://abcxcztest.herokuapp.com"
-    public static var serverURL =  "http://192.168.1.3:3000"
+    public static var serverURL =  "https://abcxcztest.herokuapp.com"
+//    public static var serverURL =  "http://192.168.1.3:3000"
     
 }

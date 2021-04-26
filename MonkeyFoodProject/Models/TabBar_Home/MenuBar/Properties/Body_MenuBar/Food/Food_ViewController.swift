@@ -44,7 +44,8 @@ class Food_ViewController: UIViewController {
     private let mytable: UITableView = {
         let table = UITableView()
         table.register(FoodTable_TableViewCell.self, forCellReuseIdentifier: FoodTable_TableViewCell.identifier) as? FoodTable_TableViewCell
-        
+        table.separatorInset = .zero
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         return table
     }()
     @objc func tapLogoShopping(){
@@ -181,15 +182,20 @@ extension Food_ViewController:UITableViewDataSource,UITableViewDelegate{
            
             let cell = tableView.dequeueReusableCell(withIdentifier: "FoodTable_TableViewCell") as! FoodTable_TableViewCell
             cell.textLabel?.text = "te"
-            //image
-            let urlhinh = Config.serverURL + "/upload/" + arrFood[indexPath.row].Image
-        do {
-            let data = try Data(contentsOf: URL(string: urlhinh)!)
-            cell.imageCellFood.image = UIImage(data: data)
-        }catch { }
-            //text
-            cell.lbl_TitleFood.text = arrFood[indexPath.row].FoodName
-        
+            let queueImg = DispatchQueue.init(label: "")
+            queueImg.async {
+               
+                let urlhinh = Config.serverURL + "/upload/" + self.arrFood[indexPath.row].Image
+            do {
+                let data = try Data(contentsOf: URL(string: urlhinh)!)
+                DispatchQueue.main.async {
+                    cell.imageCellFood.image = UIImage(data: data)
+                    cell.lbl_TitleFood.text = self.arrFood[indexPath.row].FoodName
+                }
+            }catch { }
+               
+                
+            }
             return cell
         }
     

@@ -90,17 +90,29 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
         }
         if indexPath.row <= 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: RecomendFoodTableViewCell.identifier, for: indexPath) as! RecomendFoodTableViewCell
-            //image
-            let urlhinh = Config.serverURL + "/upload/" + arrRecommendRestaurent[indexPath.row].Image
-            do {
-                let data = try Data(contentsOf: URL(string: urlhinh)!)
-                cell.img_Food.image = UIImage(data: data)
-            }catch { }
-            //text
-            cell.lbl_TitleFood.text = arrRecommendRestaurent[indexPath.row].Name
+            let queueImg = DispatchQueue.init(label: "queueImg")
+            queueImg.async {
+                //image
+                
+                let urlhinh = Config.serverURL + "/upload/" + self.arrRecommendRestaurent[indexPath.row].Image
+                do {
+                    let data = try Data(contentsOf: URL(string: urlhinh)!)
+                    DispatchQueue.main.async {
+                        cell.img_Food.image = UIImage(data: data)
+                        cell.lbl_TitleFood.text = self.arrRecommendRestaurent[indexPath.row].Name
+                    }
+                }catch { }
+                //text
+                
+            }
+     
             cell.selectionStyle = .none
+            
+            
+            
             return cell
         }
+        
         
         if indexPath.row == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Title_Footer_TableViewCell.identifier, for: indexPath) as! Title_Footer_TableViewCell
@@ -109,14 +121,20 @@ class HomeScreenViewcontroller:UIViewController,UITableViewDataSource,UITableVie
         }
         else if indexPath.row <= 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Footer_Tableview_TableViewCell.identifier, for: indexPath) as! Footer_Tableview_TableViewCell
-            
-            let urlhinh = Config.serverURL + "/upload/" + arrRecommendRestaurent[indexPath.row].Image
-            do {
-                let data = try Data(contentsOf: URL(string: urlhinh)!)
-                cell.img_Food.image = UIImage(data: data)
-            }catch { }
-            //text
-            cell.lbl_FoodName.text = arrRecommendRestaurent[indexPath.row].Name
+            let queueImg = DispatchQueue.init(label: "queueImg")
+            queueImg.async {
+                let urlhinh = Config.serverURL + "/upload/" + self.arrRecommendRestaurent[indexPath.row].Image
+                do {
+                    let data = try Data(contentsOf: URL(string: urlhinh)!)
+                    DispatchQueue.main.async {
+                        cell.img_Food.image = UIImage(data: data)
+                        cell.lbl_FoodName.text = self.arrRecommendRestaurent[indexPath.row].Name
+                    }
+                }catch { }
+                //text
+                
+            }
+       
             cell.selectionStyle = .none
             return cell
             

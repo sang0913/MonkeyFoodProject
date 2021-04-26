@@ -13,17 +13,17 @@ class Demension {
 
     
 // Iphone X
-//    var widthScale:CGFloat = 1.0
-//    var heightScale:CGFloat = 1.0
-//    private init() {
-//
-//
-//        let witdhIP_X:CGFloat = 375 * widthScale
-//        let heightIP_X:CGFloat = 812 * heightScale
-//
-//        widthScale = UIScreen.main.bounds.width / witdhIP_X
-//        heightScale = UIScreen.main.bounds.height / heightIP_X
-//    }
+    var widthScale:CGFloat = 1.0
+    var heightScale:CGFloat = 1.0
+    private init() {
+
+
+        let witdhIP_X:CGFloat = 375 * widthScale
+        let heightIP_X:CGFloat = 812 * heightScale
+
+        widthScale = UIScreen.main.bounds.width / witdhIP_X
+        heightScale = UIScreen.main.bounds.height / heightIP_X
+    }
 
     
         //iphone 8
@@ -43,17 +43,17 @@ class Demension {
 //    iphone 11 ProMax
     
     
-    var widthScale:CGFloat = 0.9057
-    var heightScale:CGFloat = 0.90625
-private init() {
-
-    let witdh_IP11Promax:CGFloat = 414 * widthScale
-    let height_IP11Promax:CGFloat = 896 * heightScale
-
-
-    widthScale = UIScreen.main.bounds.width / witdh_IP11Promax
-    heightScale = UIScreen.main.bounds.height / height_IP11Promax
-}
+//    var widthScale:CGFloat = 0.9057
+//    var heightScale:CGFloat = 0.90625
+//private init() {
+//
+//    let witdh_IP11Promax:CGFloat = 414 * widthScale
+//    let height_IP11Promax:CGFloat = 896 * heightScale
+//
+//
+//    widthScale = UIScreen.main.bounds.width / witdh_IP11Promax
+//    heightScale = UIScreen.main.bounds.height / height_IP11Promax
+//}
     
    //MARK: FontSize
     
@@ -607,3 +607,4 @@ private init() {
         return 311 * self.heightScale
     }
 }
+//s
