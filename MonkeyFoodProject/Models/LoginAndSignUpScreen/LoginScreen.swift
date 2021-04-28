@@ -10,6 +10,7 @@ import FBSDKLoginKit
 class LoginScreen : BaseViewcontroller
 
 {
+    @IBOutlet var mySpiner: UIActivityIndicatorView!
     // add for class LoginButtonDelegate
     
     
@@ -68,8 +69,10 @@ class LoginScreen : BaseViewcontroller
         
         let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
         view.addGestureRecognizer(screenTapGesture)
-        
-        
+       
+        view.addSubview(mySpiner)
+        mySpiner.backgroundColor = .gray
+        mySpiner.alpha = 0.5
     }
     
     //MARK:UI Elements
@@ -172,9 +175,10 @@ class LoginScreen : BaseViewcontroller
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppearLoginScreen")
         navigationController?.navigationBar.isTranslucent = true
+        mySpiner.isHidden = true
         
     }
-    
+  
     
     //MARK:Setup UI Elements
     private func setup_lbl_TopTitle(){
@@ -301,7 +305,7 @@ class LoginScreen : BaseViewcontroller
 }
 extension LoginScreen {
     @objc func tapButtonLogin(){
-        
+   
         print("tapButtonLogin")
         if (txt_Email_LoginScreen.txt_inputReusable.text == ""){
             let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập UserName", preferredStyle: .alert)
@@ -317,7 +321,8 @@ extension LoginScreen {
         else {
             
             print("tapButtonLogin")
-            
+            mySpiner.isHidden = false
+            mySpiner.startAnimating()
             let url = URL(string: Config.serverURL + "/login")
             var request = URLRequest(url: url!)
             request.httpMethod = "POST"
@@ -336,6 +341,9 @@ extension LoginScreen {
                     if(json["kq"] as! Int == 1){
                         //Login thanh cong
                         print("đăng nhập thành công")
+                   
+                        
+                        
                         //Tạo Token
                         let defaults = UserDefaults.standard
                         defaults.setValue(json["Token"], forKey: "UserToken")
@@ -343,7 +351,7 @@ extension LoginScreen {
                         
                         DispatchQueue.main.async {
                             
-                            
+                           
                             let sb = UIStoryboard(name: "Main", bundle: nil)
                             let vc  = sb.instantiateViewController(identifier: "NavigationBarController") as! NavigationBarController
                             
@@ -358,11 +366,14 @@ extension LoginScreen {
                             
                             if(json["errMsg"] as! String == "Sai password.") {
                                 DispatchQueue.main.async {
+                                    
                                     let alert = UIAlertController(title: "Thông báo", message: "Sai password.", preferredStyle: .alert)
                                     alert.addAction(.init(title: "Đồng ý",
                                                           style: .cancel,
                                                           handler: nil))
                                     self.present(alert, animated: true, completion: nil)
+                                    self.mySpiner.isHidden = true
+                                    
                                 }
                             }
                             
@@ -373,6 +384,7 @@ extension LoginScreen {
                                                           style: .cancel,
                                                           handler: nil))
                                     self.present(alert, animated: true, completion: nil)
+                                    self.mySpiner.isHidden = true
                                 }
                             }
                         }

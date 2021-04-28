@@ -47,9 +47,24 @@
                     <view key="view" contentMode="scaleToFill" id="kya-xx-3du">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Srj-Ey-cub">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="color" red="0.99216777089999997" green="0.41570755840000001" blue="0.20394939179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nHk-no-Xr9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Srj-Ey-cub" secondAttribute="bottom" id="158-pD-VWh"/>
+                            <constraint firstItem="Srj-Ey-cub" firstAttribute="leading" secondItem="nHk-no-Xr9" secondAttribute="leading" id="9Ih-7T-C7X"/>
+                            <constraint firstItem="nHk-no-Xr9" firstAttribute="trailing" secondItem="Srj-Ey-cub" secondAttribute="trailing" id="ESO-zW-8kR"/>
+                            <constraint firstItem="Srj-Ey-cub" firstAttribute="top" secondItem="kya-xx-3du" secondAttribute="top" id="mGL-uY-cZk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mySpiner" destination="Srj-Ey-cub" id="mI8-ds-a1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbO-vf-akQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,9 +77,24 @@
                     <view key="view" contentMode="scaleToFill" id="WvA-cM-OSr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9B6-tJ-OKt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="color" red="0.99216777089999997" green="0.41570755840000001" blue="0.20394939179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vcb-xn-N4J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9B6-tJ-OKt" firstAttribute="top" secondItem="WvA-cM-OSr" secondAttribute="top" id="W3o-Km-AYc"/>
+                            <constraint firstItem="9B6-tJ-OKt" firstAttribute="leading" secondItem="vcb-xn-N4J" secondAttribute="leading" id="aNH-3f-x0e"/>
+                            <constraint firstItem="vcb-xn-N4J" firstAttribute="trailing" secondItem="9B6-tJ-OKt" secondAttribute="trailing" id="orR-MF-tMe"/>
+                            <constraint firstAttribute="bottom" secondItem="9B6-tJ-OKt" secondAttribute="bottom" id="waP-9a-TbP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mySpiner" destination="9B6-tJ-OKt" id="RPl-B5-K3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDS-8l-qSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,12 +219,6 @@
                     <view key="view" contentMode="scaleToFill" id="c1G-Xk-Sq9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 6816" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-FW-mjh">
-                                <rect key="frame" x="20" y="202" width="335" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WbH-Kv-fZY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -226,13 +250,6 @@
                     <view key="view" contentMode="scaleToFill" id="YFo-3H-mBp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yR-uu-efj">
-                                <rect key="frame" x="184" y="213" width="46" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ILr-jL-4jI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -249,12 +266,6 @@
                     <view key="view" contentMode="scaleToFill" id="VK9-8e-Vkb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menubar.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WUz-pf-ZjA">
-                                <rect key="frame" x="40" y="148" width="335" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BN2-R4-Dum"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -357,8 +368,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 6816" width="34" height="34"/>
-        <image name="menubar.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

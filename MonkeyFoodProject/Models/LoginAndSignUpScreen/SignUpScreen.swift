@@ -8,6 +8,7 @@
 import UIKit
 class SignUpScreen:BaseViewcontroller {
     
+    @IBOutlet var mySpiner: UIActivityIndicatorView!
     private let lbl_Top_Title_SignUp : lbl_Top_Title = {
         let label = lbl_Top_Title()
         label.lbl_Top_Title.text = Resource.SourceSignInSignUpScreen.SignUpScreen.TopTile_SignUp
@@ -95,7 +96,10 @@ class SignUpScreen:BaseViewcontroller {
         
         let screenTapGesture = UITapGestureRecognizer(target: self, action: #selector(superScreenTapGesture))
         view.addGestureRecognizer(screenTapGesture)
-        
+        view.addSubview(mySpiner)
+        mySpiner.backgroundColor = .black
+        mySpiner.isHidden = true
+        mySpiner.alpha = 0.4
         
     }
     
@@ -196,8 +200,10 @@ class SignUpScreen:BaseViewcontroller {
 }
 
 extension SignUpScreen {
+    
     //MARK:Button Send data
     @objc func tapButtonSignUp(){
+      
         if (txt_Name_SignUp.txt_inputReusable.text == ""){
             let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập UserName", preferredStyle: .alert)
             alert.addAction(.init(title: "Đồng ý", style: .cancel, handler: nil))
@@ -246,6 +252,9 @@ extension SignUpScreen {
             sData += "&Email=" + self.txt_Email_SignUp.txt_inputReusable.text!
             sData += "&Mobile=" + self.txt_Mobile_SignUp.txt_inputReusable.text!
             sData += "&Address=" + self.txt_Address_SignUp.txt_inputReusable.text!
+            
+            self.mySpiner.isHidden = false
+            self.mySpiner.startAnimating()
             let postData = sData.data(using: .utf8)
             request.httpBody = postData
             let taskUserRegister = URLSession.shared.dataTask(with: request, completionHandler: { data , response, error in
@@ -258,6 +267,7 @@ extension SignUpScreen {
                     
                     if(json["kq"] as! Int == 1){
                         //Login thanh cong
+                        
                         print("đăng kí thành công")
                         //alert thành công
                         let defaults = UserDefaults.standard
@@ -290,6 +300,7 @@ extension SignUpScreen {
                                                   style: .cancel,
                                                   handler: nil))
                             self.present(alert, animated: true, completion: nil)
+                            self.mySpiner.isHidden = true
                         }
                     }
                 }catch let error { print(error.localizedDescription) }
